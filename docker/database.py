@@ -128,3 +128,7 @@ class Database:
                 self.cursor.execute(create_query)
             
             self.connection.commit()
+
+# Example usage:
+db = Database()
+db.close()
