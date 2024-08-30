@@ -4,14 +4,15 @@ import pandas as pd
 
 app = Flask(__name__)
 
-# Replace with your actual API key and base URL
+# Replace with your actual API key
 WEATHER_API_KEY = "a3a196f898853f6c894e5c066f8af5c0"
-BASE_URL = "http://api.openweathermap.org/data/2.5/onecall"
+BASE_URL = "https://api.openweathermap.org/data/3.0/onecall"
 
 @app.route('/weather', methods=['GET'])
 def get_weather():
     lat = request.args.get('lat')
     lon = request.args.get('lon')
+    exclude = request.args.get('exclude', '')  # Optional parameter to exclude parts of the data
 
     if not lat or not lon:
         return jsonify({"error": "Please provide latitude and longitude"}), 400
@@ -21,7 +22,7 @@ def get_weather():
         'lon': lon,
         'appid': WEATHER_API_KEY,
         'units': 'metric',  # Change to 'imperial' for Fahrenheit
-        'exclude': 'minutely'  # Example to exclude minutely data
+        'exclude': exclude  # Include exclude parameter if specified
     }
 
     response = requests.get(BASE_URL, params=params)
@@ -48,7 +49,7 @@ def process_weather_data(data):
         "sunset": data["current"]["sunset"],
     }])
 
-    # Convert daily forecast to DataFrame
+    # Convert daily forecast to DataFrame if present
     daily_df = pd.DataFrame([
         {
             "date": day["dt"],
@@ -60,10 +61,10 @@ def process_weather_data(data):
             "clouds": day["clouds"],
             "rain": day.get("rain", 0),
             "uvi": day["uvi"]
-        } for day in data["daily"]
+        } for day in data.get("daily", [])
     ])
 
-    # Convert alerts to DataFrame
+    # Convert alerts to DataFrame if present
     alerts_df = pd.DataFrame([
         {
             "event": alert["event"],
