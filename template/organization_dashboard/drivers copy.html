@@ -3,11 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Synergysource - Map</title>
+        <title>Synergysource - Drivers</title>
         <link rel="icon" type="image/webp" href="assets/s.webp" />
     </head>
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"  rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@9.0.3"></script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <body>
         <div id="navbar"></div>
@@ -148,20 +150,13 @@
         .catch((error) => console.error("Error loading navbar:", error));
     </script>
 
-
     <script>
-        if (document.getElementById("default-table") && typeof simpleDatatables.DataTable !== 'undefined') {
-            const dataTable = new simpleDatatables.DataTable("#default-table", {
-                searchable: false,
-                perPageSelect: false
+        if (document.getElementById("search-table") && typeof simpleDatatables.DataTable !== 'undefined') {
+            const dataTable = new simpleDatatables.DataTable("#search-table", {
+                searchable: true,
+                sortable: false
             });
         }
     </script>
 
-
-
 </html>
-
-
-
-

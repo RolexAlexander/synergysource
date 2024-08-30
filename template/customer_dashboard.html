@@ -1,108 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Customer Dashboard</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
+</head>
 
-  <body class="bg-gray-100">
+<body class="bg-gray-100">
     <div id="navbar"></div>
 
     <div class="container mx-auto p-6">
-      <h1 class="text-2xl font-bold mb-6">Customer Dashboard</h1>
+        <h1 class="text-2xl font-bold mb-6">Customer Dashboard</h1>
 
-      <!-- Main Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-        <!-- Map Card -->
-        <a href="customer_dashboard/map.html" class="block">
-          <div class="bg-white p-4 rounded-lg shadow-md">
-            <h2 class="font-semibold text-lg text-center">Map</h2>
-          </div>
-        </a>
+        <!-- Main Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+            <!-- Map Card -->
+            <a href="customer_dashboard/map.html" class="block">
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <h2 class="font-semibold text-lg text-center">Map</h2>
+                </div>
+            </a>
 
-        <!-- Manage Account Card -->
+            <!-- Manage Ride Card -->
+            <a href="customer_dashboard/ride.html" class="block">
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <h2 class="font-semibold text-lg text-center">Manage Ride</h2>
+                </div>
+            </a>
 
-        <!-- Manage Ride Card -->
-        <a href="customer_dashboard/ride.html" class="block">
-          <div class="bg-white p-4 rounded-lg shadow-md">
-            <h2 class="font-semibold text-lg text-center">Manage Ride</h2>
-          </div>
-        </a>
+            <!-- Report Card -->
+            <a href="customer_dashboard/report.html" class="block">
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <h2 class="font-semibold text-lg text-center">Report</h2>
+                </div>
+            </a>
 
-        <!-- Blank Card -->
-        <a href="customer_dashboard/report.html" class="block">
-          <div class="bg-white p-4 rounded-lg shadow-md">
-            <h2 class="font-semibold text-lg text-center">Report</h2>
-          </div>
-        </a>
+            <!-- Additional Blank Card (optional) -->
+            <a href="customer_dashboard/report.html" class="block">
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <h2 class="font-semibold text-lg text-center">Blank Card</h2>
+                </div>
+            </a>
+        </div>
+    </div>
 
-        <!-- Additional Blank Card (optional) -->
-        <a href="customer_dashboard/report.html" class="block">
-          <div class="bg-white p-4 rounded-lg shadow-md">
-            <h2 class="font-semibold text-lg text-center">Blank Card</h2>
-          </div>
-        </a>
-      </div>
+    <!-- Notification area -->
+    <div id="notification" class="mb-4 hidden fixed bottom-4 right-4 bg-green-100 border border-green-400 text-green-700 p-3 rounded shadow-lg max-w-xs">
+        <span id="notificationMessage"></span>
     </div>
 
     <script>
-      // Function to hide elements by ID
-      function hideElementById(id) {
-        const element = document.getElementById(id);
-        if (element) {
-          element.style.display = "none";
+        // Function to hide elements by ID
+        function hideElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "none";
+            }
         }
-      }
 
-      // Function to show elements by ID
-      function showElementById(id) {
-        const element = document.getElementById(id);
-        if (element) {
-          element.style.display = "block";
+        // Function to show elements by ID
+        function showElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "block";
+            }
         }
-      }
 
-      // Fetch the navbar and check registration status
-      fetch("navbar.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("navbar").innerHTML = data;
+        // Fetch the navbar and check registration status
+        fetch("navbar.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("navbar").innerHTML = data;
 
-          // Check user registration status
-          const userRegistered = JSON.parse(
-            localStorage.getItem("userRegistered")
-          );
-          console.log("userRegistered:", userRegistered);
+                // Check user registration status
+                const userRegistered = JSON.parse(localStorage.getItem("userRegistered"));
+                console.log("userRegistered:", userRegistered);
 
-          if (userRegistered && userRegistered.registered) {
-            hideElementById("login-link");
-            hideElementById("register-link");
-            showElementById("profile-link");
-          }
-
-          // Set up mobile menu toggle functionality
-          document
-            .querySelectorAll("[data-collapse-toggle]")
-            .forEach((button) => {
-              button.addEventListener("click", function () {
-                const mobileMenu = document.getElementById("mobile-menu-2");
-                if (mobileMenu) {
-                  mobileMenu.style.display =
-                    mobileMenu.style.display === "none" ||
-                    mobileMenu.style.display === ""
-                      ? "block"
-                      : "none";
+                if (userRegistered && userRegistered.registered) {
+                    hideElementById("login-link");
+                    hideElementById("register-link");
+                    showElementById("profile-link");
                 }
-              });
-            });
-        })
-        .catch((error) => console.error("Error loading navbar:", error));
+
+                // Set up mobile menu toggle functionality
+                document.querySelectorAll("[data-collapse-toggle]").forEach((button) => {
+                    button.addEventListener("click", function () {
+                        const mobileMenu = document.getElementById("mobile-menu-2");
+                        if (mobileMenu) {
+                            mobileMenu.style.display = mobileMenu.style.display === "none" || mobileMenu.style.display === "" ? "block" : "none";
+                        }
+                    });
+                });
+            })
+            .catch((error) => console.error("Error loading navbar:", error));
+
+        // Check for notification in localStorage
+        const notification = localStorage.getItem('notification');
+        console.log("notification:", notification);
+        if (notification) {
+            const notificationDiv = document.getElementById('notification');
+            document.getElementById('notificationMessage').textContent = notification;
+            notificationDiv.classList.remove('hidden');
+
+            // Set a timeout to hide the notification after 5 seconds
+            setTimeout(() => {
+                notificationDiv.classList.add('hidden');
+            }, 5000); // Change 5000 to desired duration in milliseconds
+
+            // Clear the notification from localStorage after displaying
+            localStorage.removeItem('notification');
+        }
     </script>
-  </body>
+</body>
 </html>

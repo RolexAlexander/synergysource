@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Organization Dashboard</title>
+    <title>Customer Dashboard</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
@@ -15,65 +15,45 @@
     <div id="navbar"></div>
 
     <div class="container mx-auto p-6">
-      <h1 class="text-2xl font-bold mb-6">Organization Dashboard</h1>
+      <h1 class="text-2xl font-bold mb-6">Customer Dashboard</h1>
 
       <!-- Main Cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-        <!-- Drivers Card -->
-        <a href="organization_dashboard/drivers.html" class="block">
-          <div class="bg-white p-4 rounded-lg shadow-md">
-            <h2 class="font-semibold text-lg text-center">Drivers</h2>
-          </div>
-        </a>
-
         <!-- Map Card -->
-        <a href="organization_dashboard/map.html" class="block">
+        <a href="customer_dashboard/map.html" class="block">
           <div class="bg-white p-4 rounded-lg shadow-md">
             <h2 class="font-semibold text-lg text-center">Map</h2>
           </div>
         </a>
 
-        <!-- Comments Card -->
-        <a href="organization_dashboard/comments.html" class="block">
+        <!-- Manage Account Card -->
+
+        <!-- Manage Ride Card -->
+        <a href="customer_dashboard/ride.html" class="block">
           <div class="bg-white p-4 rounded-lg shadow-md">
-            <h2 class="font-semibold text-lg text-center">Comments</h2>
+            <h2 class="font-semibold text-lg text-center">Manage Ride</h2>
           </div>
         </a>
 
         <!-- Blank Card -->
-        <a href="organization_dashboard/driver.html" class="block">
+        <a href="customer_dashboard/report.html" class="block">
+          <div class="bg-white p-4 rounded-lg shadow-md">
+            <h2 class="font-semibold text-lg text-center">Report</h2>
+          </div>
+        </a>
+
+        <!-- Additional Blank Card (optional) -->
+        <a href="customer_dashboard/report.html" class="block">
           <div class="bg-white p-4 rounded-lg shadow-md">
             <h2 class="font-semibold text-lg text-center">Blank Card</h2>
           </div>
         </a>
       </div>
+    </div>
 
-      <!-- Driver Comments Table -->
-      <div class="bg-white rounded-lg shadow-md p-4">
-        <h3 class="font-semibold text-lg mb-4">Driver Comments</h3>
-        <table class="min-w-full border-collapse">
-          <thead>
-            <tr class="bg-gray-200">
-              <th class="py-2 px-4 border">Driver Name</th>
-              <th class="py-2 px-4 border">Comments</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b">
-              <td class="py-2 px-4">John Doe</td>
-              <td class="py-2 px-4">Great performance!</td>
-            </tr>
-            <tr class="border-b">
-              <td class="py-2 px-4">Jane Smith</td>
-              <td class="py-2 px-4">Needs improvement in punctuality.</td>
-            </tr>
-            <tr class="border-b">
-              <td class="py-2 px-4">Mike Johnson</td>
-              <td class="py-2 px-4">Excellent feedback from customers.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <!-- Notification area -->
+    <div id="notification" class="mb-4 hidden bg-green-100 border border-green-400 text-green-700 p-3 rounded">
+        <span id="notificationMessage"></span>
     </div>
 
     <script>
@@ -128,6 +108,27 @@
             });
         })
         .catch((error) => console.error("Error loading navbar:", error));
+    </script>
+
+    <script>
+        // Check for notification in localStorage
+        const notification = localStorage.getItem('notification');
+        console.log("notification:", notification);
+        if (notification) {
+            document.getElementById('notificationMessage').textContent = notification;
+            document.getElementById('notification').classList.remove('hidden');
+
+            // Clear the notification from localStorage after displaying
+            localStorage.removeItem('notification');
+        }
+
+        // Fetch the navbar as in the previous example
+        fetch("../navbar.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("navbar").innerHTML = data;
+            })
+            .catch((error) => console.error("Error loading navbar:", error));
     </script>
   </body>
 </html>
