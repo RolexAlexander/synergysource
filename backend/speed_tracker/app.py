@@ -5,10 +5,10 @@ import threading
 import math
 
 carCascade = cv2.CascadeClassifier('myhaar.xml')
-video = cv2.VideoCapture('cars.mp4')
+video = cv2.VideoCapture('/backend/speed_tracker/cars.mp4')
 
-WIDTH = 1280
-HEIGHT = 720
+WIDTH = 1920
+HEIGHT = 1080
 
 
 def estimateSpeed(location1, location2):
