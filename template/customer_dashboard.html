@@ -9,47 +9,80 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
+<style>
+    .card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+  
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+  
+    .card-icon {
+      color: #007bff;
+      font-size: 36px;
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+  
+    .card-icon:hover {
+      color: #0056b3;
+    }
+  
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      text-align: center;
+    }
+  </style>
+
 <body class="bg-gray-100">
     <div id="navbar"></div>
 
     <div class="container mx-auto p-6">
-        <h1 class="text-2xl font-bold mb-6">Customer Dashboard</h1>
-    
+        <h1 class="text-3xl font-bold mb-6 text-center">Customer Dashboard</h1>
+      
         <!-- Main Cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-            <!-- Map Card -->
-            <a href="map/vehicles.html" class="block">
-                <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center flex-col">
-                    <i class="fas fa-map-marker-alt text-3xl mb-2 text-blue-500"></i>
-                    <h2 class="font-semibold text-lg text-center">Map</h2>
-                </div>
-            </a>
-    
-            <!-- Manage Ride Card -->
-            <a href="customer_dashboard/ride.html" class="block">
-                <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center flex-col">
-                    <i class="fas fa-car text-3xl mb-2 text-green-500"></i>
-                    <h2 class="font-semibold text-lg text-center">Manage Ride</h2>
-                </div>
-            </a>
-    
-            <!-- Report Card -->
-            <a href="customer_dashboard/report.html" class="block">
-                <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center flex-col">
-                    <i class="fas fa-file-alt text-3xl mb-2 text-yellow-500"></i>
-                    <h2 class="font-semibold text-lg text-center">Report</h2>
-                </div>
-            </a>
-    
-            <!-- Weather Forecast Card -->
-            <a href="customer_dashboard/map.html" class="block">
-                <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center flex-col">
-                    <i class="fas fa-cloud-sun text-3xl mb-2 text-gray-500"></i>
-                    <h2 class="font-semibold text-lg text-center">Weather Forecast</h2>
-                </div>
-            </a>
+          <!-- Map Card -->
+          <a href="map/vehicles.html" class="card block">
+            <div class="flex flex-col items-center">
+              <i class="fas fa-map-marker-alt card-icon"></i>
+              <h2 class="card-title">Map</h2>
+            </div>
+          </a>
+      
+          <!-- Manage Ride Card -->
+          <a href="customer_dashboard/ride.html" class="card block">
+            <div class="flex flex-col items-center">
+              <i class="fas fa-car card-icon text-green-500"></i>
+              <h2 class="card-title">Manage Ride</h2>
+            </div>
+          </a>
+      
+          <!-- Report Card -->
+          <a href="customer_dashboard/report.html" class="card block">
+            <div class="flex flex-col items-center">
+              <i class="fas fa-file-alt card-icon text-yellow-500"></i>
+              <h2 class="card-title">Report</h2>
+            </div>
+          </a>
+      
+          <!-- Weather Forecast Card -->
+          <a href="customer_dashboard/map.html" class="card block">
+            <div class="flex flex-col items-center">
+              <i class="fas fa-cloud-sun card-icon text-gray-500"></i>
+              <h2 class="card-title">Weather Forecast</h2>
+            </div>
+          </a>
         </div>
-    </div>
+      </div>
+      
     
 
     <!-- Notification area -->
