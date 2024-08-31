@@ -6,6 +6,7 @@
     <title>Customer Dashboard</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body class="bg-gray-100">
@@ -13,38 +14,43 @@
 
     <div class="container mx-auto p-6">
         <h1 class="text-2xl font-bold mb-6">Customer Dashboard</h1>
-
+    
         <!-- Main Cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
             <!-- Map Card -->
             <a href="map/vehicles.html" class="block">
-                <div class="bg-white p-4 rounded-lg shadow-md">
+                <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center flex-col">
+                    <i class="fas fa-map-marker-alt text-3xl mb-2 text-blue-500"></i>
                     <h2 class="font-semibold text-lg text-center">Map</h2>
                 </div>
             </a>
-
+    
             <!-- Manage Ride Card -->
             <a href="customer_dashboard/ride.html" class="block">
-                <div class="bg-white p-4 rounded-lg shadow-md">
+                <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center flex-col">
+                    <i class="fas fa-car text-3xl mb-2 text-green-500"></i>
                     <h2 class="font-semibold text-lg text-center">Manage Ride</h2>
                 </div>
             </a>
-
+    
             <!-- Report Card -->
             <a href="customer_dashboard/report.html" class="block">
-                <div class="bg-white p-4 rounded-lg shadow-md">
+                <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center flex-col">
+                    <i class="fas fa-file-alt text-3xl mb-2 text-yellow-500"></i>
                     <h2 class="font-semibold text-lg text-center">Report</h2>
                 </div>
             </a>
-
-            <!-- Additional Blank Card (optional) -->
-            <a href="map/hotspots.html" class="block">
-                <div class="bg-white p-4 rounded-lg shadow-md">
-                    <h2 class="font-semibold text-lg text-center">Blank Card</h2>
+    
+            <!-- Weather Forecast Card -->
+            <a href="customer_dashboard/map.html" class="block">
+                <div class="bg-white p-4 rounded-lg shadow-md flex items-center justify-center flex-col">
+                    <i class="fas fa-cloud-sun text-3xl mb-2 text-gray-500"></i>
+                    <h2 class="font-semibold text-lg text-center">Weather Forecast</h2>
                 </div>
             </a>
         </div>
     </div>
+    
 
     <!-- Notification area -->
     <!-- <div id="notification" class="mb-4 hidden fixed bottom-4 right-4 bg-green-100 border border-green-400 text-green-700 p-3 rounded shadow-lg max-w-xs">
@@ -211,5 +217,8 @@
             localStorage.removeItem('notification');
         }
     </script> -->
+
+
+    
 </body>
 </html>
