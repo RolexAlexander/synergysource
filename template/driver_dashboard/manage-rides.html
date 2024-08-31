@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Navbar styling */
+        #navbar {
+            backdrop-filter: blur(10px);
+        }
+        .navbar-item {
+            padding: 0.75rem 1.5rem;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #f0f0f0;
+        }
+        /* Button styling */
+        .accept-button {
+            background-color: #38b2ac;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+        .accept-button:hover {
+            background-color: #319795;
+            transform: scale(1.05);
+        }
+        .decline-button {
+            background-color: #e53e3e;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+        .decline-button:hover {
+            background-color: #c53030;
+            transform: scale(1.05);
+        }
+        /* Camera Section */
+        #camera {
+            background-color: #edf2f7;
+            border: 2px dashed #cbd5e0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+        .camera-icon {
+            color: #4a5568;
+            font-size: 48px;
+        }
+        .camera-instructions {
+            color: #718096;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+
+    <!-- Navbar -->
+    <div id="navbar" class="fixed top-0 left-0 w-full bg-opacity-70 bg-gray-800 text-white shadow-md z-50">
+        <!-- Navbar content here -->
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-6 pt-24">
+        <!-- Main Header -->
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold mb-4 text-gray-800 dark:text-gray-100 text-center">Driver Dashboard</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300 text-center">Manage your rides and monitor passengers.</p>
+        </header>
+
+        <!-- Ride Request Section -->
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Incoming Ride Request</h2>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">Pickup Location: 123 Main St</p>
+            <p class="text-gray-700 dark:text-gray-300 mb-6">Destination: 456 Oak St</p>
+            <div class="flex justify-between">
+                <button class="accept-button"><i class="fas fa-check"></i> Accept</button>
+                <button class="decline-button"><i class="fas fa-times"></i> Decline</button>
+            </div>
+        </div>
+
+        <!-- Camera Support Section -->
+        <div id="camera" class="mb-6">
+            <div class="text-center">
+                <i class="fas fa-camera camera-icon"></i>
+                <p class="camera-instructions">Camera feed will appear here for passenger detection</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dark Mode Toggle Button -->
+    <button class="dark-mode-toggle fixed bottom-6 right-6 bg-gray-800 text-white p-4 rounded-full shadow-md transition-transform duration-300">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        document.querySelector('.dark-mode-toggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Set initial theme
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark');
+            }
+        });
+    </script>
+</body>
+</html>
