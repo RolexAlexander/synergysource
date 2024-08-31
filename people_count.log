@@ -1925,3 +1925,11 @@ cv2.error: OpenCV(4.10.0) :-1: error: (-5:Bad argument) in function 'rectangle'
 2024-08-31 11:07:56,179 - Number of people detected: 1
 2024-08-31 11:08:30,425 - Number of people detected: 2
 2024-08-31 11:08:30,686 - Number of people detected: 1
+2024-08-31 11:09:19,540 - Number of people detected: 2
+2024-08-31 11:09:22,659 - Number of people detected: 1
+2024-08-31 11:09:24,497 - Number of people detected: 2
+2024-08-31 11:09:25,231 - Number of people detected: 1
+2024-08-31 11:09:25,473 - Number of people detected: 2
+2024-08-31 11:09:25,960 - Number of people detected: 1
+2024-08-31 11:09:26,925 - Number of people detected: 2
+2024-08-31 11:09:31,595 - Number of people detected: 1
