@@ -10,11 +10,27 @@
     <style>
         body {
             background-color: #1e1e1e;
-            color: #e1e1e1;
+            color: #dddddd;
         }
         .card {
             background-color: #2b2b2b;
             border: 1px solid #444444;
+        }
+        .card-title {
+            color: #ffffff;
+        }
+        .card-body {
+            padding: 1.5rem;
+        }
+        .uv-circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            margin: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -113,10 +129,12 @@
             y: temperatures,
             mode: 'lines+markers',
             type: 'scatter',
-            line: { shape: 'spline' },
+            line: { shape: 'spline', color: '#ff7f0e' },
+            marker: { color: '#ff7f0e', size: 8 }
         }], {
             title: 'Temperature Over Time',
             paper_bgcolor: '#2b2b2b',
+            plot_bgcolor: '#1e1e1e',
             font: { color: '#e1e1e1' },
             xaxis: { title: 'Time', gridcolor: '#444444' },
             yaxis: { title: 'Temperature (°F)', gridcolor: '#444444' }
@@ -128,10 +146,12 @@
             y: humidities,
             mode: 'lines+markers',
             type: 'scatter',
-            line: { shape: 'spline' },
+            line: { shape: 'spline', color: '#1f77b4' },
+            marker: { color: '#1f77b4', size: 8 }
         }], {
             title: 'Humidity Over Time',
             paper_bgcolor: '#2b2b2b',
+            plot_bgcolor: '#1e1e1e',
             font: { color: '#e1e1e1' },
             xaxis: { title: 'Time', gridcolor: '#444444' },
             yaxis: { title: 'Humidity (%)', gridcolor: '#444444' }
@@ -151,10 +171,16 @@
                     { range: [5, 10], color: '#33CCFF' },
                     { range: [10, 15], color: '#66FFFF' },
                     { range: [15, 20], color: '#99FFFF' }
-                ]
+                ],
+                threshold: {
+                    line: { color: 'red', width: 4 },
+                    thickness: 0.75,
+                    value: 15
+                }
             },
         }], {
             paper_bgcolor: '#2b2b2b',
+            plot_bgcolor: '#1e1e1e',
             font: { color: '#e1e1e1' }
         });
 
@@ -164,9 +190,13 @@
             y: rainPossibilities,
             type: 'bar',
             marker: { color: '#17becf' },
+            text: rainPossibilities.map(value => `${value}%`),
+            textposition: 'auto',
+            hoverinfo: 'x+y'
         }], {
             title: 'Rain Possibility Over Time',
             paper_bgcolor: '#2b2b2b',
+            plot_bgcolor: '#1e1e1e',
             font: { color: '#e1e1e1' },
             xaxis: { title: 'Time', gridcolor: '#444444' },
             yaxis: { title: 'Possibility (%)', gridcolor: '#444444' }
@@ -195,77 +225,76 @@
     // Call the function every 5 seconds
     setInterval(generateRealisticData, 5000);
 </script>
-    <script>
 
-        function logout(event) {
-            event.preventDefault(); // Prevent the default anchor behavior
-            localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
-            console.log("User logged out");
-            // Redirect to the register page
-            window.location.href = '/template/signup.html';
+<script>
+    function logout(event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+        localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
+        console.log("User logged out");
+        // Redirect to the register page
+        window.location.href = '/template/signup.html';
+    }
+    // Function to hide elements by ID
+    function hideElementById(id) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.style.display = "none";
         }
-        // Function to hide elements by ID
-        function hideElementById(id) {
-            const element = document.getElementById(id);
-            if (element) {
-                element.style.display = "none";
-            }
-        }
+    }
 
-        // Function to show elements by ID
-        function showElementById(id) {
-            const element = document.getElementById(id);
-            if (element) {
-                element.style.display = "block";
-            }
+    // Function to show elements by ID
+    function showElementById(id) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.style.display = "block";
         }
+    }
 
-        // Function to toggle profile dropdown visibility
-        function toggleProfileDropdown() {
-            const dropdown = document.getElementById('profile-dropdown');
-            dropdown.classList.toggle('hidden');
-        }
+    // Function to toggle profile dropdown visibility
+    function toggleProfileDropdown() {
+        const dropdown = document.getElementById('profile-dropdown');
+        dropdown.classList.toggle('hidden');
+    }
 
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches('#profile-button')) {
-                const dropdowns = document.getElementsByClassName('absolute');
-                for (let i = 0; i < dropdowns.length; i++) {
-                    const openDropdown = dropdowns[i];
-                    if (!openDropdown.classList.contains('hidden')) {
-                        openDropdown.classList.add('hidden');
-                    }
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('#profile-button')) {
+            const dropdowns = document.getElementsByClassName('absolute');
+            for (let i = 0; i < dropdowns.length; i++) {
+                const openDropdown = dropdowns[i];
+                if (!openDropdown.classList.contains('hidden')) {
+                    openDropdown.classList.add('hidden');
                 }
             }
         }
+    }
 
+    fetch("../navbar.html")
+    .then((response) => response.text())
+    .then((data) => {
+        document.getElementById("navbar").innerHTML = data;
 
-        fetch("../navbar.html")
-        .then((response) => response.text())
-        .then((data) => {
-            document.getElementById("navbar").innerHTML = data;
+        // Check user login status
+        const userLoggedIn = JSON.parse(localStorage.getItem("userRegistered"));
+        console.log("userLoggedIn:", userLoggedIn);
 
-            // Check user login status
-            const userLoggedIn = JSON.parse(localStorage.getItem("userRegistered"));
-            console.log("userLoggedIn:", userLoggedIn);
+        if (userLoggedIn && userLoggedIn.token) {
+            console.log("userLoggedIn hide");
+            hideElementById("login-link");
+            hideElementById("register-link");
+            showElementById("profile-menu");
+        } else {
+            showElementById("login-link");
+            showElementById("register-link");
+            hideElementById("profile-menu");
+        }
 
-            if (userLoggedIn && userLoggedIn.token) {
-                console.log("userLoggedIn hide");
-                hideElementById("login-link");
-                hideElementById("register-link");
-                showElementById("profile-menu");
-            } else {
-                showElementById("login-link");
-                showElementById("register-link");
-                hideElementById("profile-menu");
-            }
-
-            // Set up mobile menu toggle functionality
-            // Assuming you will define this function
-            // setupMobileMenuToggle();
-        })
-        .catch((error) => console.error("Error loading navbar:", error));
-    </script>
+        // Set up mobile menu toggle functionality
+        // Assuming you will define this function
+        // setupMobileMenuToggle();
+    })
+    .catch((error) => console.error("Error loading navbar:", error));
+</script>
 
 </body>
 </html>
