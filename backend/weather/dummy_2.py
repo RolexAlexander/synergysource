@@ -121,9 +121,31 @@ def update_graphs(n):
     wind_speeds[:] = trim_data(wind_speeds)
     rain_possibilities[:] = trim_data(rain_possibilities)
 
-    # Temperature Figure
+    # Define thresholds for sharp increases
+    temp_threshold = 4.0  # e.g., 5°F increase
+    humidity_threshold = 10.0  # e.g., 10% increase
+
+    # Calculate color based on the change in temperature
+    temp_colors = [
+        'red' if (i > 0 and (temperatures[i] - temperatures[i - 1]) > temp_threshold) else dark_theme['highlightColor']
+        for i in range(len(temperatures))
+    ]
+
+    # Calculate color based on the change in humidity
+    humidity_colors = [
+        'red' if (i > 0 and (humidities[i] - humidities[i - 1]) > humidity_threshold) else dark_theme['highlightColor']
+        for i in range(len(humidities))
+    ]
+
+    # Temperature Figure with Conditional Coloring
     temperature_figure = go.Figure(
-        data=[go.Scatter(x=times, y=temperatures, mode='lines+markers', line=dict(shape='spline', smoothing=1.3))],
+        data=[go.Scatter(
+            x=times,
+            y=temperatures,
+            mode='lines+markers',
+            line=dict(shape='spline', smoothing=1.3),
+            marker=dict(color=temp_colors)
+        )],
         layout=go.Layout(
             title="Temperature Over Time",
             xaxis=dict(title="Time", color=dark_theme['axisColor'], gridcolor=dark_theme['gridColor']),
@@ -135,9 +157,15 @@ def update_graphs(n):
         )
     )
 
-    # Humidity Figure
+    # Humidity Figure with Conditional Coloring
     humidity_figure = go.Figure(
-        data=[go.Scatter(x=times, y=humidities, mode='lines+markers', line=dict(shape='spline', smoothing=1.3))],
+        data=[go.Scatter(
+            x=times,
+            y=humidities,
+            mode='lines+markers',
+            line=dict(shape='spline', smoothing=1.3),
+            marker=dict(color=humidity_colors)
+        )],
         layout=go.Layout(
             title="Humidity Over Time",
             xaxis=dict(title="Time", color=dark_theme['axisColor'], gridcolor=dark_theme['gridColor']),
@@ -148,6 +176,7 @@ def update_graphs(n):
             font=dict(color=dark_theme['textColor'])
         )
     )
+
 
     # UV Index Visualization as a Colored Circle
     uv_color = "green" if uv_index < 3 else "yellow" if uv_index < 6 else "orange" if uv_index < 8 else "red"
