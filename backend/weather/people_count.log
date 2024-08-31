@@ -1,0 +1,96 @@
+2024-08-30 20:56:59,543 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.224.156:5000
+2024-08-30 20:56:59,543 - [33mPress CTRL+C to quit[0m
+2024-08-30 20:57:05,617 - 192.168.224.156 - - [30/Aug/2024 20:57:05] "GET / HTTP/1.1" 200 -
+2024-08-30 20:57:05,626 - 192.168.224.156 - - [30/Aug/2024 20:57:05] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-08-30 20:57:09,003 - Number of people detected: 1
+2024-08-30 20:57:09,010 - 192.168.224.156 - - [30/Aug/2024 20:57:09] "GET /video_feed HTTP/1.1" 200 -
+2024-08-30 20:57:09,339 - Number of people detected: 2
+2024-08-30 20:57:12,967 - Number of people detected: 1
+2024-08-30 20:57:13,197 - Number of people detected: 2
+2024-08-30 20:57:13,896 - Number of people detected: 1
+2024-08-30 20:57:34,920 - Number of people detected: 2
+2024-08-30 20:57:35,418 - Number of people detected: 1
+2024-08-30 20:57:35,660 - Number of people detected: 2
+2024-08-30 20:57:36,374 - Number of people detected: 3
+2024-08-30 20:57:36,846 - Number of people detected: 2
+2024-08-30 20:57:38,008 - Number of people detected: 3
+2024-08-30 20:57:38,706 - Number of people detected: 2
+2024-08-30 20:57:39,191 - Number of people detected: 3
+2024-08-30 20:57:41,928 - Number of people detected: 2
+2024-08-30 20:57:42,392 - Number of people detected: 3
+2024-08-30 20:57:42,625 - Number of people detected: 2
+2024-08-30 20:57:42,857 - Number of people detected: 3
+2024-08-30 20:57:43,088 - Number of people detected: 1
+2024-08-30 20:57:43,329 - Number of people detected: 2
+2024-08-30 20:57:44,272 - Number of people detected: 3
+2024-08-30 20:57:44,756 - Number of people detected: 2
+2024-08-30 20:57:45,235 - Number of people detected: 3
+2024-08-30 20:57:45,491 - Number of people detected: 2
+2024-08-30 20:57:45,757 - Number of people detected: 3
+2024-08-30 20:57:46,242 - Number of people detected: 2
+2024-08-30 20:57:47,191 - Number of people detected: 3
+2024-08-30 20:57:47,452 - Number of people detected: 2
+2024-08-30 20:57:47,714 - Number of people detected: 1
+2024-08-30 20:57:48,695 - Number of people detected: 2
+2024-08-30 20:57:48,931 - Number of people detected: 1
+2024-08-30 20:58:08,199 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.224.156:5000
+2024-08-30 20:58:08,199 - [33mPress CTRL+C to quit[0m
+2024-08-30 20:58:10,970 - 192.168.224.156 - - [30/Aug/2024 20:58:10] "GET / HTTP/1.1" 200 -
+2024-08-30 20:58:10,981 - 192.168.224.156 - - [30/Aug/2024 20:58:10] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-08-30 20:58:14,262 - Number of people detected: 2
+2024-08-30 20:58:14,267 - 192.168.224.156 - - [30/Aug/2024 20:58:14] "GET /video_feed HTTP/1.1" 200 -
+2024-08-30 20:58:15,626 - Number of people detected: 3
+2024-08-30 20:58:15,866 - Number of people detected: 2
+2024-08-30 20:58:17,075 - Number of people detected: 1
+2024-08-30 20:58:17,312 - Number of people detected: 2
+2024-08-30 20:58:17,775 - Number of people detected: 3
+2024-08-30 20:58:18,016 - Number of people detected: 1
+2024-08-30 20:58:19,647 - Number of people detected: 2
+2024-08-30 20:58:20,112 - Number of people detected: 3
+2024-08-30 20:58:20,347 - Number of people detected: 2
+2024-08-30 20:58:20,578 - Number of people detected: 3
+2024-08-30 20:58:20,806 - Number of people detected: 2
+2024-08-30 20:58:22,662 - Number of people detected: 3
+2024-08-30 20:58:22,892 - Number of people detected: 2
+2024-08-30 20:58:23,360 - Number of people detected: 3
+2024-08-30 20:58:23,593 - Number of people detected: 2
+2024-08-30 20:58:24,054 - Number of people detected: 3
+2024-08-30 20:58:24,292 - Number of people detected: 2
+2024-08-30 20:58:26,394 - Number of people detected: 3
+2024-08-30 20:58:26,626 - Number of people detected: 2
+2024-08-30 20:58:27,092 - Number of people detected: 3
+2024-08-30 20:58:27,556 - Number of people detected: 2
+2024-08-30 20:58:27,789 - Number of people detected: 3
+2024-08-30 20:58:28,018 - Number of people detected: 2
+2024-08-30 20:58:28,707 - Number of people detected: 3
+2024-08-30 20:58:28,939 - Number of people detected: 2
+2024-08-30 20:58:29,629 - Number of people detected: 1
+2024-08-30 20:58:30,099 - Number of people detected: 2
+2024-08-30 20:58:30,565 - Number of people detected: 3
+2024-08-30 20:58:30,800 - Number of people detected: 1
+2024-08-30 20:58:33,561 - Number of people detected: 2
+2024-08-30 20:58:33,787 - Number of people detected: 1
+2024-08-30 20:58:34,484 - Number of people detected: 2
+2024-08-30 20:58:34,713 - Number of people detected: 3
+2024-08-30 20:58:34,949 - Number of people detected: 2
+2024-08-30 20:58:35,180 - Number of people detected: 1
+2024-08-30 20:58:35,876 - Number of people detected: 2
+2024-08-30 20:58:36,117 - Number of people detected: 1
+2024-08-30 20:58:37,513 - Number of people detected: 0
+2024-08-30 20:58:38,209 - Number of people detected: 1
+2024-08-30 20:58:39,832 - Number of people detected: 2
+2024-08-30 20:58:41,462 - Number of people detected: 1
+2024-08-30 20:58:41,917 - Number of people detected: 2
+2024-08-30 20:58:43,306 - Number of people detected: 1
+2024-08-30 20:58:43,767 - Number of people detected: 2
+2024-08-30 20:58:44,002 - Number of people detected: 1
+2024-08-30 20:58:45,865 - Number of people detected: 2
+2024-08-30 20:58:46,095 - Number of people detected: 1
+2024-08-30 20:58:49,546 - Number of people detected: 2
+2024-08-30 20:58:49,809 - Number of people detected: 1
