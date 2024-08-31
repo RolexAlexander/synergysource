@@ -351,7 +351,7 @@
             const userLoggedIn = JSON.parse(localStorage.getItem("userRegistered"));
             console.log("userLoggedIn:", userLoggedIn);
 
-            if (userLoggedIn && userLoggedIn.registered) {
+            if (userLoggedIn && userLoggedIn.token) {
                 console.log("userLoggedIn hide");
                 hideElementById("login-link");
                 hideElementById("register-link");

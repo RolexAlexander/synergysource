@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>SynergySource - Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <form id="loginForm" class="bg-white p-6 rounded-lg shadow-md w-full max-w-md space-y-6">
+        <div>
+            <label class="block text-sm font-semibold text-gray-700">Email</label>
+            <input type="email" placeholder="Enter your Email" class="mt-1 p-2 block w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" id="email" required>
+        </div>
+
+        <div>
+            <label class="block text-sm font-semibold text-gray-700">Password</label>
+            <input type="password" placeholder="Enter your Password" class="mt-1 p-2 block w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" id="password" required>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="button" class="w-full py-2 bg-gray-800 text-white font-semibold rounded-md hover:bg-gray-900" onclick="loginUser()">Login</button>
+    </form>
+
+    <script>
+        async function loginUser() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const data = { email, password };
+
+            const response = await postData('https://observant-integrity-production.up.railway.app/login', data);
+
+            if (response.success) {
+                const accountType = response.account_type; // Assuming the API returns the account type
+                if (accountType === 'customer') {
+                    window.location.href = 'customer_dashboard.html';
+                } else if (accountType === 'driver') {
+                    window.location.href = 'driver_dashboard.html';
+                } else if (accountType === 'organization') {
+                    window.location.href = 'organization_dashboard.html';
+                }
+            } else {
+                alert('Login failed: ' + response.message);
+            }
+        }
+
+        async function postData(url, data) {
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                return await response.json();
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -21,44 +21,17 @@
     <table id="selection-table" class="min-w-full text-sm md:text-base">
         <thead>
             <tr>
-                <th class="bg-gray-300 p-2 md:p-4">
-                    <span class="flex items-center">
-                        Driver Name
-                        <svg class="w-3 h-3 md:w-4 md:h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4"/>
-                        </svg>
-                    </span>
-                </th>
-                <th class="bg-gray-300 p-2 md:p-4" data-type="date" data-format="YYYY/DD/MM">
-                    <span class="flex items-center">
-                        Vehicle Type
-                        <svg class="w-3 h-3 md:w-4 md:h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4"/>
-                        </svg>
-                    </span>
-                </th>
-                <th class="bg-gray-300 p-2 md:p-4">
-                    <span class="flex items-center">
-                        License Plate
-                        <svg class="w-3 h-3 md:w-4 md:h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4"/>
-                        </svg>
-                    </span>
-                </th>
-                <th class="bg-gray-300 p-2 md:p-4">
-                    <span class="flex items-center">
-                        Capacity
-                        <svg class="w-3 h-3 md:w-4 md:h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4"/>
-                        </svg>
-                    </span>
-                </th>
+                <th class="bg-gray-300 p-2 md:p-4">Driver Name</th>
+                <th class="bg-gray-300 p-2 md:p-4">Vehicle Type</th>
+                <th class="bg-gray-300 p-2 md:p-4">License Plate</th>
+                <th class="bg-gray-300 p-2 md:p-4">Capacity</th>
+                <th class="bg-gray-300 p-2 md:p-4">People On Board</th>
+                <th class="bg-gray-300 p-2 md:p-4">Location</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody id="driverTableBody">
         </tbody>
     </table>
-    
 
     <div id="addDriverModal" class="fixed inset-0 flex items-center justify-center z-50 hidden p-4 md:p-8">
         <div class="bg-white rounded-lg shadow-lg p-12 w-full max-w-md">
@@ -84,36 +57,59 @@
         </div>
     </div>
 
-
     <script>
-        const sampleData = [
-            { name: 'Flowbite', releaseDate: '2021/25/09', downloads: 269000, growth: '49%' },
-            { name: 'React', releaseDate: '2013/24/05', downloads: 4500000, growth: '24%' },
-            { name: 'Angular', releaseDate: '2010/20/09', downloads: 2800000, growth: '17%' },
-            { name: 'Vue', releaseDate: '2014/12/02', downloads: 3600000, growth: '30%' },
-            { name: 'Svelte', releaseDate: '2016/26/11', downloads: 1200000, growth: '57%' },
-            { name: 'Ember', releaseDate: '2011/08/12', downloads: 500000, growth: '44%' },
-            { name: 'Backbone', releaseDate: '2010/13/10', downloads: 300000, growth: '9%' },
-            { name: 'jQuery', releaseDate: '2006/28/01', downloads: 6000000, growth: '5%' },
+        const driverData = [
+            {
+                "driver_name": "Alice Smith",
+                "vehicle_type": "bus",
+                "license_plate": "ABC123",
+                "capacity": 16,
+                "people": 4,
+                "latitude": 6.823338,
+                "longitude": -58.118653
+            },
+            {
+                "driver_name": "Bob Johnson",
+                "vehicle_type": "car",
+                "license_plate": "XYZ789",
+                "capacity": 5,
+                "people": 5,
+                "latitude": 6.820305,
+                "longitude": -58.108098
+            },
+            {
+                "driver_name": "Alice Smith",
+                "vehicle_type": "bus",
+                "license_plate": "ABC123",
+                "capacity": 16,
+                "people": 4,
+                "latitude": 6.823338,
+                "longitude": -58.118653
+            },
+            {
+                "driver_name": "Bob Johnson",
+                "vehicle_type": "car",
+                "license_plate": "XYZ789",
+                "capacity": 5,
+                "people": 5,
+                "latitude": -58.118653,
+                "longitude": 6.823338
+            }
         ];
         
-        const tableBody = document.querySelector("#selection-table tbody");
-        sampleData.forEach(data => {
-            const row = document.createElement("tr");
+        const tableBody = document.getElementById('driverTableBody');
+        driverData.forEach(driver => {
+            const row = document.createElement('tr');
             row.classList.add("hover:bg-gray-50", "cursor-pointer", "p-1", "md:p-2");
-            row.dataset.url = `/template/organization_dashboard/driver_details.html?id=${data.name}`; // Assuming you have an ID for the item
 
             row.innerHTML = `
-                <td class="font-medium text-gray-900 whitespace-nowrap dark:text-gray-600">${data.name}</td>
-                <td>${data.releaseDate}</td>
-                <td>${data.downloads}</td>
-                <td>${data.growth}</td>
+                <td class="font-medium text-gray-900 whitespace-nowrap dark:text-gray-600">${driver.driver_name}</td>
+                <td>${driver.vehicle_type}</td>
+                <td>${driver.license_plate}</td>
+                <td>${driver.capacity}</td>
+                <td>${driver.people}</td>
+                <td>Lat: ${driver.latitude}, Long: ${driver.longitude}</td>
             `;
-
-            row.addEventListener('click', () => {
-                window.location.href = row.dataset.url; // Navigate to the URL
-            });
-
 
             tableBody.appendChild(row);
         });
@@ -141,7 +137,6 @@
     </script>
 
     <script>
-
         function logout(event) {
             event.preventDefault(); // Prevent the default anchor behavior
             localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
@@ -149,7 +144,7 @@
             // Redirect to the register page
             window.location.href = '/template/signup.html';
         }
-        // Function to hide elements by ID
+
         function hideElementById(id) {
             const element = document.getElementById(id);
             if (element) {
@@ -157,7 +152,6 @@
             }
         }
 
-        // Function to show elements by ID
         function showElementById(id) {
             const element = document.getElementById(id);
             if (element) {
@@ -165,13 +159,11 @@
             }
         }
 
-        // Function to toggle profile dropdown visibility
         function toggleProfileDropdown() {
             const dropdown = document.getElementById('profile-dropdown');
             dropdown.classList.toggle('hidden');
         }
 
-        // Close the dropdown if the user clicks outside of it
         window.onclick = function(event) {
             if (!event.target.matches('#profile-button')) {
                 const dropdowns = document.getElementsByClassName('absolute');
@@ -184,18 +176,15 @@
             }
         }
 
-
         fetch("../navbar.html")
         .then((response) => response.text())
         .then((data) => {
             document.getElementById("navbar").innerHTML = data;
 
-            // Check user login status
             const userLoggedIn = JSON.parse(localStorage.getItem("userRegistered"));
             console.log("userLoggedIn:", userLoggedIn);
 
             if (userLoggedIn && userLoggedIn.token) {
-                console.log("userLoggedIn hide");
                 hideElementById("login-link");
                 hideElementById("register-link");
                 showElementById("profile-menu");
@@ -204,18 +193,12 @@
                 showElementById("register-link");
                 hideElementById("profile-menu");
             }
-
-            // Set up mobile menu toggle functionality
-            // Assuming you will define this function
-            // setupMobileMenuToggle();
         })
         .catch((error) => console.error("Error loading navbar:", error));
     </script>
 
     <script>
-
         if (document.getElementById("selection-table") && typeof simpleDatatables.DataTable !== 'undefined') {
-
             let multiSelect = true;
             let rowNavigation = false;
             let table = null;
@@ -233,56 +216,35 @@
                         if (!tr.attributes.class) {
                             tr.attributes.class = "";
                         }
-                        if (row.selected) {
-                            tr.attributes.class += " selected";
-                        } else {
-                            tr.attributes.class = tr.attributes.class.replace(" selected", "");
+                        if (multiSelect) {
+                            tr.attributes.class += "multi-select";
                         }
-                        return tr;
+                        return row;
                     }
                 };
-                if (rowNavigation) {
-                    options.rowNavigation = true;
-                    options.tabIndex = 1;
-                }
-                options.perPage = 7;
-                options.paging = false;
 
                 table = new simpleDatatables.DataTable("#selection-table", options);
 
-                // Mark all rows as unselected
-                table.data.data.forEach(data => {
-                    data.selected = false;
+                const checkboxColumn = table.columns().create(0, {
+                    sortable: false,
+                    sortBy: false,
+                    format: () => "<input type='checkbox' class='w-4 h-4' />"
                 });
 
-                table.on("datatable.selectrow", (rowIndex, event) => {
-                    event.preventDefault();
-                    const row = table.data.data[rowIndex];
-                    if (row.selected) {
-                        row.selected = false;
-                    } else {
-                        if (!multiSelect) {
-                            table.data.data.forEach(data => {
-                                data.selected = false;
-                            });
-                        }
-                        row.selected = true;
+                table.rows().addEventListener("click", (_row, e) => {
+                    const checkbox = e.target.querySelector("input[type='checkbox']");
+                    if (checkbox) {
+                        checkbox.checked = !checkbox.checked;
                     }
-                    table.update();
                 });
-            };
-
-            // Row navigation makes no sense on mobile, so we deactivate it and hide the checkbox.
-            const isMobile = window.matchMedia("(any-pointer:coarse)").matches;
-            if (isMobile) {
-                rowNavigation = false;
             }
 
             resetTable();
+
+            document.getElementById("selection-table").addEventListener("datatable.page", resetTable);
+            document.getElementById("selection-table").addEventListener("datatable.search", resetTable);
+            document.getElementById("selection-table").addEventListener("datatable.sort", resetTable);
         }
-
     </script>
-
-
 </body>
 </html>
