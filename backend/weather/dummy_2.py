@@ -4,6 +4,7 @@ from dash.dependencies import Input, Output
 import random
 from datetime import datetime
 import plotly.graph_objs as go
+from plotly.subplots import make_subplots
 
 # Initialize the Dash app
 app = dash.Dash(__name__)
@@ -18,11 +19,48 @@ dark_theme = {
     'highlightColor': '#17becf'
 }
 
+# Dummy pollutant data
+pollutants = {
+    "PM2.5": random.uniform(10, 50),
+    "PM10": random.uniform(20, 60),
+    "NO2": random.uniform(15, 40),
+    "O3": random.uniform(30, 70)
+}
+
+# Weather icon mapping based on conditions
+weather_icons = {
+    'sunny': '☀️',
+    'rainy': '🌧️',
+    'cloudy': '☁️',
+    'stormy': '⛈️',
+    'snowy': '❄️',
+    'foggy': '🌫️'
+}
+
+# Sample current weather condition
+current_weather = "sunny"
+
 # Layout of the app with dark theme
 app.layout = html.Div([
     html.H1(
         "Real-Time Weather Monitoring",
         style={'color': dark_theme['textColor'], 'textAlign': 'center', 'padding': '10px'}
+    ),
+    html.Div(
+        [
+            html.Div(
+                [
+                    html.H2(f"{weather_icons[current_weather]} {current_weather.capitalize()}"),
+                    html.P("Current Pollutants (µg/m³):", style={'fontSize': '18px'}),
+                    html.Ul([
+                        html.Li(f"{pollutant}: {level:.1f}", style={'fontSize': '16px'}) 
+                        for pollutant, level in pollutants.items()
+                    ])
+                ],
+                style={'textAlign': 'center', 'padding': '20px', 'color': dark_theme['textColor']}
+            )
+        ],
+        style={'display': 'flex', 'justifyContent': 'center', 'alignItems': 'center', 'paddingBottom': '20px'}
     ),
     dcc.Graph(id='temperature-graph', config={'displayModeBar': False}),
     dcc.Graph(id='humidity-graph', config={'displayModeBar': False}),
@@ -61,7 +99,6 @@ def trim_data(data_list):
 )
 def update_graphs(n):
     # Generate dummy data
-    # Initialize previous values (starting points)
     prev_temp = 80.0  # Starting with a typical temperature
     prev_humidity = 50.0  # Average humidity
     prev_uv_index = 5.0  # Moderate UV index
@@ -70,74 +107,47 @@ def update_graphs(n):
 
     # Function to generate new data with realistic fluctuations
     def generate_realistic_data(prev_temp, prev_humidity, prev_uv_index, prev_wind_speed, prev_rain_probability):
-        # Temperature: fluctuate around the previous value
         temp = round(prev_temp + random.uniform(-1.5, 1.5), 2)
-
-        # Humidity: small fluctuations, with occasional larger jumps
         humidity = round(prev_humidity + random.uniform(-2.0, 2.0), 2)
-        if random.random() < 0.05:  # 5% chance of a significant change
-            humidity += random.uniform(-5, 5)
-
-        # UV Index: gradual change, with a small chance of sudden shift
         uv_index = round(prev_uv_index + random.uniform(-0.2, 0.2), 1)
-        uv_index = max(0, min(uv_index, 11))  # Keep within the 0-11 range
-
-        # Wind Speed: minor fluctuations with occasional gusts
+        uv_index = max(0, min(uv_index, 11))
         wind_speed = round(prev_wind_speed + random.uniform(-0.5, 0.5), 2)
-        if random.random() < 0.1:  # 10% chance of a gust
-            wind_speed += random.uniform(-2, 2)
-        wind_speed = max(0, wind_speed)  # Wind speed cannot be negative
-
-        # Rain Probability: skewed towards lower values, with occasional spikes
+        wind_speed = max(0, wind_speed)
         rain_probability = round(prev_rain_probability + (random.random() - 0.5) * 2, 2)
-        if random.random() < 0.05:  # 5% chance of a sudden increase
-            rain_probability += random.uniform(5, 15)
-        rain_probability = max(0, min(rain_probability, 100))  # Keep within the 0-100 range
+        rain_probability = max(0, min(rain_probability, 100))
 
         timestamp = datetime.now().strftime('%H:%M:%S')
-
         return temp, humidity, uv_index, wind_speed, rain_probability, timestamp
 
-    # Generate new data using the function
     temp, humidity, uv_index, wind_speed, rain_probability, timestamp = generate_realistic_data(
         prev_temp, prev_humidity, prev_uv_index, prev_wind_speed, prev_rain_probability
     )
 
-    # Update the previous values
-    prev_temp, prev_humidity, prev_uv_index, prev_wind_speed, prev_rain_probability = temp, humidity, uv_index, wind_speed, rain_probability
-
-
-    # Append to lists
     temperatures.append(temp)
     times.append(timestamp)
     humidities.append(humidity)
     wind_speeds.append(wind_speed)
     rain_possibilities.append(rain_probability)
 
-    # Trim the data lists to ensure they don't exceed MAX_LENGTH
     temperatures[:] = trim_data(temperatures)
     times[:] = trim_data(times)
     humidities[:] = trim_data(humidities)
     wind_speeds[:] = trim_data(wind_speeds)
     rain_possibilities[:] = trim_data(rain_possibilities)
 
-    # Define thresholds for sharp increases
     temp_threshold = 4.0  # e.g., 5°F increase
     humidity_threshold = 10.0  # e.g., 10% increase
 
-    # Calculate color based on the change in temperature
     temp_colors = [
         'red' if (i > 0 and (temperatures[i] - temperatures[i - 1]) > temp_threshold) else dark_theme['highlightColor']
         for i in range(len(temperatures))
     ]
 
-    # Calculate color based on the change in humidity
     humidity_colors = [
         'red' if (i > 0 and (humidities[i] - humidities[i - 1]) > humidity_threshold) else dark_theme['highlightColor']
         for i in range(len(humidities))
     ]
 
-    # Temperature Figure with Conditional Coloring
     temperature_figure = go.Figure(
         data=[go.Scatter(
             x=times,
@@ -156,8 +166,8 @@ def update_graphs(n):
             font=dict(color=dark_theme['textColor'])
         )
     )
-
-    # Humidity Figure with Conditional Coloring
+    
+    
     humidity_figure = go.Figure(
         data=[go.Scatter(
             x=times,
@@ -176,7 +186,6 @@ def update_graphs(n):
             font=dict(color=dark_theme['textColor'])
         )
     )
-
 
     # UV Index Visualization as a Colored Circle
     uv_color = "green" if uv_index < 3 else "yellow" if uv_index < 6 else "orange" if uv_index < 8 else "red"
@@ -204,7 +213,6 @@ def update_graphs(n):
         },
         children=f"UV: {uv_index}"
     )
-
 
     # Wind Speed Gauge
     wind_speed_figure = go.Figure(
@@ -237,7 +245,6 @@ def update_graphs(n):
         margin=dict(l=40, r=20, t=40, b=30)
     )
 
-
     # Rain Possibility Bar Chart
     rain_possibility_figure = go.Figure(
         data=[go.Bar(x=times, y=rain_possibilities, marker_color=dark_theme['highlightColor'])],
@@ -254,6 +261,5 @@ def update_graphs(n):
 
     return temperature_figure, humidity_figure, uv_circle, wind_speed_figure, rain_possibility_figure
 
-# Run the app
 if __name__ == '__main__':
     app.run_server(debug=True)
