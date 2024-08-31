@@ -2,7 +2,7 @@ from database import Database
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from uuid import UUID
-from typing import Optional, List
+from typing import Optional, List, Dict
 
 # init fast api app
 app = FastAPI()
@@ -255,6 +255,14 @@ def update_vehicle(vehicle_id: UUID, vehicle: VehicleUpdate):
         vehicle_type=vehicle.vehicle_type
     )
     return {"message": "Vehicle updated successfully"}
+
+@app.get("/ListAllVehicles/", response_model=List)
+def get_vehicles():
+    db = Database()
+    vehicles = db.get_all_vehicles_with_drivers()
+    if not vehicles:
+        raise HTTPException(status_code=404, detail="No vehicles found")
+    return vehicles
 
 @app.delete("/vehicles/{vehicle_id}")
 def delete_vehicle(vehicle_id: UUID):
