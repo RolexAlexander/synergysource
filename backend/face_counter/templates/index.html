@@ -1,23 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Real-Time Face Detection using YOLO</title>
+    <title>AI Technologies</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Contact</a></li>
+<body class="bg-gray-900 text-white">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-800 p-4">
+        <ul class="flex space-x-4">
+            <li><a href="#" class="text-gray-300 hover:text-white">Home</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Features</a></li>
+            <li><a href="#" class="text-gray-300 hover:text-white">Contact</a></li>
         </ul>
     </nav>
-    <div class="container">
-        <h1>Real-Time Face Detection using YOLO</h1>
-        <img src="{{ url_for('video_feed') }}" alt="Video Feed">
+
+    <!-- Main Content -->
+    <div class="container mx-auto mt-8">
+        <h1 class="text-4xl font-bold text-center mb-8">AI Technologies</h1>
+        
+        <div class="flex justify-center mb-8">
+            <img src="{{ url_for('video_feed') }}" alt="Video Feed" class="rounded-lg shadow-lg">
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <!-- Card 1 -->
+            <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-semibold mb-4">Prediction 1</h2>
+                <p class="text-gray-400">Model: Model Name 1</p>
+                <p class="text-gray-400">Confidence: 95%</p>
+                <p class="text-gray-400">Details: Description of the prediction.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-semibold mb-4">Prediction 2</h2>
+                <p class="text-gray-400">Model: Model Name 2</p>
+                <p class="text-gray-400">Confidence: 90%</p>
+                <p class="text-gray-400">Details: Description of the prediction.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-semibold mb-4">Prediction 3</h2>
+                <p class="text-gray-400">Model: Model Name 3</p>
+                <p class="text-gray-400">Confidence: 85%</p>
+                <p class="text-gray-400">Details: Description of the prediction.</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-gray-800 rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-semibold mb-4">Prediction 4</h2>
+                <p class="text-gray-400">Model: Model Name 4</p>
+                <p class="text-gray-400">Confidence: 92%</p>
+                <p class="text-gray-400">Details: Description of the prediction.</p>
+            </div>
+        </div>
     </div>
-    <footer>
-        <p>&copy; 2024 Dinamus Intuitions Prototype</p>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-4 mt-8">
+        <p class="text-center text-gray-400">&copy; 2024 SynergySource</p>
     </footer>
 </body>
 </html>
