@@ -17,7 +17,7 @@
         <!-- Main Cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
             <!-- Map Card -->
-            <a href="customer_dashboard/map.html" class="block">
+            <a href="map/vehicles.html" class="block">
                 <div class="bg-white p-4 rounded-lg shadow-md">
                     <h2 class="font-semibold text-lg text-center">Map</h2>
                 </div>
@@ -60,6 +60,96 @@
 
 
     <script>
+
+        function logout(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
+            console.log("User logged out");
+            // Redirect to the register page
+            window.location.href = '/template/signup.html';
+        }
+        // Function to hide elements by ID
+        function hideElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "none";
+            }
+        }
+
+        // Function to show elements by ID
+        function showElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "block";
+            }
+        }
+
+        // Function to toggle profile dropdown visibility
+        function toggleProfileDropdown() {
+            const dropdown = document.getElementById('profile-dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('#profile-button')) {
+                const dropdowns = document.getElementsByClassName('absolute');
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (!openDropdown.classList.contains('hidden')) {
+                        openDropdown.classList.add('hidden');
+                    }
+                }
+            }
+        }
+
+
+        fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+            document.getElementById("navbar").innerHTML = data;
+
+            // Check user login status
+            const userLoggedIn = JSON.parse(localStorage.getItem("userRegistered"));
+            console.log("userLoggedIn:", userLoggedIn);
+
+            if (userLoggedIn && userLoggedIn.registered) {
+                console.log("userLoggedIn hide");
+                hideElementById("login-link");
+                hideElementById("register-link");
+                showElementById("profile-menu");
+            } else {
+                showElementById("login-link");
+                showElementById("register-link");
+                hideElementById("profile-menu");
+            }
+
+            // Set up mobile menu toggle functionality
+            // Assuming you will define this function
+            // setupMobileMenuToggle();
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
+    </script>
+
+    <script>
+        // Check for notification in localStorage
+        const notification = localStorage.getItem('notification');
+        console.log("notification:", notification);
+        if (notification) {
+            const notificationDiv = document.getElementById('notification');
+            document.getElementById('notificationMessage').textContent = notification;
+            notificationDiv.classList.remove('hidden');
+
+            // Set a timeout to hide the notification after 5 seconds
+            setTimeout(() => {
+                notificationDiv.classList.add('hidden');
+            }, 5000); // Change 5000 to desired duration in milliseconds
+
+            // Clear the notification from localStorage after displaying
+            localStorage.removeItem('notification');
+        }
+    </script>
+    <!-- <script>
         // Function to hide elements by ID
         function hideElementById(id) {
             const element = document.getElementById(id);
@@ -120,6 +210,6 @@
             // Clear the notification from localStorage after displaying
             localStorage.removeItem('notification');
         }
-    </script>
+    </script> -->
 </body>
 </html>

@@ -5,66 +5,83 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>synergysource</title>
         <link rel="icon" type="image/webp" href="assets/s.webp" />
+        <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"  rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <body>
         <div id="navbar"></div>
     </body>
 
     <script>
-      // Function to hide elements by ID
-      function hideElementById(id) {
-        const element = document.getElementById(id);
-        if (element) {
-          element.style.display = "none";
+        function logout(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
+            console.log("User logged out");
+            // Redirect to the register page
+            window.location.href = '/template/signup.html';
         }
-      }
 
-      // Function to show elements by ID
-      function showElementById(id) {
-        const element = document.getElementById(id);
-        if (element) {
-          element.style.display = "block";
+        // Function to hide elements by ID
+        function hideElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "none";
+            }
         }
-      }
 
-      // Fetch the navbar and check registration status
-      fetch("navbar.html")
+        // Function to show elements by ID
+        function showElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "block";
+            }
+        }
+
+        // Function to toggle profile dropdown visibility
+        function toggleProfileDropdown() {
+            const dropdown = document.getElementById('profile-dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('#profile-button')) {
+                const dropdowns = document.getElementsByClassName('absolute');
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (!openDropdown.classList.contains('hidden')) {
+                        openDropdown.classList.add('hidden');
+                    }
+                }
+            }
+        }
+
+
+        fetch("navbar.html")
         .then((response) => response.text())
         .then((data) => {
-          document.getElementById("navbar").innerHTML = data;
+            document.getElementById("navbar").innerHTML = data;
 
-          // Check user registration status
-          const userRegistered = JSON.parse(
-            localStorage.getItem("userRegistered")
-          );
-          console.log("userRegistered:", userRegistered);
+            // Check user login status
+            const userLoggedIn = JSON.parse(localStorage.getItem("userRegistered"));
+            console.log("userLoggedIn:", userLoggedIn);
 
-          if (userRegistered && userRegistered.registered) {
-            hideElementById("login-link");
-            hideElementById("register-link");
-            showElementById("profile-link");
-          }
+            if (userLoggedIn && userLoggedIn.registered) {
+                console.log("userLoggedIn hide");
+                hideElementById("login-link");
+                hideElementById("register-link");
+                showElementById("profile-menu");
+            } else {
+                showElementById("login-link");
+                showElementById("register-link");
+                hideElementById("profile-menu");
+            }
 
-          // Set up mobile menu toggle functionality
-          document
-            .querySelectorAll("[data-collapse-toggle]")
-            .forEach((button) => {
-              button.addEventListener("click", function () {
-                const mobileMenu = document.getElementById("mobile-menu-2");
-                if (mobileMenu) {
-                  mobileMenu.style.display =
-                    mobileMenu.style.display === "none" ||
-                    mobileMenu.style.display === ""
-                      ? "block"
-                      : "none";
-                }
-              });
-            });
+            // Set up mobile menu toggle functionality
+            // Assuming you will define this function
+            // setupMobileMenuToggle();
         })
         .catch((error) => console.error("Error loading navbar:", error));
     </script>
-
 </html>

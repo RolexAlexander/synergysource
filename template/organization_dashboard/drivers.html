@@ -122,10 +122,12 @@
             { name: 'Backbone', releaseDate: '2010/13/10', downloads: 300000, growth: '9%' },
             { name: 'jQuery', releaseDate: '2006/28/01', downloads: 6000000, growth: '5%' },
         ];
+        
         const tableBody = document.querySelector("#selection-table tbody");
         sampleData.forEach(data => {
             const row = document.createElement("tr");
             row.classList.add("hover:bg-gray-50", "cursor-pointer", "p-1", "md:p-2");
+            row.dataset.url = `/template/organization_dashboard/driver_details.html?id=${data.name}`; // Assuming you have an ID for the item
 
             row.innerHTML = `
                 <td class="font-medium text-gray-900 whitespace-nowrap dark:text-gray-600">${data.name}</td>
@@ -133,6 +135,11 @@
                 <td>${data.downloads}</td>
                 <td>${data.growth}</td>
             `;
+
+            row.addEventListener('click', () => {
+                window.location.href = row.dataset.url; // Navigate to the URL
+            });
+
 
             tableBody.appendChild(row);
         });
@@ -159,8 +166,79 @@
         });
     </script>
 
+    <script>
 
-<script>
+        function logout(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
+            console.log("User logged out");
+            // Redirect to the register page
+            window.location.href = '/template/signup.html';
+        }
+        // Function to hide elements by ID
+        function hideElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "none";
+            }
+        }
+
+        // Function to show elements by ID
+        function showElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "block";
+            }
+        }
+
+        // Function to toggle profile dropdown visibility
+        function toggleProfileDropdown() {
+            const dropdown = document.getElementById('profile-dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('#profile-button')) {
+                const dropdowns = document.getElementsByClassName('absolute');
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (!openDropdown.classList.contains('hidden')) {
+                        openDropdown.classList.add('hidden');
+                    }
+                }
+            }
+        }
+
+
+        fetch("../navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+            document.getElementById("navbar").innerHTML = data;
+
+            // Check user login status
+            const userLoggedIn = JSON.parse(localStorage.getItem("userRegistered"));
+            console.log("userLoggedIn:", userLoggedIn);
+
+            if (userLoggedIn && userLoggedIn.registered) {
+                console.log("userLoggedIn hide");
+                hideElementById("login-link");
+                hideElementById("register-link");
+                showElementById("profile-menu");
+            } else {
+                showElementById("login-link");
+                showElementById("register-link");
+                hideElementById("profile-menu");
+            }
+
+            // Set up mobile menu toggle functionality
+            // Assuming you will define this function
+            // setupMobileMenuToggle();
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
+    </script>
+
+    <!-- <script>
       // Function to hide elements by ID
       function hideElementById(id) {
         const element = document.getElementById(id);
@@ -212,7 +290,7 @@
             });
         })
         .catch((error) => console.error("Error loading navbar:", error));
-    </script>
+    </script> -->
 
 
     <script>

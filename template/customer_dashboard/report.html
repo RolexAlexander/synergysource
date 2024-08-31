@@ -178,7 +178,7 @@
 
         // Function to fetch driver data from the API
         async function fetchDrivers() {
-            const apiUrl = 'https://9247356dcf160f9c96e4412568c135d4.loophole.site/ListAllVehicles';
+            const apiUrl = 'https://observant-integrity-production.up.railway.app/ListAllVehicles';
 
             try {
                 const response = await fetch(apiUrl, {
@@ -297,7 +297,79 @@
         });
     </script>
 
-    <script>
+        <script>
+
+        function logout(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
+            console.log("User logged out");
+            // Redirect to the register page
+            window.location.href = '/template/signup.html';
+        }
+        // Function to hide elements by ID
+        function hideElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "none";
+            }
+        }
+
+        // Function to show elements by ID
+        function showElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "block";
+            }
+        }
+
+        // Function to toggle profile dropdown visibility
+        function toggleProfileDropdown() {
+            const dropdown = document.getElementById('profile-dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('#profile-button')) {
+                const dropdowns = document.getElementsByClassName('absolute');
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (!openDropdown.classList.contains('hidden')) {
+                        openDropdown.classList.add('hidden');
+                    }
+                }
+            }
+        }
+
+
+        fetch("../navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+            document.getElementById("navbar").innerHTML = data;
+
+            // Check user login status
+            const userLoggedIn = JSON.parse(localStorage.getItem("userRegistered"));
+            console.log("userLoggedIn:", userLoggedIn);
+
+            if (userLoggedIn && userLoggedIn.registered) {
+                console.log("userLoggedIn hide");
+                hideElementById("login-link");
+                hideElementById("register-link");
+                showElementById("profile-menu");
+            } else {
+                showElementById("login-link");
+                showElementById("register-link");
+                hideElementById("profile-menu");
+            }
+
+            // Set up mobile menu toggle functionality
+            // Assuming you will define this function
+            // setupMobileMenuToggle();
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
+    </script>
+
+    <!-- <script>
       // Function to hide elements by ID
       function hideElementById(id) {
         const element = document.getElementById(id);
@@ -349,7 +421,7 @@
             });
         })
         .catch((error) => console.error("Error loading navbar:", error));
-    </script>
+    </script> -->
 </body>
 
 </html>
