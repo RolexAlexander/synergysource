@@ -38,7 +38,7 @@ weather_icons = {
 }
 
 # Sample current weather condition
-current_weather = "sunny"
+current_weather = "cloudy"
 
 # Layout of the app with dark theme
 app.layout = html.Div([
@@ -148,23 +148,43 @@ def update_graphs(n):
         for i in range(len(humidities))
     ]
 
+
+    #for current temperature
     temperature_figure = go.Figure(
-        data=[go.Scatter(
-            x=times,
-            y=temperatures,
-            mode='lines+markers',
-            line=dict(shape='spline', smoothing=1.3),
-            marker=dict(color=temp_colors)
-        )],
-        layout=go.Layout(
-            title="Temperature Over Time",
-            xaxis=dict(title="Time", color=dark_theme['axisColor'], gridcolor=dark_theme['gridColor']),
-            yaxis=dict(title="Temperature (°F)", color=dark_theme['axisColor'], gridcolor=dark_theme['gridColor']),
-            margin=dict(l=40, r=20, t=40, b=30),
-            paper_bgcolor=dark_theme['graphBackground'],
-            plot_bgcolor=dark_theme['graphBackground'],
-            font=dict(color=dark_theme['textColor'])
-        )
+    data=[go.Scatter(
+        x=times,
+        y=temperatures,
+        mode='lines+markers',
+        fill='tozeroy',
+        line=dict(shape='spline', smoothing=1.3),
+        marker=dict(color=temp_colors)
+    )],
+    layout=go.Layout(
+        title="Temperature Over Time",
+        xaxis=dict(title="Time", color=dark_theme['axisColor'], gridcolor=dark_theme['gridColor']),
+        yaxis=dict(title="Temperature (°F)", color=dark_theme['axisColor'], gridcolor=dark_theme['gridColor']),
+        margin=dict(l=40, r=20, t=80, b=30),  # Adjusted top margin for space
+        paper_bgcolor=dark_theme['graphBackground'],
+        plot_bgcolor=dark_theme['graphBackground'],
+        font=dict(color=dark_theme['textColor']),
+        annotations=[
+            go.layout.Annotation(
+                x=times,
+                y=temp,
+                xref="x",
+                yref="y",
+                text=f"Current Temp: {temp:.1f}°F",
+                showarrow=True,
+                arrowhead=2,
+                ax=0,
+                ay=-40,  # Adjust the position of the text
+                font=dict(size=14, color=dark_theme['textColor']),
+                bgcolor=dark_theme['graphBackground'],
+                bordercolor=dark_theme['axisColor'],
+                borderwidth=1
+            )
+        ]
+    )
     )
     
     

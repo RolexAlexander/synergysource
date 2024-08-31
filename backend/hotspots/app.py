@@ -12,18 +12,18 @@ data = {
         6.820, 6.816, 6.821, 6.817, 6.818, 6.819, 6.820, 6.821, 6.816, 6.818,
         6.817, 6.819, 6.818, 6.820, 6.821, 6.818, 6.819, 6.817, 6.818, 6.820,
         6.821, 6.818, 6.816, 6.820, 6.821, 6.818, 6.819, 6.817, 6.820, 6.821,
-        6.818, 6.819, 6.817, 6.820, 6.821, 6.815, 6.822, 6.823, 6.814, 6.824
+        6.818, 6.819, 6.817, 6.820, 6.821, 6.815, 6.822, 6.823, 6.814, 6.824,
+        6.824522
     ],
     'longitude': [
         -58.119, -58.120, -58.118, -58.121, -58.122, -58.118, -58.119, -58.120, -58.121, -58.122,
         -58.119, -58.120, -58.121, -58.122, -58.119, -58.118, -58.119, -58.120, -58.121, -58.122,
         -58.119, -58.120, -58.121, -58.122, -58.119, -58.120, -58.121, -58.122, -58.119, -58.118,
         -58.119, -58.120, -58.121, -58.122, -58.119, -58.120, -58.121, -58.122, -58.119, -58.118,
-        -58.119, -58.120, -58.121, -58.122, -58.119, -58.123, -58.124, -58.124, -58.124, -58.124
+        -58.119, -58.120, -58.121, -58.122, -58.119, -58.123, -58.124, -58.124, -58.124, -58.124,
+        -58.114
     ]
 }
-
-
 
 df = pd.DataFrame(data)
 
@@ -31,14 +31,23 @@ df = pd.DataFrame(data)
 def index():
     # Create a base map centered around Guyana
     map_center = [6.818, -58.119]
-    m = folium.Map(location=map_center, zoom_start=13)
+    m = folium.Map(location=map_center, zoom_start=13, control_scale=True)
 
     # Create heatmap layer with custom opacity
     heat_data = [[row['latitude'], row['longitude']] for index, row in df.iterrows()]
     HeatMap(heat_data, min_opacity=0.2, max_opacity=0.8, radius=15).add_to(m)
 
+    # Add geolocation control
+    folium.LayerControl().add_to(m)
+    folium.Marker(
+        location=map_center,
+        popup='Current Location',
+        icon=folium.Icon(icon='info-sign')
+    ).add_to(m)
+
     # Save the map to an HTML file in the templates directory
-    m.save('C:/Users/sm94c/Documents/Repositiories/innovation_project/synergysource/backend/hotspots/templates/map.html')
+    map_path = 'map.html'
+    m.save(map_path)
 
     return render_template('map.html')
 
