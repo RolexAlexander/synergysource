@@ -43,6 +43,35 @@ class DriverUpdateRequest(BaseModel):
     phone_number: Optional[str] = None
     password: Optional[str] = None
 
+class LocationCreate(BaseModel):
+    driver_id: UUID
+    name: str
+    latitude: float
+    longitude: float
+
+class LocationUpdate(BaseModel):
+    name: Optional[str]
+    latitude: Optional[float]
+    longitude: Optional[float]
+
+class VehicleCreate(BaseModel):
+    license_plate: str
+    capacity: int
+    organization_id: UUID
+    operating_location: str
+    status: Optional[bool] = True
+    vehicle_type: str
+
+class VehicleUpdate(BaseModel):
+    license_plate: Optional[str]
+    capacity: Optional[int]
+    operating_location: Optional[str]
+    status: Optional[bool]
+    vehicle_type: Optional[str]
+
+class UpdatePeopleRequest(BaseModel):
+    license_plate: str
+    people: int
 # Customer Endpoints
 
 @app.post("/customers/", response_model=UUID)
@@ -160,3 +189,78 @@ def delete_driver(driver_id: UUID):
     global db
     db.delete_driver(str(driver_id))
     return {"message": "Driver deleted successfully"}
+
+@app.post("/locations/", response_model=UUID)
+def create_location(location: LocationCreate):
+    location_id = db.create_location(
+        driver_id=str(location.driver_id),
+        name=location.name,
+        latitude=location.latitude,
+        longitude=location.longitude
+    )
+    return location_id
+
+@app.get("/locations/{location_id}")
+def get_location(location_id: UUID):
+    location = db.get_location(str(location_id))
+    if not location:
+        raise HTTPException(status_code=404, detail="Location not found")
+    print(f"location: {location}")
+    return {"uuid": location[0], "driver_id": location[1], "name": location[2], "latitude": location[3], "longitude": location[4], "created_at": location[5]}
+
+@app.put("/locations/{location_id}")
+def update_location(location_id: UUID, location: LocationUpdate):    
+    db.update_location(
+        location_id=str(location_id),
+        name=location.name,
+        latitude=location.latitude,
+        longitude=location.longitude
+    )
+    return {"message": "Location updated successfully"}
+
+@app.delete("/locations/{location_id}")
+def delete_location(location_id: UUID):
+    db.delete_location(str(location_id))
+    return {"message": "Location deleted successfully"}
+
+# ---- Endpoints for 'vehicles' ----
+
+@app.post("/vehicles/", response_model=UUID)
+def create_vehicle(vehicle: VehicleCreate):
+    vehicle_id = db.create_vehicle(
+        license_plate=vehicle.license_plate,
+        capacity=vehicle.capacity,
+        organization_id=str(vehicle.organization_id),
+        operating_location=vehicle.operating_location,
+        vehicle_type=vehicle.vehicle_type,
+        status=vehicle.status
+    )
+    return vehicle_id
+
+@app.get("/vehicles/{vehicle_id}")
+def get_vehicle(vehicle_id: UUID):
+    vehicle = db.get_vehicle(str(vehicle_id))
+    if not vehicle:
+        raise HTTPException(status_code=404, detail="Vehicle not found")
+    return {"uuid": vehicle[0], "license_plate": vehicle[1], "vehicle_type": vehicle[2], "capacity": vehicle[3], "people": vehicle[4], "organization_id": vehicle[5], "operating_location": vehicle[6], "status": vehicle[7], "created_at": vehicle[8]}
+
+@app.put("/vehicles/{vehicle_id}")
+def update_vehicle(vehicle_id: UUID, vehicle: VehicleUpdate):
+    db.update_vehicle(
+        vehicle_id=str(vehicle_id),
+        license_plate=vehicle.license_plate,
+        capacity=vehicle.capacity,
+        operating_location=vehicle.operating_location,
+        status=vehicle.status,
+        vehicle_type=vehicle.vehicle_type
+    )
+    return {"message": "Vehicle updated successfully"}
+
+@app.delete("/vehicles/{vehicle_id}")
+def delete_vehicle(vehicle_id: UUID):
+    db.delete_vehicle(str(vehicle_id))
+    return {"message": "Vehicle deleted successfully"}
+
+@app.put("/vehicles/update_people/")
+def update_people(vehicles: UpdatePeopleRequest):
+    return db.update_people_in_vehicle(vehicles.license_plate, vehicles.people)

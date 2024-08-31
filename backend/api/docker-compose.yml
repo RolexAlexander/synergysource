@@ -4,7 +4,7 @@ services:
   database:
     image: 'postgres:latest'
     ports:
-      - 15432:15432
+      - 5432:5432
     environment:
       POSTGRES_PASSWORD: xyz
     networks:
@@ -30,17 +30,17 @@ services:
     volumes:
       - pgadmin-data:/var/lib/pgadmin/
 
-  fastapi:
-    build:
-      dockerfile: ./Dockerfile
-      context: .
-    ports:
-      - 8000:8000
-    depends_on:
-      - database
-      - pgadmin
-    networks:
-      - postgres-network
+  # fastapi:
+  #   build:
+  #     dockerfile: ./Dockerfile
+  #     context: .
+  #   ports:
+  #     - 90:8000
+  #   depends_on:
+  #     - database
+  #     - pgadmin
+  #   networks:
+  #     - postgres-network
 
 networks: 
   postgres-network:
