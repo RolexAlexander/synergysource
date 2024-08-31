@@ -81,5 +81,12 @@ def process_weather_data(data):
         "alerts": alerts_df.to_dict(orient='records')
     }
 
+
+@app.route('/web', methods=['GET', 'POST'])
+async def handle_webhook():
+    data = await request.get_json()  # Get the JSON body of the request
+    return {"status": "success", "data": data}
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

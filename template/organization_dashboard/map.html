@@ -3,68 +3,237 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Synergysource - Map</title>
-        <link rel="icon" type="image/webp" href="assets/s.webp" />
-    </head>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"  rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+        <title>synergysource</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+        <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"  rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    </head>   
     <body>
-        <div id="navbar"></div>
+        <div class="min-h-screen bg-gray-100 flex flex-col">
+            <!-- Navbar -->
+            <nav class="bg-white shadow-md px-4 py-3 flex justify-between items-center">
+                <div class="text-2xl font-semibold text-gray-800">Map Dashboard</div>
+                <div class="flex space-x-4">
+                    <button id="toggleSidebar" class="bg-blue-600 text-white px-3 py-2 rounded-md focus:outline-none">
+                        Show Analytics
+                    </button>
+                </div>
+            </nav>
+        
+            <!-- Main Content -->
+            <div class="flex flex-grow overflow-hidden relative">
+                <!-- Map Section -->
+                <div class="flex-grow relative">
+                    <!-- Map Container -->
+                    <div id="mapContainer" class="h-full w-full bg-gray-300">
+                        <!-- Map will be embedded here -->
+                        <div id="map" class="h-screen"></div>
+                    </div>
+                    
+                    <!-- Weather Widget -->
+                    <div id="weatherWidget" class="absolute top-5 right-5 z-20">
+                        <!-- Weather widget content goes here -->
+                    </div>
+                </div>
+        
+                <!-- Sidebar for Analytics (hidden by default) -->
+                <aside id="sidebar" class="w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out fixed top-0 right-0 h-full z-10">
+                    <div class="h-full flex flex-col p-4">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Analytics</h2>
+                        <!-- Wind Speed Graph -->
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-700">Wind Speed</h3>
+                            <div id="windSpeedGraph" class="bg-gray-200 h-40 mt-2 rounded-md">
+                                <!-- Wind speed graph will be embedded here -->
+                            </div>
+                        </div>
+                        <!-- Other Analytics Graphs -->
+                        <div class="mb-6">
+                            <h3 class="text-lg font-semibold text-gray-700">Other Analytics</h3>
+                            <div id="otherAnalyticsGraph" class="bg-gray-200 h-40 mt-2 rounded-md">
+                                <!-- Other analytics graphs will be embedded here -->
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+        
+                        
+                         
     </body>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+        <style>
+            /* Override Leaflet default popup styles */
+            .leaflet-popup-content-wrapper {
+                background: none;
+                border: none;
+                box-shadow: none;
+                padding: 0;
+            }
 
-    <script>
-      // Function to hide elements by ID
-      function hideElementById(id) {
-        const element = document.getElementById(id);
-        if (element) {
-          element.style.display = "none";
-        }
-      }
+            .leaflet-popup-tip-container {
+                display: none;
+            }
 
-      // Function to show elements by ID
-      function showElementById(id) {
-        const element = document.getElementById(id);
-        if (element) {
-          element.style.display = "block";
-        }
-      }
+            .leaflet-popup-content {
+                margin: 0;
+                padding: 0;
+                width: auto;
+            }
 
-      // Fetch the navbar and check registration status
-      fetch("../navbar.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("navbar").innerHTML = data;
-
-          // Check user registration status
-          const userRegistered = JSON.parse(
-            localStorage.getItem("userRegistered")
-          );
-          console.log("userRegistered:", userRegistered);
-
-          if (userRegistered && userRegistered.registered) {
-            hideElementById("login-link");
-            hideElementById("register-link");
-            showElementById("profile-link");
-          }
-
-          // Set up mobile menu toggle functionality
-          document
-            .querySelectorAll("[data-collapse-toggle]")
-            .forEach((button) => {
-              button.addEventListener("click", function () {
-                const mobileMenu = document.getElementById("mobile-menu-2");
-                if (mobileMenu) {
-                  mobileMenu.style.display =
-                    mobileMenu.style.display === "none" ||
-                    mobileMenu.style.display === ""
-                      ? "block"
-                      : "none";
+            .leaflet-popup-close-button {
+                display: none;
+            }
+        </style>
+        <script type="text/javascript"> var css_file=document.createElement("link"); var widgetUrl = location.href; css_file.setAttribute("rel","stylesheet"); css_file.setAttribute("type","text/css"); css_file.setAttribute("href",'https://s.bookcdn.com/css/w/booked-wzs-widget-160x275.css?v=0.0.1'); document.getElementsByTagName("head")[0].appendChild(css_file); function setWidgetData_71616(data) { if(typeof(data) != 'undefined' && data.results.length > 0) { for(var i = 0; i < data.results.length; ++i) { var objMainBlock = document.getElementById('m-booked-bl-simple-week-vertical-71616'); if(objMainBlock !== null) { var copyBlock = document.getElementById('m-bookew-weather-copy-'+data.results[i].widget_type); objMainBlock.innerHTML = data.results[i].html_code; if(copyBlock !== null) objMainBlock.appendChild(copyBlock); } } } else { alert('data=undefined||data.results is empty'); } } var widgetSrc = "https://widgets.booked.net/weather/info?action=get_weather_info;ver=7;cityID=11754;type=4;scode=;ltid=3458;domid=w209;anc_id=25591;countday=undefined;cmetric=1;wlangID=1;color=137AE9;wwidth=160;header_color=ffffff;text_color=333333;link_color=08488D;border_form=1;footer_color=ffffff;footer_text_color=333333;transparent=0;v=0.0.1";widgetSrc += ';ref=' + widgetUrl;widgetSrc += ';rand_id=71616';var weatherBookedScript = document.createElement("script"); weatherBookedScript.setAttribute("type", "text/javascript"); weatherBookedScript.src = widgetSrc; document.body.appendChild(weatherBookedScript) 
+        </script><!-- weather widget end -->
+        <script>
+            // JavaScript to toggle the sidebar and weather widget
+            document.getElementById('toggleSidebar').addEventListener('click', function() {
+                const sidebar = document.getElementById('sidebar');
+                const weatherWidget = document.getElementById('weatherWidget');
+        
+                // Toggle sidebar visibility
+                sidebar.classList.toggle('translate-x-full');
+        
+                // Toggle weather widget visibility
+                if (!sidebar.classList.contains('translate-x-full')) {
+                    weatherWidget.classList.add('opacity-0');
+                    weatherWidget.classList.add('pointer-events-none');
+                } else {
+                    weatherWidget.classList.remove('opacity-0');
+                    weatherWidget.classList.remove('pointer-events-none');
                 }
-              });
             });
-        })
-        .catch((error) => console.error("Error loading navbar:", error));
-    </script>
+        </script>
+        <script>
+            // const myHeaders = new Headers();
+            // myHeaders.append("Content-Type", "application/json");
 
+            // const raw = JSON.stringify({});
+
+            // const requestOptions = {
+            // method: "GET",
+            // mode: 'no-cors',
+            // headers: myHeaders,
+            // redirect: "follow"
+            // };
+
+            // fetch("http://localhost:8000/ListAllVehicles/", requestOptions)
+            // .then((response) => response.text())
+            // .then((result) => console.log(result))
+            // .catch((error) => console.error(error));
+
+            // Fetch vehicle data from the API
+            fetch('https://9247356dcf160f9c96e4412568c135d4.loophole.site/ListAllVehicles/', {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Access-Control-Allow-Credentials': 'true'
+            }
+            })
+            .then(response => {
+                if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json(); // Parse the JSON response
+            })
+            .then(data => {
+                console.log('Response:', data); // Log the response data
+
+                // Initialize the map
+                var map = L.map('map').setView([6.823338, -58.118653], 13);
+
+                L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
+
+                var greenIcon = L.icon({
+                iconUrl: '/template/assets/car-service.png',
+                iconSize: [40, 40],  // size of the icon
+                iconAnchor: [20, 40],  // center horizontally, bottom vertically
+                popupAnchor: [0, -40]   // point from which the popup should open relative to the iconAnchor
+                });
+
+                // Loop through each vehicle in the response data
+                data.forEach(vehicle => {
+                // Create a marker for each vehicle
+                var marker = L.marker([vehicle.latitude, vehicle.longitude], { icon: greenIcon }).addTo(map);
+
+                // Create the popup content for each vehicle
+                var popupContent = `
+                    <div style="
+                        display: flex; 
+                        flex-direction: column; 
+                        align-items: center; 
+                        padding: 15px; 
+                        background-color: #f9f9f9; 
+                        border-radius: 12px; 
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+                        font-family: 'Helvetica Neue', Arial, sans-serif;
+                    ">
+                        <h3 style="
+                            margin: 0 0 10px 0; 
+                            font-size: 18px; 
+                            color: #333; 
+                            font-weight: 600;
+                        ">
+                            ${vehicle.driver_name}
+                        </h3>
+                        <p style="
+                            margin: 0 0 5px 0; 
+                            font-size: 14px; 
+                            color: #555;
+                        ">
+                            Vehicle Type: <span style="color: #000;">${vehicle.vehicle_type}</span>
+                        </p>
+                        <p style="
+                            margin: 0 0 5px 0; 
+                            font-size: 14px; 
+                            color: #555;
+                        ">
+                            License Plate: <span style="color: #000;">${vehicle.license_plate}</span>
+                        </p>
+                        <p style="
+                            margin: 0 0 15px 0; 
+                            font-size: 14px; 
+                            color: #555;
+                        ">
+                            Capacity: <span style="color: #000;">${vehicle.people}/${vehicle.capacity}</span>
+                        </p>
+                        <button onclick="hailRide()" style="
+                            padding: 8px 20px; 
+                            background-color: #007bff; 
+                            color: white; 
+                            border: none; 
+                            border-radius: 25px; 
+                            cursor: pointer;
+                            font-size: 14px;
+                            font-weight: 500;
+                            transition: background-color 0.3s ease;
+                        " onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'">
+                            Hail Vehicle
+                        </button>
+                    </div>
+                `;
+
+                // Attach the popup to the marker
+                marker.bindPopup(popupContent);
+                });
+
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+
+            // Define the hailRide function to handle the button click
+            function hailRide() {
+            alert("Ride has been hailed/created!");
+            // You can replace this with your custom logic for creating a ride
+            }
+    </script>
 </html>

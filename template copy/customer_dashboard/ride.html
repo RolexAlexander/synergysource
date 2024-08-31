@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Synergysource - Ride</title>
+    <link rel="icon" type="image/webp" href="assets/s.webp" />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"  rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="max-w-screen-xl mx-auto p-4 mt-4">
+        <!-- Title and Add Button -->
+        <div class="flex justify-between items-center mb-4 max-w-screen-xl">
+            <h1 class="text-xl font-bold text-gray-800">Booked Rides</h1>
+            <button onclick="openAddRideModal()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add Ride</button>
+        </div>
+
+        <!-- Table -->
+        <div class="overflow-x-auto">
+            <table class="min-w-full max-w-screen-xl bg-white shadow-md rounded border-collapse">
+                <thead>
+                    <tr class="bg-gray-800 text-white text-sm">
+                        <th class="p-2 text-left">Pick Up</th>
+                        <th class="p-2 text-left">Destination</th>
+                        <th class="p-2 text-left">Passengers</th>
+                        <th class="p-2 text-left">Vehicle</th>
+                        <th class="p-2 pr-3 text-right">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="ride-table-body">
+                    <tr class="border-b">
+                        <td class="p-2 text-sm text-gray-700">Location A</td>
+                        <td class="p-2 text-sm text-gray-700">Location B</td>
+                        <td class="p-2 text-sm text-gray-700">4</td>
+                        <td class="p-2 text-sm text-gray-700">Sedan</td>
+                        <td class="p-2 text-right">
+                            <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600" onclick="cancelRide(this)">Cancel</button>
+                        </td>
+                    </tr>
+                    <!-- Additional rows as needed -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Add Ride Modal -->
+    <div id="add-ride-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white p-6 rounded shadow-lg max-w-md w-full">
+            <h2 class="text-xl font-bold mb-4">Add Ride</h2>
+            <form id="add-ride-form">
+                <div class="mb-4">
+                    <label for="pickup" class="block text-gray-700">Pick Up</label>
+                    <input type="text" id="pickup" name="pickup" class="w-full px-4 py-2 border rounded-md" required>
+                </div>
+                <div class="mb-4">
+                    <label for="destination" class="block text-gray-700">Destination</label>
+                    <input type="text" id="destination" name="destination" class="w-full px-4 py-2 border rounded-md" required>
+                </div>
+                <div class="mb-4">
+                    <label for="passengers" class="block text-gray-700">Passengers</label>
+                    <input type="number" id="passengers" name="passengers" class="w-full px-4 py-2 border rounded-md" required>
+                </div>
+                <!-- <div class="mb-4">
+                    <label for="vehicle" class="block text-gray-700">Vehicle</label>
+                    <input type="text" id="vehicle" name="vehicle" class="w-full px-4 py-2 border rounded-md" required>
+                </div> -->
+                <div class="mb-4">
+                    <label for="vehicle" class="block text-gray-700">Vehicle</label>
+                    <select id="vehicle" name="vehicle" class="w-full px-4 py-2 border rounded-md" required>
+                        <option value="Sedan">Sedan</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Van">Van</option>
+                        <option value="Truck">Truck</option>
+                    </select>
+                </div>
+                <div class="flex justify-end">
+                    <button type="button" onclick="closeAddRideModal()" class="mr-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">Cancel</button>
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Add Ride</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Open Add Ride Modal
+        function openAddRideModal() {
+            document.getElementById('add-ride-modal').classList.remove('hidden');
+        }
+
+        // Close Add Ride Modal
+        function closeAddRideModal() {
+            document.getElementById('add-ride-modal').classList.add('hidden');
+        }
+
+        // Cancel a Ride
+        function cancelRide(button) {
+            const row = button.closest("tr");
+            row.remove(); // Remove the ride from the table
+        }
+
+        // Handle Add Ride Form Submission
+        document.getElementById('add-ride-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const pickup = document.getElementById('pickup').value;
+            const destination = document.getElementById('destination').value;
+            const passengers = document.getElementById('passengers').value;
+            const vehicle = document.getElementById('vehicle').value;
+
+            // Add the new ride to the table
+            const tableBody = document.getElementById('ride-table-body');
+            const newRow = `
+                <tr class="border-b">
+                    <td class="p-2 text-sm text-gray-700">${pickup}</td>
+                    <td class="p-2 text-sm text-gray-700">${destination}</td>
+                    <td class="p-2 text-sm text-gray-700">${passengers}</td>
+                    <td class="p-2 text-sm text-gray-700">${vehicle}</td>
+                    <td class="p-2 text-right">
+                        <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600" onclick="cancelRide(this)">Cancel</button>
+                    </td>
+                </tr>
+            `;
+            tableBody.insertAdjacentHTML('beforeend', newRow);
+
+            // Reset the form and close the modal
+            document.getElementById('add-ride-form').reset();
+            closeAddRideModal();
+        });
+    </script>
+
+    <script>
+        // Function to hide elements by ID
+        function hideElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "none";
+            }
+        }
+
+        // Function to show elements by ID
+        function showElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "block";
+            }
+        }
+
+        // Function to cancel a ride
+        function cancelRide(button) {
+            const row = button.closest("tr");
+            row.remove(); // Remove the ride from the table
+        }
+
+        // Fetch the navbar and check registration status
+        fetch("../navbar.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("navbar").innerHTML = data;
+
+                // Check user registration status
+                const userRegistered = JSON.parse(localStorage.getItem("userRegistered"));
+                console.log("userRegistered:", userRegistered);
+
+                if (userRegistered && userRegistered.registered) {
+                    hideElementById("login-link");
+                    hideElementById("register-link");
+                    showElementById("profile-link");
+                }
+
+                // Set up mobile menu toggle functionality
+                document
+                    .querySelectorAll("[data-collapse-toggle]")
+                    .forEach((button) => {
+                        button.addEventListener("click", function () {
+                            const mobileMenu = document.getElementById("mobile-menu-2");
+                            if (mobileMenu) {
+                                mobileMenu.style.display =
+                                    mobileMenu.style.display === "none" || mobileMenu.style.display === ""
+                                        ? "block"
+                                        : "none";
+                            }
+                        });
+                    });
+            })
+            .catch((error) => console.error("Error loading navbar:", error));
+
+        // Initialize DataTable if available
+        if (document.getElementById("default-table") && typeof simpleDatatables.DataTable !== 'undefined') {
+            const dataTable = new simpleDatatables.DataTable("#default-table", {
+                searchable: false,
+                perPageSelect: false
+            });
+        }
+    </script>
+</body>
+</html>

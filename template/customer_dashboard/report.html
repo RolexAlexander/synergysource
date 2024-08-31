@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,66 +10,232 @@
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
     <div id="navbar"></div>
-    
-    <div class="container mx-auto p-4">
-        <h2 class="text-xl font-semibold mb-4">User Report</h2>
-        
-        <form id="reportForm" class="bg-white p-4 rounded-lg shadow-md">
-            <div class="flex space-x-4">
+
+    <div class="container mx-auto p-4 sm:p-2">
+        <h2 class="text-xl sm:text-lg px-2 font-semibold mb-4">User Report</h2>
+
+        <form id="reportForm" class="bg-white p-4 sm:p-2 rounded-lg">
+            <div class="flex flex-col sm:flex-row sm:space-x-4">
                 <div class="flex-1">
-                    <label for="firstName" class="block text-sm font-medium">First Name</label>
-                    <input type="text" id="firstName" class="mt-1 block w-full border border-gray-300 rounded-md p-2" readonly />
+                    <label for="firstName" class="block text-sm sm:text-xs font-medium">First Name</label>
+                    <input type="text" id="firstName" class="mt-1 block w-full border border-gray-300 rounded-md p-2 sm:p-1" readonly />
                 </div>
-                <div class="flex-1">
-                    <label for="lastName" class="block text-sm font-medium">Last Name</label>
-                    <input type="text" id="lastName" class="mt-1 block w-full border border-gray-300 rounded-md p-2" readonly />
+                <div class="flex-1 mt-4 sm:mt-0">
+                    <label for="lastName" class="block text-sm sm:text-xs font-medium">Last Name</label>
+                    <input type="text" id="lastName" class="mt-1 block w-full border border-gray-300 rounded-md p-2 sm:p-1" readonly />
                 </div>
             </div>
             <div class="mt-4">
-                <label for="driverSearch" class="block text-sm font-medium">Search Driver</label>
-                <input type="text" id="driverSearch" class="mt-1 block w-full border border-gray-300 rounded-md p-2" placeholder="Enter driver name or license plate..." />
+                <label for="driverSearch" class="block text-sm sm:text-xs font-medium">Search Driver</label>
+                <input type="text" id="driverSearch" class="mt-1 block w-full border border-gray-300 rounded-md p-2 sm:p-1" placeholder="Enter driver name or license plate..." />
                 <ul id="driverList" class="mt-2 border border-gray-300 rounded-md max-h-40 overflow-auto hidden"></ul>
             </div>
             <div class="mt-4">
-                <label for="report" class="block text-sm font-medium">User Report</label>
-                <textarea id="report" class="mt-1 block w-full border border-gray-300 rounded-md p-2" rows="4" placeholder="Write your report here..."></textarea>
+                <label for="report" class="block text-sm sm:text-xs font-medium">User Report</label>
+                <textarea id="report" class="mt-1 block w-full border border-gray-300 rounded-md p-2 sm:p-1" rows="4" placeholder="Write your report here..."></textarea>
             </div>
-            <button type="submit" class="mt-4 bg-blue-500 text-white p-2 rounded-md">Submit Report</button>
+
+            <div class="mt-4">
+                <label for="rating" class="block text-sm sm:text-xs font-medium">Rating</label>
+                <div id="rating" class="flex space-x-2 mt-1">
+                    <span class="cursor-pointer text-gray-300 hover:text-yellow-400" data-value="1">&#9733;</span>
+                    <span class="cursor-pointer text-gray-300 hover:text-yellow-400" data-value="2">&#9733;</span>
+                    <span class="cursor-pointer text-gray-300 hover:text-yellow-400" data-value="3">&#9733;</span>
+                    <span class="cursor-pointer text-gray-300 hover:text-yellow-400" data-value="4">&#9733;</span>
+                    <span class="cursor-pointer text-gray-300 hover:text-yellow-400" data-value="5">&#9733;</span>
+                </div>
+                <input type="hidden" id="ratingValue" name="ratingValue">
+            </div>
+
+
+            <!-- <button type="submit" class="mt-4 bg-blue-500 text-white p-2 sm:p-1 rounded-md">Submit Report</button>
+            <button id="emergencyButton" class="mt-4 ml-2 bg-red-500 text-white p-2 sm:p-1 rounded-md">Emergency</button> -->
+
+            <!-- <div class="flex flex-col sm:flex-row sm:space-x-2"> -->
+            <div class="flex flex-col sm:flex-row sm:space-x-4">
+                <div class="flex-1">
+                    <button type="submit" class="w-full sm:w-auto mt-4 bg-blue-500 text-white p-2 sm:p-1 sm:px-4 rounded-md">Submit Report</button>
+                </div>
+                <div class="flex-1 sm:text-right">
+                    <button id="emergencyButton" class="w-full sm:w-auto mt-4 bg-red-500 text-white p-2 sm:p-1 sm:px-4 rounded-md">Emergency</button>
+                </div>
+            </div>
+
         </form>
     </div>
 
+
     <script>
-        // Sample driver data
-        const drivers = [
-            {
-                license_plate: "GTB 1234",
-                driver: {
-                    name: "John Smith",
-                    experience_years: 10,
-                    rating: 4.7,
-                    license_number: "GY123456"
-                },
-                vehicle_type: "Minibus",
-                estimated_travel_time: "45 minutes"
-            },
-            {
-                license_plate: "GTB 90",
-                driver: {
-                    name: "John Doe",
-                    experience_years: 10,
-                    rating: 4.7,
-                    license_number: "GY123456"
-                },
-                vehicle_type: "car",
-                estimated_travel_time: "45 minutes"
+        const stars = document.querySelectorAll('#rating span');
+        const ratingValue = document.getElementById('ratingValue');
+
+        stars.forEach((star, index) => {
+            star.addEventListener('mouseover', () => {
+                // Highlight stars up to the hovered star
+                stars.forEach((s, i) => {
+                    if (i <= index) {
+                        s.classList.remove('text-gray-300');
+                        s.classList.add('text-yellow-400');
+                    } else {
+                        s.classList.remove('text-yellow-400');
+                        s.classList.add('text-gray-300');
+                    }
+                });
+            });
+
+            star.addEventListener('mouseout', () => {
+                // Reset stars to the selected rating state
+                stars.forEach((s, i) => {
+                    if (i < ratingValue.value) {
+                        s.classList.remove('text-gray-300');
+                        s.classList.add('text-yellow-400');
+                    } else {
+                        s.classList.remove('text-yellow-400');
+                        s.classList.add('text-gray-300');
+                    }
+                });
+            });
+
+            star.addEventListener('click', () => {
+                // Set the selected rating value
+                const value = star.getAttribute('data-value');
+                ratingValue.value = value;
+
+                // Update the appearance of the stars
+                stars.forEach((s, i) => {
+                    if (i < value) {
+                        s.classList.remove('text-gray-300');
+                        s.classList.add('text-yellow-400');
+                    } else {
+                        s.classList.remove('text-yellow-400');
+                        s.classList.add('text-gray-300');
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+    <!-- <script>
+        const stars = document.querySelectorAll('#rating span');
+        const ratingValue = document.getElementById('ratingValue');
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                // Set the selected rating value
+                const value = star.getAttribute('data-value');
+                ratingValue.value = value;
+
+                // Update the appearance of the stars
+                stars.forEach(s => {
+                    if (s.getAttribute('data-value') <= value) {
+                        s.classList.remove('text-gray-300');
+                        s.classList.add('text-yellow-400');
+                    } else {
+                        s.classList.remove('text-yellow-400');
+                        s.classList.add('text-gray-300');
+                    }
+                });
+            });
+        });
+    </script> -->
+
+
+    <script>
+        document.getElementById("emergencyButton").addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent default form submission
+        
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const driver = document.getElementById("driverSearch").value || null;
+        const emergency = true; // Boolean value indicating emergency
+
+        const emergencyData = {
+            firstName: firstName,
+            lastName: lastName,
+            driver: driver,
+            emergency: emergency
+        };
+
+        console.log("Emergency Data:", emergencyData);
+
+        // Store notification message
+        localStorage.setItem('notification', 'Emergency report submitted successfully!');
+
+        // Redirect to a confirmation page or perform any other actions needed
+        window.location.href = '../customer_dashboard.html';
+    });
+
+    </script>
+
+    <script>
+        let drivers2 = []; // Initialize an empty array for drivers
+        console.log("init driver2")
+
+        // Function to fetch driver data from the API
+        async function fetchDrivers() {
+            const apiUrl = 'https://9247356dcf160f9c96e4412568c135d4.loophole.site/ListAllVehicles';
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                        "ngrok-skip-browser-warning": 'True'
+                    }
+                });
+
+                // Check if the response is ok (status in the range 200-299)
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                // Parse the JSON response
+                drivers2 = await response.json();
+
+                // Log the fetched drivers or handle them as needed
+                console.log("drivers2");
+                console.log(drivers2);
+            } catch (error) {
+                console.error('Error fetching drivers:', error);
             }
-            // Add more driver objects as needed
-        ];
+        }
+
+        
+        // // Sample driver data
+        // const drivers = [
+        //     {
+        //         license_plate: "GTB 1234",
+        //         driver: {
+        //             name: "John Smith",
+        //             experience_years: 10,
+        //             rating: 4.7,
+        //             license_number: "GY123456"
+        //         },
+        //         vehicle_type: "Minibus",
+        //         estimated_travel_time: "45 minutes"
+        //     },
+        //     {
+        //         license_plate: "GTB 90",
+        //         driver: {
+        //             name: "John Doe",
+        //             experience_years: 10,
+        //             rating: 4.7,
+        //             license_number: "GY123456"
+        //         },
+        //         vehicle_type: "car",
+        //         estimated_travel_time: "45 minutes"
+        //     }
+        //     // Add more driver objects as needed
+        // ];
 
         // Fetch user data from localStorage and populate the form
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", async() => {
+            await fetchDrivers(); // Fetch drivers data from the API
             const userData = JSON.parse(localStorage.getItem("userRegistered"));
             if (userData && userData.registered) {
                 document.getElementById("firstName").value = userData.firstName;
@@ -83,8 +250,8 @@
         driverSearch.addEventListener("input", () => {
             const query = driverSearch.value.toLowerCase();
             driverList.innerHTML = '';
-            const filteredDrivers = drivers.filter(driver => 
-                driver.driver.name.toLowerCase().includes(query) || 
+            const filteredDrivers = drivers2.filter(driver => 
+                driver.driver_name.toLowerCase().includes(query) || 
                 driver.license_plate.toLowerCase().includes(query)
             );
 
@@ -93,9 +260,9 @@
                 filteredDrivers.forEach(driver => {
                     const listItem = document.createElement("li");
                     listItem.className = "p-2 cursor-pointer hover:bg-gray-100";
-                    listItem.textContent = `${driver.driver.name} - ${driver.license_plate}`;
+                    listItem.textContent = `${driver.driver_name} - ${driver.license_plate}`;
                     listItem.onclick = () => {
-                        driverSearch.value = driver.driver.name;
+                        driverSearch.value = driver.driver_name;
                         driverList.innerHTML = '';
                     };
                     driverList.appendChild(listItem);
@@ -109,16 +276,24 @@
         document.getElementById("reportForm").addEventListener("submit", (event) => {
             event.preventDefault();
             const report = document.getElementById("report").value;
+            const currentTime = new Date(); // Get the current time
+            const formattedTime = currentTime.toLocaleString(); // Change this as needed
+
             console.log("Driver Search:", driverSearch.value);
             console.log("Report:", report);
+            console.log("Created At:", formattedTime); // Log the current time
             // Store notification message
             localStorage.setItem('notification', 'Report submitted successfully!');
-
+            localStorage.setItem('report_data', JSON.stringify({
+                "first_name": document.getElementById("firstName").value,
+                "last_name": document.getElementById("lastName").value,
+                "driver": document.getElementById("driverSearch").value,
+                "report": report,
+                "created_at": formattedTime,
+                "rating": document.getElementById("ratingValue").value
+            }));
+            
             window.location.href = '../customer_dashboard.html';
-
-
-            // alert("Report submitted successfully!");
-            // You can also add code here to send the report to your backend if needed
         });
     </script>
 
@@ -176,4 +351,5 @@
         .catch((error) => console.error("Error loading navbar:", error));
     </script>
 </body>
+
 </html>
