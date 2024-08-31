@@ -2,6 +2,8 @@ import cv2
 import numpy as np
 from flask import Flask, render_template, Response
 import logging
+import requests
+import json
 
 # Set up logging
 logging.basicConfig(filename='people_count.log', level=logging.INFO, format='%(asctime)s - %(message)s')
@@ -65,9 +67,30 @@ detector = YOLOFaceDetector(
     names_path='C:/Users/sm94c/Documents/Repositiories/innovation_project/synergysource/backend/face_counter/coco.names'
 )
 
+# URL of the database logging endpoint
+DATABASE_LOGGING_URL = 'https://observant-integrity-production.up.railway.app/vehicles/update_people/'
+
+def log_to_database(license_plate, people_count):
+    payload = {
+        'license_plate': license_plate,
+        'people': people_count
+    }
+    headers = {
+        'accept': 'application/json',
+        'Content-Type': 'application/json'
+    }
+    try:
+        response = requests.put(DATABASE_LOGGING_URL, json=payload, headers=headers)
+        response.raise_for_status()
+        logging.info(f"Logged to database: {payload}")
+        print(response.json)
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Error logging to database: {e}")
+
 def gen_frames():
     cap = cv2.VideoCapture(0)
     previous_count = None
+    license_plate = "ABC123"  # Example license plate; modify as needed
     while True:
         success, frame = cap.read()
         if not success:
@@ -78,6 +101,7 @@ def gen_frames():
         
         if current_count != previous_count:
             logging.info(f"Number of people detected: {current_count}")
+            log_to_database(license_plate, current_count)  # Log to database
             previous_count = current_count
 
         # Draw the number of people detected at the top of the frame

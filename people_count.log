@@ -1933,3 +1933,1771 @@ cv2.error: OpenCV(4.10.0) :-1: error: (-5:Bad argument) in function 'rectangle'
 2024-08-31 11:09:25,960 - Number of people detected: 1
 2024-08-31 11:09:26,925 - Number of people detected: 2
 2024-08-31 11:09:31,595 - Number of people detected: 1
+2024-08-31 11:12:02,280 - Number of people detected: 0
+2024-08-31 11:12:02,565 - Number of people detected: 1
+2024-08-31 11:15:27,006 - Number of people detected: 0
+2024-08-31 11:15:27,255 - Number of people detected: 1
+2024-08-31 11:15:42,622 - Number of people detected: 0
+2024-08-31 11:15:42,854 - Number of people detected: 1
+2024-08-31 11:20:00,564 - Number of people detected: 0
+2024-08-31 11:20:01,035 - Number of people detected: 1
+2024-08-31 11:20:58,002 - Number of people detected: 0
+2024-08-31 11:20:58,271 - Number of people detected: 1
+2024-08-31 11:21:37,560 - Number of people detected: 2
+2024-08-31 11:21:37,795 - Number of people detected: 1
+2024-08-31 11:21:38,039 - Number of people detected: 2
+2024-08-31 11:21:38,495 - Number of people detected: 1
+2024-08-31 11:21:38,725 - Number of people detected: 2
+2024-08-31 11:21:39,880 - Number of people detected: 1
+2024-08-31 11:22:02,403 - Number of people detected: 0
+2024-08-31 11:22:02,640 - Number of people detected: 1
+2024-08-31 11:22:17,135 - Number of people detected: 0
+2024-08-31 11:22:17,374 - Number of people detected: 1
+2024-08-31 11:22:20,427 - Number of people detected: 0
+2024-08-31 11:22:20,666 - Number of people detected: 1
+2024-08-31 11:22:21,136 - Number of people detected: 0
+2024-08-31 11:22:21,375 - Number of people detected: 1
+2024-08-31 11:22:39,609 - Number of people detected: 2
+2024-08-31 11:22:40,476 - Number of people detected: 1
+2024-08-31 11:22:41,064 - Number of people detected: 2
+2024-08-31 11:22:43,974 - Number of people detected: 1
+2024-08-31 11:22:50,013 - Number of people detected: 2
+2024-08-31 11:22:56,708 - Number of people detected: 1
+2024-08-31 11:22:57,426 - Number of people detected: 2
+2024-08-31 11:22:58,467 - Number of people detected: 1
+2024-08-31 11:23:00,189 - Number of people detected: 2
+2024-08-31 11:23:00,681 - Number of people detected: 1
+2024-08-31 11:23:00,937 - Number of people detected: 2
+2024-08-31 11:23:01,243 - Number of people detected: 1
+2024-08-31 11:23:01,751 - Number of people detected: 2
+2024-08-31 11:23:02,977 - Number of people detected: 1
+2024-08-31 11:23:03,226 - Number of people detected: 3
+2024-08-31 11:23:03,504 - Number of people detected: 2
+2024-08-31 11:23:03,765 - Number of people detected: 3
+2024-08-31 11:23:06,208 - Number of people detected: 2
+2024-08-31 11:23:06,500 - Number of people detected: 3
+2024-08-31 11:23:08,615 - Number of people detected: 2
+2024-08-31 11:23:08,900 - Number of people detected: 3
+2024-08-31 11:23:11,837 - Number of people detected: 2
+2024-08-31 11:23:12,108 - Number of people detected: 3
+2024-08-31 11:23:13,881 - Number of people detected: 2
+2024-08-31 11:23:14,912 - Number of people detected: 3
+2024-08-31 11:23:15,692 - Number of people detected: 2
+2024-08-31 11:23:15,944 - Number of people detected: 3
+2024-08-31 11:23:17,163 - Number of people detected: 2
+2024-08-31 11:23:17,467 - Number of people detected: 3
+2024-08-31 11:23:17,752 - Number of people detected: 2
+2024-08-31 11:23:17,995 - Number of people detected: 3
+2024-08-31 11:23:29,072 - Number of people detected: 2
+2024-08-31 11:23:29,319 - Number of people detected: 3
+2024-08-31 11:23:45,650 - Number of people detected: 2
+2024-08-31 11:23:45,890 - Number of people detected: 3
+2024-08-31 11:23:46,393 - Number of people detected: 2
+2024-08-31 11:23:46,633 - Number of people detected: 3
+2024-08-31 11:23:48,656 - Number of people detected: 2
+2024-08-31 11:23:48,895 - Number of people detected: 3
+2024-08-31 11:24:12,028 - Number of people detected: 2
+2024-08-31 11:24:12,536 - Number of people detected: 3
+2024-08-31 11:24:22,164 - Number of people detected: 2
+2024-08-31 11:24:22,420 - Number of people detected: 3
+2024-08-31 11:24:22,915 - Number of people detected: 2
+2024-08-31 11:24:23,868 - Number of people detected: 3
+2024-08-31 11:24:24,344 - Number of people detected: 2
+2024-08-31 11:24:24,582 - Number of people detected: 3
+2024-08-31 11:24:25,065 - Number of people detected: 2
+2024-08-31 11:24:25,306 - Number of people detected: 3
+2024-08-31 11:24:25,546 - Number of people detected: 2
+2024-08-31 11:24:26,031 - Number of people detected: 3
+2024-08-31 11:24:31,625 - Number of people detected: 2
+2024-08-31 11:24:31,867 - Number of people detected: 3
+2024-08-31 11:24:32,626 - Number of people detected: 2
+2024-08-31 11:24:32,871 - Number of people detected: 4
+2024-08-31 11:24:33,112 - Number of people detected: 3
+2024-08-31 11:24:33,368 - Number of people detected: 4
+2024-08-31 11:24:35,588 - Number of people detected: 3
+2024-08-31 11:24:37,023 - Number of people detected: 2
+2024-08-31 11:24:37,255 - Number of people detected: 3
+2024-08-31 11:24:37,484 - Number of people detected: 2
+2024-08-31 11:24:38,414 - Number of people detected: 1
+2024-08-31 11:24:38,644 - Number of people detected: 2
+2024-08-31 11:24:39,103 - Number of people detected: 3
+2024-08-31 11:24:40,716 - Number of people detected: 1
+2024-08-31 11:24:41,866 - Number of people detected: 2
+2024-08-31 11:24:42,097 - Number of people detected: 1
+2024-08-31 11:24:42,326 - Number of people detected: 2
+2024-08-31 11:24:42,562 - Number of people detected: 3
+2024-08-31 11:24:42,787 - Number of people detected: 2
+2024-08-31 11:24:43,015 - Number of people detected: 1
+2024-08-31 11:24:43,488 - Number of people detected: 3
+2024-08-31 11:24:43,716 - Number of people detected: 2
+2024-08-31 11:24:44,189 - Number of people detected: 3
+2024-08-31 11:24:44,418 - Number of people detected: 2
+2024-08-31 11:24:44,668 - Number of people detected: 3
+2024-08-31 11:24:45,912 - Number of people detected: 2
+2024-08-31 11:24:46,177 - Number of people detected: 1
+2024-08-31 11:24:46,423 - Number of people detected: 3
+2024-08-31 11:24:46,673 - Number of people detected: 2
+2024-08-31 11:24:46,930 - Number of people detected: 3
+2024-08-31 11:24:47,473 - Number of people detected: 1
+2024-08-31 11:24:51,467 - Number of people detected: 2
+2024-08-31 11:24:52,129 - Number of people detected: 1
+2024-08-31 11:24:53,027 - Number of people detected: 2
+2024-08-31 11:24:54,305 - Number of people detected: 1
+2024-08-31 11:24:55,068 - Number of people detected: 2
+2024-08-31 11:24:55,318 - Number of people detected: 4
+2024-08-31 11:24:55,574 - Number of people detected: 3
+2024-08-31 11:24:55,836 - Number of people detected: 2
+2024-08-31 11:24:56,406 - Number of people detected: 3
+2024-08-31 11:24:56,677 - Number of people detected: 4
+2024-08-31 11:24:56,924 - Number of people detected: 3
+2024-08-31 11:24:57,173 - Number of people detected: 4
+2024-08-31 11:24:57,691 - Number of people detected: 3
+2024-08-31 11:24:59,111 - Number of people detected: 2
+2024-08-31 11:24:59,361 - Number of people detected: 3
+2024-08-31 11:25:00,947 - Number of people detected: 2
+2024-08-31 11:25:01,238 - Number of people detected: 1
+2024-08-31 11:25:05,050 - Number of people detected: 2
+2024-08-31 11:25:05,583 - Number of people detected: 1
+2024-08-31 11:25:07,671 - Number of people detected: 2
+2024-08-31 11:25:07,926 - Number of people detected: 1
+2024-08-31 11:25:12,836 - Number of people detected: 2
+2024-08-31 11:25:14,230 - Number of people detected: 1
+2024-08-31 11:25:22,673 - Number of people detected: 2
+2024-08-31 11:25:23,627 - Number of people detected: 1
+2024-08-31 11:25:25,515 - Number of people detected: 2
+2024-08-31 11:25:25,989 - Number of people detected: 1
+2024-08-31 11:25:28,370 - Number of people detected: 2
+2024-08-31 11:25:28,604 - Number of people detected: 1
+2024-08-31 11:25:42,400 - Number of people detected: 2
+2024-08-31 11:25:43,098 - Number of people detected: 1
+2024-08-31 11:25:43,790 - Number of people detected: 2
+2024-08-31 11:25:44,256 - Number of people detected: 1
+2024-08-31 11:25:44,722 - Number of people detected: 2
+2024-08-31 11:25:45,419 - Number of people detected: 1
+2024-08-31 11:25:45,651 - Number of people detected: 2
+2024-08-31 11:25:46,346 - Number of people detected: 1
+2024-08-31 11:25:46,810 - Number of people detected: 2
+2024-08-31 11:25:49,852 - Number of people detected: 1
+2024-08-31 11:25:50,091 - Number of people detected: 2
+2024-08-31 11:25:50,560 - Number of people detected: 1
+2024-08-31 11:25:50,793 - Number of people detected: 2
+2024-08-31 11:25:51,501 - Number of people detected: 1
+2024-08-31 11:25:52,202 - Number of people detected: 2
+2024-08-31 11:25:52,469 - Number of people detected: 1
+2024-08-31 11:25:54,143 - Number of people detected: 2
+2024-08-31 11:25:54,372 - Number of people detected: 1
+2024-08-31 11:25:54,606 - Number of people detected: 2
+2024-08-31 11:25:55,772 - Number of people detected: 1
+2024-08-31 11:25:56,013 - Number of people detected: 2
+2024-08-31 11:25:56,247 - Number of people detected: 1
+2024-08-31 11:26:01,641 - Number of people detected: 2
+2024-08-31 11:26:02,580 - Number of people detected: 1
+2024-08-31 11:26:02,809 - Number of people detected: 2
+2024-08-31 11:26:03,518 - Number of people detected: 1
+2024-08-31 11:26:06,823 - Number of people detected: 0
+2024-08-31 11:26:07,060 - Number of people detected: 2
+2024-08-31 11:26:09,644 - Number of people detected: 1
+2024-08-31 11:26:10,821 - Number of people detected: 2
+2024-08-31 11:26:11,532 - Number of people detected: 1
+2024-08-31 11:26:17,660 - Number of people detected: 2
+2024-08-31 11:26:17,888 - Number of people detected: 1
+2024-08-31 11:26:18,118 - Number of people detected: 2
+2024-08-31 11:26:19,997 - Number of people detected: 1
+2024-08-31 11:26:43,451 - Number of people detected: 2
+2024-08-31 11:27:00,202 - Number of people detected: 1
+2024-08-31 11:27:02,326 - Number of people detected: 2
+2024-08-31 11:27:02,556 - Number of people detected: 1
+2024-08-31 11:27:04,681 - Number of people detected: 2
+2024-08-31 11:27:04,922 - Number of people detected: 1
+2024-08-31 11:27:17,383 - Number of people detected: 2
+2024-08-31 11:27:17,838 - Number of people detected: 1
+2024-08-31 11:27:18,064 - Number of people detected: 2
+2024-08-31 11:27:18,982 - Number of people detected: 1
+2024-08-31 11:27:20,591 - Number of people detected: 2
+2024-08-31 11:27:20,821 - Number of people detected: 1
+2024-08-31 11:27:21,732 - Number of people detected: 2
+2024-08-31 11:27:22,886 - Number of people detected: 1
+2024-08-31 11:27:29,031 - Number of people detected: 2
+2024-08-31 11:27:29,275 - Number of people detected: 1
+2024-08-31 11:28:33,648 - Number of people detected: 0
+2024-08-31 11:28:35,501 - Number of people detected: 1
+2024-08-31 11:28:36,191 - Number of people detected: 0
+2024-08-31 11:28:36,420 - Number of people detected: 1
+2024-08-31 11:28:37,335 - Number of people detected: 0
+2024-08-31 11:28:37,782 - Number of people detected: 1
+2024-08-31 11:28:38,016 - Number of people detected: 0
+2024-08-31 11:28:38,238 - Number of people detected: 1
+2024-08-31 11:28:38,922 - Number of people detected: 0
+2024-08-31 11:28:39,145 - Number of people detected: 1
+2024-08-31 11:28:43,864 - Number of people detected: 2
+2024-08-31 11:28:44,101 - Number of people detected: 1
+2024-08-31 11:29:39,788 - Number of people detected: 2
+2024-08-31 11:29:40,242 - Number of people detected: 3
+2024-08-31 11:29:40,932 - Number of people detected: 2
+2024-08-31 11:29:44,388 - Number of people detected: 1
+2024-08-31 11:29:45,130 - Number of people detected: 2
+2024-08-31 11:29:45,592 - Number of people detected: 1
+2024-08-31 11:29:45,821 - Number of people detected: 2
+2024-08-31 11:29:47,716 - Number of people detected: 1
+2024-08-31 11:30:49,259 - Number of people detected: 2
+2024-08-31 11:30:49,959 - Number of people detected: 1
+2024-08-31 11:31:02,606 - Number of people detected: 2
+2024-08-31 11:31:03,314 - Number of people detected: 1
+2024-08-31 11:31:06,615 - Number of people detected: 2
+2024-08-31 11:31:06,850 - Number of people detected: 3
+2024-08-31 11:31:07,083 - Number of people detected: 4
+2024-08-31 11:31:07,315 - Number of people detected: 2
+2024-08-31 11:31:07,555 - Number of people detected: 1
+2024-08-31 11:31:08,723 - Number of people detected: 2
+2024-08-31 11:31:08,964 - Number of people detected: 3
+2024-08-31 11:31:09,423 - Number of people detected: 2
+2024-08-31 11:31:09,657 - Number of people detected: 3
+2024-08-31 11:31:10,586 - Number of people detected: 2
+2024-08-31 11:31:11,057 - Number of people detected: 3
+2024-08-31 11:31:11,295 - Number of people detected: 2
+2024-08-31 11:31:11,531 - Number of people detected: 3
+2024-08-31 11:31:11,761 - Number of people detected: 2
+2024-08-31 11:31:12,017 - Number of people detected: 1
+2024-08-31 11:31:12,987 - Number of people detected: 2
+2024-08-31 11:31:13,235 - Number of people detected: 1
+2024-08-31 11:31:14,320 - Number of people detected: 2
+2024-08-31 11:31:14,813 - Number of people detected: 1
+2024-08-31 11:31:15,749 - Number of people detected: 2
+2024-08-31 11:31:15,985 - Number of people detected: 1
+2024-08-31 11:31:16,455 - Number of people detected: 2
+2024-08-31 11:31:16,681 - Number of people detected: 1
+2024-08-31 11:31:17,378 - Number of people detected: 2
+2024-08-31 11:31:18,068 - Number of people detected: 1
+2024-08-31 11:31:18,297 - Number of people detected: 2
+2024-08-31 11:31:18,532 - Number of people detected: 3
+2024-08-31 11:31:19,916 - Number of people detected: 2
+2024-08-31 11:31:20,142 - Number of people detected: 1
+2024-08-31 11:31:20,370 - Number of people detected: 2
+2024-08-31 11:31:20,832 - Number of people detected: 3
+2024-08-31 11:31:21,060 - Number of people detected: 1
+2024-08-31 11:31:21,291 - Number of people detected: 2
+2024-08-31 11:31:22,215 - Number of people detected: 1
+2024-08-31 11:31:22,454 - Number of people detected: 2
+2024-08-31 11:31:23,868 - Number of people detected: 1
+2024-08-31 11:31:24,097 - Number of people detected: 2
+2024-08-31 11:31:24,811 - Number of people detected: 1
+2024-08-31 11:31:25,046 - Number of people detected: 2
+2024-08-31 11:31:25,284 - Number of people detected: 1
+2024-08-31 11:31:25,756 - Number of people detected: 2
+2024-08-31 11:31:25,999 - Number of people detected: 1
+2024-08-31 11:31:26,233 - Number of people detected: 2
+2024-08-31 11:31:26,467 - Number of people detected: 1
+2024-08-31 11:31:26,933 - Number of people detected: 2
+2024-08-31 11:31:27,843 - Number of people detected: 3
+2024-08-31 11:31:28,069 - Number of people detected: 2
+2024-08-31 11:31:28,524 - Number of people detected: 3
+2024-08-31 11:31:28,751 - Number of people detected: 2
+2024-08-31 11:31:29,994 - Number of people detected: 3
+2024-08-31 11:31:30,932 - Number of people detected: 2
+2024-08-31 11:31:31,164 - Number of people detected: 3
+2024-08-31 11:31:31,865 - Number of people detected: 2
+2024-08-31 11:31:32,338 - Number of people detected: 3
+2024-08-31 11:31:33,514 - Number of people detected: 2
+2024-08-31 11:31:33,747 - Number of people detected: 3
+2024-08-31 11:31:34,677 - Number of people detected: 1
+2024-08-31 11:31:35,391 - Number of people detected: 2
+2024-08-31 11:31:35,634 - Number of people detected: 1
+2024-08-31 11:31:35,862 - Number of people detected: 3
+2024-08-31 11:31:36,099 - Number of people detected: 1
+2024-08-31 11:31:36,338 - Number of people detected: 2
+2024-08-31 11:31:36,574 - Number of people detected: 3
+2024-08-31 11:31:37,032 - Number of people detected: 2
+2024-08-31 11:31:37,512 - Number of people detected: 3
+2024-08-31 11:31:38,683 - Number of people detected: 2
+2024-08-31 11:31:38,918 - Number of people detected: 3
+2024-08-31 11:31:39,622 - Number of people detected: 2
+2024-08-31 11:31:39,852 - Number of people detected: 3
+2024-08-31 11:31:40,780 - Number of people detected: 2
+2024-08-31 11:31:41,490 - Number of people detected: 3
+2024-08-31 11:31:42,502 - Number of people detected: 1
+2024-08-31 11:31:42,766 - Number of people detected: 2
+2024-08-31 11:31:43,322 - Number of people detected: 3
+2024-08-31 11:31:44,904 - Number of people detected: 2
+2024-08-31 11:31:45,183 - Number of people detected: 1
+2024-08-31 11:31:45,421 - Number of people detected: 2
+2024-08-31 11:31:45,666 - Number of people detected: 3
+2024-08-31 11:31:47,118 - Number of people detected: 1
+2024-08-31 11:31:47,353 - Number of people detected: 2
+2024-08-31 11:31:47,833 - Number of people detected: 1
+2024-08-31 11:31:48,063 - Number of people detected: 2
+2024-08-31 11:31:48,541 - Number of people detected: 3
+2024-08-31 11:31:48,782 - Number of people detected: 1
+2024-08-31 11:31:49,310 - Number of people detected: 2
+2024-08-31 11:31:50,022 - Number of people detected: 1
+2024-08-31 11:31:51,684 - Number of people detected: 2
+2024-08-31 11:31:51,920 - Number of people detected: 1
+2024-08-31 11:31:52,393 - Number of people detected: 2
+2024-08-31 11:31:52,623 - Number of people detected: 1
+2024-08-31 11:31:54,565 - Number of people detected: 2
+2024-08-31 11:31:55,972 - Number of people detected: 1
+2024-08-31 11:31:56,206 - Number of people detected: 2
+2024-08-31 11:31:56,439 - Number of people detected: 1
+2024-08-31 11:31:57,142 - Number of people detected: 2
+2024-08-31 11:31:57,373 - Number of people detected: 0
+2024-08-31 11:31:57,602 - Number of people detected: 1
+2024-08-31 11:31:57,837 - Number of people detected: 2
+2024-08-31 11:31:58,071 - Number of people detected: 0
+2024-08-31 11:31:58,776 - Number of people detected: 1
+2024-08-31 11:31:59,015 - Number of people detected: 0
+2024-08-31 11:31:59,254 - Number of people detected: 1
+2024-08-31 11:31:59,758 - Number of people detected: 2
+2024-08-31 11:31:59,989 - Number of people detected: 0
+2024-08-31 11:32:00,222 - Number of people detected: 2
+2024-08-31 11:32:00,451 - Number of people detected: 1
+2024-08-31 11:32:00,681 - Number of people detected: 2
+2024-08-31 11:32:00,918 - Number of people detected: 1
+2024-08-31 11:32:01,152 - Number of people detected: 3
+2024-08-31 11:32:01,619 - Number of people detected: 2
+2024-08-31 11:32:01,853 - Number of people detected: 3
+2024-08-31 11:32:02,085 - Number of people detected: 2
+2024-08-31 11:32:02,318 - Number of people detected: 1
+2024-08-31 11:32:03,015 - Number of people detected: 2
+2024-08-31 11:32:03,250 - Number of people detected: 3
+2024-08-31 11:32:03,717 - Number of people detected: 2
+2024-08-31 11:32:03,946 - Number of people detected: 1
+2024-08-31 11:32:04,179 - Number of people detected: 2
+2024-08-31 11:32:05,110 - Number of people detected: 1
+2024-08-31 11:32:05,350 - Number of people detected: 3
+2024-08-31 11:32:06,773 - Number of people detected: 2
+2024-08-31 11:32:07,027 - Number of people detected: 3
+2024-08-31 11:32:07,549 - Number of people detected: 2
+2024-08-31 11:32:07,777 - Number of people detected: 1
+2024-08-31 11:32:08,250 - Number of people detected: 3
+2024-08-31 11:32:08,482 - Number of people detected: 2
+2024-08-31 11:32:08,715 - Number of people detected: 3
+2024-08-31 11:32:08,952 - Number of people detected: 2
+2024-08-31 11:32:09,419 - Number of people detected: 3
+2024-08-31 11:32:09,882 - Number of people detected: 2
+2024-08-31 11:32:10,112 - Number of people detected: 3
+2024-08-31 11:32:10,338 - Number of people detected: 1
+2024-08-31 11:32:10,576 - Number of people detected: 2
+2024-08-31 11:32:10,809 - Number of people detected: 1
+2024-08-31 11:32:11,047 - Number of people detected: 2
+2024-08-31 11:32:11,284 - Number of people detected: 3
+2024-08-31 11:32:11,990 - Number of people detected: 2
+2024-08-31 11:32:12,457 - Number of people detected: 3
+2024-08-31 11:32:12,702 - Number of people detected: 2
+2024-08-31 11:32:14,111 - Number of people detected: 3
+2024-08-31 11:32:14,344 - Number of people detected: 2
+2024-08-31 11:32:15,044 - Number of people detected: 3
+2024-08-31 11:32:15,275 - Number of people detected: 2
+2024-08-31 11:32:16,432 - Number of people detected: 3
+2024-08-31 11:32:17,123 - Number of people detected: 2
+2024-08-31 11:32:17,354 - Number of people detected: 1
+2024-08-31 11:32:17,589 - Number of people detected: 3
+2024-08-31 11:32:18,051 - Number of people detected: 2
+2024-08-31 11:32:18,965 - Number of people detected: 3
+2024-08-31 11:32:19,888 - Number of people detected: 1
+2024-08-31 11:32:20,114 - Number of people detected: 2
+2024-08-31 11:32:21,720 - Number of people detected: 3
+2024-08-31 11:32:21,948 - Number of people detected: 1
+2024-08-31 11:32:22,402 - Number of people detected: 2
+2024-08-31 11:32:22,861 - Number of people detected: 1
+2024-08-31 11:32:23,092 - Number of people detected: 3
+2024-08-31 11:32:23,782 - Number of people detected: 1
+2024-08-31 11:32:24,006 - Number of people detected: 2
+2024-08-31 11:32:24,237 - Number of people detected: 3
+2024-08-31 11:32:25,835 - Number of people detected: 2
+2024-08-31 11:32:26,059 - Number of people detected: 3
+2024-08-31 11:32:26,741 - Number of people detected: 1
+2024-08-31 11:32:29,042 - Number of people detected: 2
+2024-08-31 11:32:29,274 - Number of people detected: 3
+2024-08-31 11:32:29,969 - Number of people detected: 2
+2024-08-31 11:32:31,352 - Number of people detected: 3
+2024-08-31 11:32:31,582 - Number of people detected: 2
+2024-08-31 11:32:32,039 - Number of people detected: 1
+2024-08-31 11:32:33,199 - Number of people detected: 2
+2024-08-31 11:32:33,432 - Number of people detected: 1
+2024-08-31 11:32:33,658 - Number of people detected: 2
+2024-08-31 11:32:33,889 - Number of people detected: 1
+2024-08-31 11:32:34,351 - Number of people detected: 2
+2024-08-31 11:32:34,585 - Number of people detected: 1
+2024-08-31 11:32:34,814 - Number of people detected: 3
+2024-08-31 11:32:35,057 - Number of people detected: 2
+2024-08-31 11:32:35,534 - Number of people detected: 3
+2024-08-31 11:32:35,766 - Number of people detected: 2
+2024-08-31 11:32:36,246 - Number of people detected: 3
+2024-08-31 11:32:36,479 - Number of people detected: 2
+2024-08-31 11:32:36,711 - Number of people detected: 1
+2024-08-31 11:32:37,175 - Number of people detected: 2
+2024-08-31 11:32:37,880 - Number of people detected: 1
+2024-08-31 11:32:38,110 - Number of people detected: 2
+2024-08-31 11:32:38,347 - Number of people detected: 3
+2024-08-31 11:32:38,581 - Number of people detected: 2
+2024-08-31 11:32:38,809 - Number of people detected: 1
+2024-08-31 11:32:39,520 - Number of people detected: 2
+2024-08-31 11:32:39,749 - Number of people detected: 1
+2024-08-31 11:32:39,978 - Number of people detected: 2
+2024-08-31 11:32:40,447 - Number of people detected: 1
+2024-08-31 11:32:40,670 - Number of people detected: 2
+2024-08-31 11:32:41,137 - Number of people detected: 1
+2024-08-31 11:32:41,611 - Number of people detected: 2
+2024-08-31 11:32:41,841 - Number of people detected: 1
+2024-08-31 11:32:42,538 - Number of people detected: 2
+2024-08-31 11:32:42,765 - Number of people detected: 3
+2024-08-31 11:32:42,997 - Number of people detected: 2
+2024-08-31 11:32:43,234 - Number of people detected: 3
+2024-08-31 11:32:43,469 - Number of people detected: 2
+2024-08-31 11:32:43,699 - Number of people detected: 1
+2024-08-31 11:32:43,933 - Number of people detected: 3
+2024-08-31 11:32:45,127 - Number of people detected: 1
+2024-08-31 11:32:45,374 - Number of people detected: 3
+2024-08-31 11:32:45,614 - Number of people detected: 1
+2024-08-31 11:32:46,093 - Number of people detected: 2
+2024-08-31 11:32:46,330 - Number of people detected: 1
+2024-08-31 11:32:46,565 - Number of people detected: 3
+2024-08-31 11:32:46,799 - Number of people detected: 2
+2024-08-31 11:32:47,037 - Number of people detected: 4
+2024-08-31 11:32:47,269 - Number of people detected: 3
+2024-08-31 11:32:47,520 - Number of people detected: 4
+2024-08-31 11:32:48,966 - Number of people detected: 3
+2024-08-31 11:32:49,665 - Number of people detected: 2
+2024-08-31 11:32:52,713 - Number of people detected: 3
+2024-08-31 11:32:52,944 - Number of people detected: 2
+2024-08-31 11:32:53,179 - Number of people detected: 3
+2024-08-31 11:32:53,411 - Number of people detected: 2
+2024-08-31 11:32:53,875 - Number of people detected: 3
+2024-08-31 11:32:54,577 - Number of people detected: 2
+2024-08-31 11:32:54,816 - Number of people detected: 1
+2024-08-31 11:32:55,846 - Number of people detected: 2
+2024-08-31 11:32:57,050 - Number of people detected: 1
+2024-08-31 11:32:57,520 - Number of people detected: 2
+2024-08-31 11:32:57,985 - Number of people detected: 1
+2024-08-31 11:32:58,218 - Number of people detected: 2
+2024-08-31 11:32:58,749 - Number of people detected: 3
+2024-08-31 11:32:59,948 - Number of people detected: 2
+2024-08-31 11:33:01,118 - Number of people detected: 3
+2024-08-31 11:33:02,827 - Number of people detected: 4
+2024-08-31 11:33:03,630 - Number of people detected: 3
+2024-08-31 11:33:03,887 - Number of people detected: 2
+2024-08-31 11:33:04,651 - Number of people detected: 3
+2024-08-31 11:33:04,895 - Number of people detected: 2
+2024-08-31 11:33:05,369 - Number of people detected: 3
+2024-08-31 11:33:06,370 - Number of people detected: 2
+2024-08-31 11:33:06,864 - Number of people detected: 3
+2024-08-31 11:33:07,106 - Number of people detected: 2
+2024-08-31 11:33:08,090 - Number of people detected: 3
+2024-08-31 11:33:08,357 - Number of people detected: 2
+2024-08-31 11:33:10,014 - Number of people detected: 3
+2024-08-31 11:33:10,718 - Number of people detected: 2
+2024-08-31 11:33:11,932 - Number of people detected: 3
+2024-08-31 11:33:12,174 - Number of people detected: 2
+2024-08-31 11:33:13,123 - Number of people detected: 1
+2024-08-31 11:33:13,362 - Number of people detected: 2
+2024-08-31 11:33:14,076 - Number of people detected: 3
+2024-08-31 11:33:14,305 - Number of people detected: 2
+2024-08-31 11:33:14,540 - Number of people detected: 3
+2024-08-31 11:33:15,016 - Number of people detected: 2
+2024-08-31 11:33:15,245 - Number of people detected: 3
+2024-08-31 11:33:15,480 - Number of people detected: 1
+2024-08-31 11:33:15,717 - Number of people detected: 2
+2024-08-31 11:33:15,950 - Number of people detected: 1
+2024-08-31 11:33:16,182 - Number of people detected: 2
+2024-08-31 11:33:16,890 - Number of people detected: 3
+2024-08-31 11:33:17,622 - Number of people detected: 2
+2024-08-31 11:33:18,107 - Number of people detected: 1
+2024-08-31 11:33:18,592 - Number of people detected: 2
+2024-08-31 11:33:18,824 - Number of people detected: 1
+2024-08-31 11:33:19,290 - Number of people detected: 3
+2024-08-31 11:33:19,763 - Number of people detected: 2
+2024-08-31 11:33:20,939 - Number of people detected: 1
+2024-08-31 11:33:21,176 - Number of people detected: 2
+2024-08-31 11:33:21,640 - Number of people detected: 3
+2024-08-31 11:33:22,107 - Number of people detected: 2
+2024-08-31 11:33:22,342 - Number of people detected: 3
+2024-08-31 11:33:23,263 - Number of people detected: 2
+2024-08-31 11:33:23,492 - Number of people detected: 3
+2024-08-31 11:33:23,723 - Number of people detected: 2
+2024-08-31 11:33:23,950 - Number of people detected: 3
+2024-08-31 11:33:24,645 - Number of people detected: 2
+2024-08-31 11:33:24,876 - Number of people detected: 3
+2024-08-31 11:33:25,333 - Number of people detected: 2
+2024-08-31 11:33:25,565 - Number of people detected: 3
+2024-08-31 11:33:30,229 - Number of people detected: 2
+2024-08-31 11:33:32,284 - Number of people detected: 3
+2024-08-31 11:33:32,513 - Number of people detected: 2
+2024-08-31 11:33:32,979 - Number of people detected: 3
+2024-08-31 11:33:33,210 - Number of people detected: 2
+2024-08-31 11:33:33,672 - Number of people detected: 3
+2024-08-31 11:33:34,129 - Number of people detected: 2
+2024-08-31 11:33:34,351 - Number of people detected: 3
+2024-08-31 11:33:37,345 - Number of people detected: 2
+2024-08-31 11:33:37,570 - Number of people detected: 3
+2024-08-31 11:33:37,796 - Number of people detected: 2
+2024-08-31 11:33:38,256 - Number of people detected: 3
+2024-08-31 11:33:38,718 - Number of people detected: 2
+2024-08-31 11:33:38,947 - Number of people detected: 3
+2024-08-31 11:33:39,181 - Number of people detected: 2
+2024-08-31 11:33:39,407 - Number of people detected: 3
+2024-08-31 11:33:41,929 - Number of people detected: 2
+2024-08-31 11:33:42,160 - Number of people detected: 1
+2024-08-31 11:33:43,066 - Number of people detected: 2
+2024-08-31 11:33:43,763 - Number of people detected: 3
+2024-08-31 11:33:44,227 - Number of people detected: 2
+2024-08-31 11:33:44,460 - Number of people detected: 3
+2024-08-31 11:33:45,628 - Number of people detected: 2
+2024-08-31 11:33:46,101 - Number of people detected: 1
+2024-08-31 11:33:46,582 - Number of people detected: 2
+2024-08-31 11:33:46,822 - Number of people detected: 1
+2024-08-31 11:33:47,307 - Number of people detected: 3
+2024-08-31 11:33:48,704 - Number of people detected: 2
+2024-08-31 11:33:49,169 - Number of people detected: 1
+2024-08-31 11:33:57,638 - Number of people detected: 2
+2024-08-31 11:33:57,870 - Number of people detected: 1
+2024-08-31 11:34:14,407 - Number of people detected: 2
+2024-08-31 11:34:30,478 - Number of people detected: 1
+2024-08-31 11:34:31,482 - Number of people detected: 2
+2024-08-31 11:34:35,646 - Number of people detected: 1
+2024-08-31 11:34:35,905 - Number of people detected: 2
+2024-08-31 11:34:42,040 - Number of people detected: 1
+2024-08-31 11:34:42,343 - Number of people detected: 2
+2024-08-31 11:34:43,372 - Number of people detected: 3
+2024-08-31 11:34:43,640 - Number of people detected: 2
+2024-08-31 11:34:43,898 - Number of people detected: 3
+2024-08-31 11:34:44,909 - Number of people detected: 2
+2024-08-31 11:34:45,172 - Number of people detected: 3
+2024-08-31 11:34:45,459 - Number of people detected: 2
+2024-08-31 11:34:45,728 - Number of people detected: 1
+2024-08-31 11:34:47,179 - Number of people detected: 2
+2024-08-31 11:34:49,724 - Number of people detected: 3
+2024-08-31 11:34:49,969 - Number of people detected: 2
+2024-08-31 11:34:50,732 - Number of people detected: 1
+2024-08-31 11:34:51,776 - Number of people detected: 3
+2024-08-31 11:34:52,076 - Number of people detected: 1
+2024-08-31 11:34:52,369 - Number of people detected: 2
+2024-08-31 11:34:52,607 - Number of people detected: 1
+2024-08-31 11:34:52,858 - Number of people detected: 2
+2024-08-31 11:34:53,111 - Number of people detected: 1
+2024-08-31 11:34:55,981 - Number of people detected: 2
+2024-08-31 11:34:56,255 - Number of people detected: 1
+2024-08-31 11:34:57,807 - Number of people detected: 2
+2024-08-31 11:34:58,047 - Number of people detected: 1
+2024-08-31 11:34:58,283 - Number of people detected: 2
+2024-08-31 11:34:59,517 - Number of people detected: 1
+2024-08-31 11:34:59,757 - Number of people detected: 2
+2024-08-31 11:35:03,462 - Number of people detected: 1
+2024-08-31 11:35:04,326 - Number of people detected: 2
+2024-08-31 11:35:06,022 - Number of people detected: 1
+2024-08-31 11:35:06,993 - Number of people detected: 2
+2024-08-31 11:35:07,995 - Number of people detected: 3
+2024-08-31 11:35:08,247 - Number of people detected: 2
+2024-08-31 11:35:08,542 - Number of people detected: 3
+2024-08-31 11:35:09,118 - Number of people detected: 2
+2024-08-31 11:35:09,380 - Number of people detected: 1
+2024-08-31 11:35:09,646 - Number of people detected: 2
+2024-08-31 11:35:10,438 - Number of people detected: 3
+2024-08-31 11:35:10,712 - Number of people detected: 2
+2024-08-31 11:35:12,360 - Number of people detected: 3
+2024-08-31 11:35:12,629 - Number of people detected: 2
+2024-08-31 11:35:13,142 - Number of people detected: 1
+2024-08-31 11:35:13,381 - Number of people detected: 2
+2024-08-31 11:35:13,901 - Number of people detected: 1
+2024-08-31 11:35:14,629 - Number of people detected: 2
+2024-08-31 11:35:15,116 - Number of people detected: 1
+2024-08-31 11:35:15,382 - Number of people detected: 2
+2024-08-31 11:35:15,894 - Number of people detected: 1
+2024-08-31 11:35:16,380 - Number of people detected: 2
+2024-08-31 11:35:16,644 - Number of people detected: 1
+2024-08-31 11:35:17,232 - Number of people detected: 2
+2024-08-31 11:35:18,238 - Number of people detected: 1
+2024-08-31 11:35:18,733 - Number of people detected: 2
+2024-08-31 11:35:20,157 - Number of people detected: 3
+2024-08-31 11:35:20,394 - Number of people detected: 2
+2024-08-31 11:35:20,639 - Number of people detected: 3
+2024-08-31 11:35:20,880 - Number of people detected: 2
+2024-08-31 11:35:21,351 - Number of people detected: 3
+2024-08-31 11:35:21,612 - Number of people detected: 2
+2024-08-31 11:35:23,281 - Number of people detected: 1
+2024-08-31 11:35:23,548 - Number of people detected: 2
+2024-08-31 11:35:31,688 - Number of people detected: 1
+2024-08-31 11:35:31,927 - Number of people detected: 2
+2024-08-31 11:35:37,257 - Number of people detected: 1
+2024-08-31 11:35:37,484 - Number of people detected: 2
+2024-08-31 11:35:38,901 - Number of people detected: 1
+2024-08-31 11:35:39,138 - Number of people detected: 2
+2024-08-31 11:35:40,542 - Number of people detected: 1
+2024-08-31 11:35:40,776 - Number of people detected: 2
+2024-08-31 11:35:50,412 - Number of people detected: 1
+2024-08-31 11:35:50,651 - Number of people detected: 2
+2024-08-31 11:35:53,459 - Number of people detected: 1
+2024-08-31 11:35:53,691 - Number of people detected: 2
+2024-08-31 11:35:56,492 - Number of people detected: 1
+2024-08-31 11:35:56,726 - Number of people detected: 3
+2024-08-31 11:35:57,208 - Number of people detected: 2
+2024-08-31 11:35:58,851 - Number of people detected: 3
+2024-08-31 11:35:59,087 - Number of people detected: 2
+2024-08-31 11:36:00,515 - Number of people detected: 3
+2024-08-31 11:36:00,748 - Number of people detected: 2
+2024-08-31 11:36:01,456 - Number of people detected: 1
+2024-08-31 11:36:01,691 - Number of people detected: 3
+2024-08-31 11:36:01,934 - Number of people detected: 4
+2024-08-31 11:36:02,183 - Number of people detected: 2
+2024-08-31 11:36:02,889 - Number of people detected: 1
+2024-08-31 11:36:03,129 - Number of people detected: 2
+2024-08-31 11:36:07,319 - Number of people detected: 1
+2024-08-31 11:36:07,559 - Number of people detected: 2
+2024-08-31 11:36:11,131 - Number of people detected: 3
+2024-08-31 11:36:11,363 - Number of people detected: 2
+2024-08-31 11:36:11,605 - Number of people detected: 3
+2024-08-31 11:36:11,834 - Number of people detected: 2
+2024-08-31 11:36:12,067 - Number of people detected: 1
+2024-08-31 11:36:13,473 - Number of people detected: 2
+2024-08-31 11:36:16,079 - Number of people detected: 1
+2024-08-31 11:36:16,548 - Number of people detected: 2
+2024-08-31 11:36:16,782 - Number of people detected: 3
+2024-08-31 11:36:17,027 - Number of people detected: 2
+2024-08-31 11:36:23,340 - Number of people detected: 1
+2024-08-31 11:36:24,612 - Number of people detected: 2
+2024-08-31 11:36:24,861 - Number of people detected: 1
+2024-08-31 11:36:25,095 - Number of people detected: 2
+2024-08-31 11:36:34,399 - Number of people detected: 1
+2024-08-31 11:36:34,870 - Number of people detected: 3
+2024-08-31 11:36:35,319 - Number of people detected: 2
+2024-08-31 11:36:38,072 - Number of people detected: 3
+2024-08-31 11:36:38,764 - Number of people detected: 2
+2024-08-31 11:36:39,696 - Number of people detected: 1
+2024-08-31 11:36:40,398 - Number of people detected: 2
+2024-08-31 11:36:40,631 - Number of people detected: 1
+2024-08-31 11:36:46,195 - Number of people detected: 2
+2024-08-31 11:36:49,523 - Number of people detected: 1
+2024-08-31 11:36:49,749 - Number of people detected: 2
+2024-08-31 11:36:55,161 - Number of people detected: 1
+2024-08-31 11:36:55,389 - Number of people detected: 2
+2024-08-31 11:37:01,985 - Number of people detected: 3
+2024-08-31 11:37:03,878 - Number of people detected: 2
+2024-08-31 11:37:04,585 - Number of people detected: 3
+2024-08-31 11:37:06,711 - Number of people detected: 2
+2024-08-31 11:37:09,786 - Number of people detected: 3
+2024-08-31 11:37:10,027 - Number of people detected: 2
+2024-08-31 11:37:11,892 - Number of people detected: 1
+2024-08-31 11:37:12,134 - Number of people detected: 2
+2024-08-31 11:37:16,138 - Number of people detected: 3
+2024-08-31 11:37:16,372 - Number of people detected: 2
+2024-08-31 11:37:20,118 - Number of people detected: 3
+2024-08-31 11:37:20,351 - Number of people detected: 2
+2024-08-31 11:37:20,584 - Number of people detected: 1
+2024-08-31 11:37:20,815 - Number of people detected: 2
+2024-08-31 11:37:21,527 - Number of people detected: 3
+2024-08-31 11:37:21,988 - Number of people detected: 2
+2024-08-31 11:37:23,156 - Number of people detected: 3
+2024-08-31 11:37:23,390 - Number of people detected: 2
+2024-08-31 11:37:25,723 - Number of people detected: 3
+2024-08-31 11:37:26,190 - Number of people detected: 2
+2024-08-31 11:37:26,659 - Number of people detected: 3
+2024-08-31 11:37:27,129 - Number of people detected: 2
+2024-08-31 11:37:27,839 - Number of people detected: 3
+2024-08-31 11:37:28,068 - Number of people detected: 2
+2024-08-31 11:37:28,539 - Number of people detected: 3
+2024-08-31 11:37:29,240 - Number of people detected: 2
+2024-08-31 11:37:29,483 - Number of people detected: 3
+2024-08-31 11:37:29,952 - Number of people detected: 2
+2024-08-31 11:37:30,187 - Number of people detected: 3
+2024-08-31 11:37:30,421 - Number of people detected: 2
+2024-08-31 11:37:30,664 - Number of people detected: 3
+2024-08-31 11:37:30,893 - Number of people detected: 2
+2024-08-31 11:37:31,123 - Number of people detected: 3
+2024-08-31 11:37:31,589 - Number of people detected: 1
+2024-08-31 11:37:32,058 - Number of people detected: 2
+2024-08-31 11:37:32,290 - Number of people detected: 3
+2024-08-31 11:37:32,522 - Number of people detected: 1
+2024-08-31 11:37:32,752 - Number of people detected: 2
+2024-08-31 11:37:33,687 - Number of people detected: 3
+2024-08-31 11:37:34,384 - Number of people detected: 2
+2024-08-31 11:37:35,791 - Number of people detected: 3
+2024-08-31 11:37:36,025 - Number of people detected: 2
+2024-08-31 11:37:39,525 - Number of people detected: 1
+2024-08-31 11:37:39,759 - Number of people detected: 2
+2024-08-31 11:37:39,991 - Number of people detected: 1
+2024-08-31 11:37:40,225 - Number of people detected: 2
+2024-08-31 11:37:40,460 - Number of people detected: 1
+2024-08-31 11:37:40,694 - Number of people detected: 2
+2024-08-31 11:37:46,080 - Number of people detected: 1
+2024-08-31 11:37:46,310 - Number of people detected: 2
+2024-08-31 11:37:47,232 - Number of people detected: 1
+2024-08-31 11:37:47,459 - Number of people detected: 2
+2024-08-31 11:38:01,787 - Number of people detected: 3
+2024-08-31 11:38:02,255 - Number of people detected: 2
+2024-08-31 11:38:02,716 - Number of people detected: 3
+2024-08-31 11:38:03,410 - Number of people detected: 2
+2024-08-31 11:38:04,090 - Number of people detected: 3
+2024-08-31 11:38:05,076 - Number of people detected: 2
+2024-08-31 11:38:05,581 - Number of people detected: 3
+2024-08-31 11:38:06,075 - Number of people detected: 2
+2024-08-31 11:38:06,578 - Number of people detected: 3
+2024-08-31 11:38:08,110 - Number of people detected: 2
+2024-08-31 11:38:08,617 - Number of people detected: 3
+2024-08-31 11:38:09,119 - Number of people detected: 2
+2024-08-31 11:38:10,131 - Number of people detected: 3
+2024-08-31 11:38:10,852 - Number of people detected: 2
+2024-08-31 11:38:11,087 - Number of people detected: 3
+2024-08-31 11:38:11,564 - Number of people detected: 2
+2024-08-31 11:38:11,798 - Number of people detected: 3
+2024-08-31 11:38:12,032 - Number of people detected: 2
+2024-08-31 11:38:12,264 - Number of people detected: 3
+2024-08-31 11:38:12,501 - Number of people detected: 2
+2024-08-31 11:38:12,748 - Number of people detected: 1
+2024-08-31 11:38:12,979 - Number of people detected: 2
+2024-08-31 11:38:13,209 - Number of people detected: 3
+2024-08-31 11:38:13,440 - Number of people detected: 2
+2024-08-31 11:38:13,670 - Number of people detected: 3
+2024-08-31 11:38:14,374 - Number of people detected: 2
+2024-08-31 11:38:14,612 - Number of people detected: 3
+2024-08-31 11:38:15,561 - Number of people detected: 2
+2024-08-31 11:38:16,958 - Number of people detected: 1
+2024-08-31 11:38:17,205 - Number of people detected: 2
+2024-08-31 11:38:17,441 - Number of people detected: 3
+2024-08-31 11:38:17,676 - Number of people detected: 2
+2024-08-31 11:38:17,907 - Number of people detected: 1
+2024-08-31 11:38:18,152 - Number of people detected: 3
+2024-08-31 11:38:18,385 - Number of people detected: 2
+2024-08-31 11:38:18,620 - Number of people detected: 1
+2024-08-31 11:38:18,855 - Number of people detected: 2
+2024-08-31 11:38:19,091 - Number of people detected: 1
+2024-08-31 11:38:19,327 - Number of people detected: 2
+2024-08-31 11:38:19,561 - Number of people detected: 1
+2024-08-31 11:38:20,032 - Number of people detected: 2
+2024-08-31 11:38:20,263 - Number of people detected: 1
+2024-08-31 11:38:20,730 - Number of people detected: 2
+2024-08-31 11:38:20,959 - Number of people detected: 3
+2024-08-31 11:38:21,190 - Number of people detected: 1
+2024-08-31 11:38:21,433 - Number of people detected: 3
+2024-08-31 11:38:21,668 - Number of people detected: 2
+2024-08-31 11:38:23,291 - Number of people detected: 3
+2024-08-31 11:38:23,521 - Number of people detected: 2
+2024-08-31 11:38:24,925 - Number of people detected: 3
+2024-08-31 11:38:25,162 - Number of people detected: 2
+2024-08-31 11:38:35,489 - Number of people detected: 1
+2024-08-31 11:38:35,725 - Number of people detected: 2
+2024-08-31 11:38:36,415 - Number of people detected: 3
+2024-08-31 11:38:36,654 - Number of people detected: 2
+2024-08-31 11:38:41,305 - Number of people detected: 1
+2024-08-31 11:38:41,532 - Number of people detected: 2
+2024-08-31 11:38:42,002 - Number of people detected: 1
+2024-08-31 11:38:42,233 - Number of people detected: 2
+2024-08-31 11:38:42,465 - Number of people detected: 1
+2024-08-31 11:38:42,698 - Number of people detected: 2
+2024-08-31 11:38:43,629 - Number of people detected: 3
+2024-08-31 11:38:43,866 - Number of people detected: 2
+2024-08-31 11:38:49,248 - Number of people detected: 1
+2024-08-31 11:38:49,481 - Number of people detected: 2
+2024-08-31 11:38:59,619 - Number of people detected: 3
+2024-08-31 11:38:59,843 - Number of people detected: 2
+2024-08-31 11:39:02,148 - Number of people detected: 3
+2024-08-31 11:39:02,377 - Number of people detected: 2
+2024-08-31 11:39:05,135 - Number of people detected: 3
+2024-08-31 11:39:05,373 - Number of people detected: 2
+2024-08-31 11:39:05,603 - Number of people detected: 1
+2024-08-31 11:39:05,834 - Number of people detected: 2
+2024-08-31 11:39:08,409 - Number of people detected: 3
+2024-08-31 11:39:09,124 - Number of people detected: 2
+2024-08-31 11:39:29,351 - Number of people detected: 1
+2024-08-31 11:39:29,822 - Number of people detected: 2
+2024-08-31 11:39:32,169 - Number of people detected: 1
+2024-08-31 11:39:32,405 - Number of people detected: 2
+2024-08-31 11:39:34,983 - Number of people detected: 1
+2024-08-31 11:39:35,211 - Number of people detected: 2
+2024-08-31 11:39:42,701 - Number of people detected: 1
+2024-08-31 11:39:42,931 - Number of people detected: 2
+2024-08-31 11:39:48,072 - Number of people detected: 1
+2024-08-31 11:39:48,525 - Number of people detected: 2
+2024-08-31 11:39:48,756 - Number of people detected: 1
+2024-08-31 11:39:50,134 - Number of people detected: 2
+2024-08-31 11:39:51,506 - Number of people detected: 1
+2024-08-31 11:39:51,735 - Number of people detected: 2
+2024-08-31 11:39:52,419 - Number of people detected: 3
+2024-08-31 11:39:52,646 - Number of people detected: 2
+2024-08-31 11:39:56,354 - Number of people detected: 1
+2024-08-31 11:39:56,581 - Number of people detected: 2
+2024-08-31 11:39:57,504 - Number of people detected: 1
+2024-08-31 11:39:57,737 - Number of people detected: 2
+2024-08-31 11:39:58,427 - Number of people detected: 1
+2024-08-31 11:39:58,658 - Number of people detected: 2
+2024-08-31 11:40:03,812 - Number of people detected: 1
+2024-08-31 11:40:05,453 - Number of people detected: 2
+2024-08-31 11:40:05,913 - Number of people detected: 1
+2024-08-31 11:40:06,157 - Number of people detected: 2
+2024-08-31 11:40:17,834 - Number of people detected: 1
+2024-08-31 11:40:18,066 - Number of people detected: 2
+2024-08-31 11:40:20,186 - Number of people detected: 1
+2024-08-31 11:40:20,663 - Number of people detected: 2
+2024-08-31 11:40:20,894 - Number of people detected: 1
+2024-08-31 11:40:21,128 - Number of people detected: 2
+2024-08-31 11:40:28,899 - Number of people detected: 3
+2024-08-31 11:40:29,126 - Number of people detected: 2
+2024-08-31 11:40:29,358 - Number of people detected: 1
+2024-08-31 11:40:30,298 - Number of people detected: 2
+2024-08-31 11:40:30,776 - Number of people detected: 3
+2024-08-31 11:40:31,011 - Number of people detected: 2
+2024-08-31 11:40:31,949 - Number of people detected: 1
+2024-08-31 11:40:32,655 - Number of people detected: 2
+2024-08-31 11:40:32,888 - Number of people detected: 1
+2024-08-31 11:40:33,118 - Number of people detected: 3
+2024-08-31 11:40:33,584 - Number of people detected: 2
+2024-08-31 11:40:34,288 - Number of people detected: 1
+2024-08-31 11:40:37,123 - Number of people detected: 2
+2024-08-31 11:40:37,355 - Number of people detected: 1
+2024-08-31 11:40:37,817 - Number of people detected: 3
+2024-08-31 11:40:39,227 - Number of people detected: 1
+2024-08-31 11:40:39,459 - Number of people detected: 3
+2024-08-31 11:40:41,801 - Number of people detected: 2
+2024-08-31 11:40:42,495 - Number of people detected: 3
+2024-08-31 11:40:43,424 - Number of people detected: 2
+2024-08-31 11:40:43,654 - Number of people detected: 3
+2024-08-31 11:40:46,928 - Number of people detected: 2
+2024-08-31 11:40:47,385 - Number of people detected: 3
+2024-08-31 11:40:47,616 - Number of people detected: 2
+2024-08-31 11:40:47,844 - Number of people detected: 1
+2024-08-31 11:40:48,077 - Number of people detected: 2
+2024-08-31 11:40:48,538 - Number of people detected: 1
+2024-08-31 11:40:49,240 - Number of people detected: 0
+2024-08-31 11:40:49,476 - Number of people detected: 1
+2024-08-31 11:40:49,705 - Number of people detected: 0
+2024-08-31 11:40:49,940 - Number of people detected: 1
+2024-08-31 11:40:50,406 - Number of people detected: 0
+2024-08-31 11:40:51,088 - Number of people detected: 1
+2024-08-31 11:40:51,320 - Number of people detected: 0
+2024-08-31 11:40:52,005 - Number of people detected: 1
+2024-08-31 11:40:52,231 - Number of people detected: 0
+2024-08-31 11:40:52,455 - Number of people detected: 1
+2024-08-31 11:40:56,163 - Number of people detected: 2
+2024-08-31 11:40:56,392 - Number of people detected: 1
+2024-08-31 11:40:56,622 - Number of people detected: 2
+2024-08-31 11:40:56,851 - Number of people detected: 1
+2024-08-31 11:40:57,313 - Number of people detected: 2
+2024-08-31 11:40:57,776 - Number of people detected: 1
+2024-08-31 11:40:58,951 - Number of people detected: 2
+2024-08-31 11:40:59,645 - Number of people detected: 1
+2024-08-31 11:41:00,105 - Number of people detected: 2
+2024-08-31 11:41:00,343 - Number of people detected: 1
+2024-08-31 11:41:02,420 - Number of people detected: 2
+2024-08-31 11:41:02,651 - Number of people detected: 1
+2024-08-31 11:41:02,897 - Number of people detected: 2
+2024-08-31 11:41:03,126 - Number of people detected: 1
+2024-08-31 11:41:04,764 - Number of people detected: 2
+2024-08-31 11:41:04,998 - Number of people detected: 1
+2024-08-31 11:41:09,475 - Number of people detected: 2
+2024-08-31 11:41:09,715 - Number of people detected: 1
+2024-08-31 11:41:10,674 - Number of people detected: 2
+2024-08-31 11:41:11,143 - Number of people detected: 1
+2024-08-31 11:41:12,599 - Number of people detected: 2
+2024-08-31 11:41:12,835 - Number of people detected: 1
+2024-08-31 11:41:19,630 - Number of people detected: 0
+2024-08-31 11:41:19,862 - Number of people detected: 1
+2024-08-31 11:41:21,745 - Number of people detected: 2
+2024-08-31 11:41:22,211 - Number of people detected: 1
+2024-08-31 11:41:22,687 - Number of people detected: 2
+2024-08-31 11:41:22,924 - Number of people detected: 1
+2024-08-31 11:41:23,153 - Number of people detected: 2
+2024-08-31 11:41:23,623 - Number of people detected: 1
+2024-08-31 11:41:24,091 - Number of people detected: 2
+2024-08-31 11:41:24,321 - Number of people detected: 1
+2024-08-31 11:41:26,194 - Number of people detected: 2
+2024-08-31 11:41:26,894 - Number of people detected: 1
+2024-08-31 11:41:27,129 - Number of people detected: 2
+2024-08-31 11:41:27,359 - Number of people detected: 1
+2024-08-31 11:41:27,596 - Number of people detected: 2
+2024-08-31 11:41:27,830 - Number of people detected: 1
+2024-08-31 11:41:30,639 - Number of people detected: 2
+2024-08-31 11:41:30,872 - Number of people detected: 1
+2024-08-31 11:41:32,272 - Number of people detected: 0
+2024-08-31 11:41:32,973 - Number of people detected: 1
+2024-08-31 11:41:33,436 - Number of people detected: 0
+2024-08-31 11:41:34,840 - Number of people detected: 1
+2024-08-31 11:41:35,074 - Number of people detected: 0
+2024-08-31 11:41:36,007 - Number of people detected: 1
+2024-08-31 11:41:36,488 - Number of people detected: 0
+2024-08-31 11:41:36,968 - Number of people detected: 1
+2024-08-31 11:41:37,201 - Number of people detected: 0
+2024-08-31 11:41:38,825 - Number of people detected: 1
+2024-08-31 11:41:39,057 - Number of people detected: 2
+2024-08-31 11:41:39,285 - Number of people detected: 1
+2024-08-31 11:41:40,002 - Number of people detected: 2
+2024-08-31 11:41:40,501 - Number of people detected: 1
+2024-08-31 11:41:41,229 - Number of people detected: 0
+2024-08-31 11:41:41,461 - Number of people detected: 1
+2024-08-31 11:41:41,933 - Number of people detected: 0
+2024-08-31 11:41:42,166 - Number of people detected: 1
+2024-08-31 11:41:45,464 - Number of people detected: 2
+2024-08-31 11:41:45,704 - Number of people detected: 1
+2024-08-31 11:41:46,158 - Number of people detected: 2
+2024-08-31 11:41:46,388 - Number of people detected: 1
+2024-08-31 11:41:47,127 - Number of people detected: 2
+2024-08-31 11:41:47,592 - Number of people detected: 1
+2024-08-31 11:41:48,293 - Number of people detected: 2
+2024-08-31 11:41:48,523 - Number of people detected: 1
+2024-08-31 11:41:48,776 - Number of people detected: 2
+2024-08-31 11:41:49,241 - Number of people detected: 1
+2024-08-31 11:41:50,177 - Number of people detected: 2
+2024-08-31 11:41:50,412 - Number of people detected: 1
+2024-08-31 11:41:50,883 - Number of people detected: 2
+2024-08-31 11:41:51,119 - Number of people detected: 1
+2024-08-31 11:41:51,355 - Number of people detected: 2
+2024-08-31 11:41:52,289 - Number of people detected: 1
+2024-08-31 11:41:52,521 - Number of people detected: 2
+2024-08-31 11:41:53,222 - Number of people detected: 1
+2024-08-31 11:41:53,453 - Number of people detected: 2
+2024-08-31 11:41:54,595 - Number of people detected: 1
+2024-08-31 11:41:54,834 - Number of people detected: 2
+2024-08-31 11:41:55,058 - Number of people detected: 1
+2024-08-31 11:41:55,292 - Number of people detected: 2
+2024-08-31 11:41:56,673 - Number of people detected: 1
+2024-08-31 11:41:58,510 - Number of people detected: 0
+2024-08-31 11:41:58,742 - Number of people detected: 1
+2024-08-31 11:41:59,205 - Number of people detected: 2
+2024-08-31 11:41:59,433 - Number of people detected: 1
+2024-08-31 11:41:59,666 - Number of people detected: 2
+2024-08-31 11:41:59,896 - Number of people detected: 1
+2024-08-31 11:42:00,129 - Number of people detected: 2
+2024-08-31 11:42:00,356 - Number of people detected: 1
+2024-08-31 11:42:00,586 - Number of people detected: 2
+2024-08-31 11:42:01,516 - Number of people detected: 1
+2024-08-31 11:42:02,213 - Number of people detected: 2
+2024-08-31 11:42:02,442 - Number of people detected: 1
+2024-08-31 11:42:02,910 - Number of people detected: 2
+2024-08-31 11:42:03,143 - Number of people detected: 1
+2024-08-31 11:42:03,831 - Number of people detected: 2
+2024-08-31 11:42:04,059 - Number of people detected: 1
+2024-08-31 11:42:06,834 - Number of people detected: 2
+2024-08-31 11:42:08,692 - Number of people detected: 1
+2024-08-31 11:42:08,937 - Number of people detected: 3
+2024-08-31 11:42:09,169 - Number of people detected: 2
+2024-08-31 11:42:09,672 - Number of people detected: 3
+2024-08-31 11:42:09,901 - Number of people detected: 2
+2024-08-31 11:42:10,629 - Number of people detected: 1
+2024-08-31 11:42:13,278 - Number of people detected: 0
+2024-08-31 11:42:13,745 - Number of people detected: 1
+2024-08-31 11:42:14,443 - Number of people detected: 0
+2024-08-31 11:42:18,667 - Number of people detected: 1
+2024-08-31 11:42:18,911 - Number of people detected: 0
+2024-08-31 11:42:20,546 - Number of people detected: 1
+2024-08-31 11:42:21,252 - Number of people detected: 2
+2024-08-31 11:42:21,484 - Number of people detected: 1
+2024-08-31 11:42:23,114 - Number of people detected: 3
+2024-08-31 11:42:23,348 - Number of people detected: 2
+2024-08-31 11:42:23,584 - Number of people detected: 3
+2024-08-31 11:42:23,815 - Number of people detected: 2
+2024-08-31 11:42:24,043 - Number of people detected: 1
+2024-08-31 11:42:24,744 - Number of people detected: 0
+2024-08-31 11:42:26,652 - Number of people detected: 1
+2024-08-31 11:42:26,903 - Number of people detected: 0
+2024-08-31 11:42:27,855 - Number of people detected: 1
+2024-08-31 11:42:28,085 - Number of people detected: 0
+2024-08-31 11:42:30,192 - Number of people detected: 1
+2024-08-31 11:42:30,428 - Number of people detected: 0
+2024-08-31 11:42:30,896 - Number of people detected: 1
+2024-08-31 11:42:31,607 - Number of people detected: 0
+2024-08-31 11:42:32,076 - Number of people detected: 1
+2024-08-31 11:42:32,545 - Number of people detected: 0
+2024-08-31 11:42:36,752 - Number of people detected: 1
+2024-08-31 11:42:36,991 - Number of people detected: 0
+2024-08-31 11:42:45,406 - Number of people detected: 1
+2024-08-31 11:42:45,645 - Number of people detected: 0
+2024-08-31 11:42:51,015 - Number of people detected: 1
+2024-08-31 11:42:52,461 - Number of people detected: 0
+2024-08-31 11:42:52,703 - Number of people detected: 1
+2024-08-31 11:42:53,176 - Number of people detected: 0
+2024-08-31 11:43:09,661 - Number of people detected: 1
+2024-08-31 11:43:09,892 - Number of people detected: 0
+2024-08-31 11:43:11,271 - Number of people detected: 1
+2024-08-31 11:43:11,509 - Number of people detected: 0
+2024-08-31 11:43:12,212 - Number of people detected: 1
+2024-08-31 11:43:12,902 - Number of people detected: 0
+2024-08-31 11:43:21,974 - Number of people detected: 2
+2024-08-31 11:43:22,202 - Number of people detected: 0
+2024-08-31 11:43:24,299 - Number of people detected: 1
+2024-08-31 11:43:26,681 - Number of people detected: 2
+2024-08-31 11:43:26,933 - Number of people detected: 1
+2024-08-31 11:43:27,410 - Number of people detected: 2
+2024-08-31 11:43:27,644 - Number of people detected: 0
+2024-08-31 11:43:27,875 - Number of people detected: 1
+2024-08-31 11:43:28,340 - Number of people detected: 0
+2024-08-31 11:43:28,808 - Number of people detected: 1
+2024-08-31 11:43:29,518 - Number of people detected: 2
+2024-08-31 11:43:30,221 - Number of people detected: 3
+2024-08-31 11:43:30,452 - Number of people detected: 1
+2024-08-31 11:43:30,688 - Number of people detected: 2
+2024-08-31 11:43:30,922 - Number of people detected: 3
+2024-08-31 11:43:31,166 - Number of people detected: 1
+2024-08-31 11:43:32,336 - Number of people detected: 0
+2024-08-31 11:43:32,565 - Number of people detected: 1
+2024-08-31 11:43:32,800 - Number of people detected: 2
+2024-08-31 11:43:33,038 - Number of people detected: 1
+2024-08-31 11:43:33,737 - Number of people detected: 0
+2024-08-31 11:43:34,914 - Number of people detected: 1
+2024-08-31 11:43:35,154 - Number of people detected: 0
+2024-08-31 11:43:35,388 - Number of people detected: 1
+2024-08-31 11:43:35,619 - Number of people detected: 0
+2024-08-31 11:43:35,856 - Number of people detected: 1
+2024-08-31 11:43:36,087 - Number of people detected: 0
+2024-08-31 11:43:36,550 - Number of people detected: 1
+2024-08-31 11:43:36,784 - Number of people detected: 0
+2024-08-31 11:43:37,496 - Number of people detected: 1
+2024-08-31 11:43:37,974 - Number of people detected: 0
+2024-08-31 11:43:42,644 - Number of people detected: 1
+2024-08-31 11:43:45,210 - Number of people detected: 0
+2024-08-31 11:43:45,453 - Number of people detected: 1
+2024-08-31 11:43:46,861 - Number of people detected: 2
+2024-08-31 11:43:47,095 - Number of people detected: 1
+2024-08-31 11:43:48,946 - Number of people detected: 2
+2024-08-31 11:43:49,189 - Number of people detected: 1
+2024-08-31 11:43:50,357 - Number of people detected: 2
+2024-08-31 11:43:50,588 - Number of people detected: 1
+2024-08-31 11:43:55,512 - Number of people detected: 2
+2024-08-31 11:43:55,747 - Number of people detected: 1
+2024-08-31 11:44:01,163 - Number of people detected: 2
+2024-08-31 11:44:01,402 - Number of people detected: 1
+2024-08-31 11:44:02,335 - Number of people detected: 2
+2024-08-31 11:44:05,335 - Number of people detected: 1
+2024-08-31 11:44:05,568 - Number of people detected: 2
+2024-08-31 11:44:06,494 - Number of people detected: 1
+2024-08-31 11:44:06,955 - Number of people detected: 2
+2024-08-31 11:44:07,190 - Number of people detected: 1
+2024-08-31 11:44:07,878 - Number of people detected: 3
+2024-08-31 11:44:08,112 - Number of people detected: 2
+2024-08-31 11:44:08,802 - Number of people detected: 3
+2024-08-31 11:44:09,032 - Number of people detected: 2
+2024-08-31 11:44:09,260 - Number of people detected: 3
+2024-08-31 11:44:09,492 - Number of people detected: 2
+2024-08-31 11:44:09,724 - Number of people detected: 3
+2024-08-31 11:44:10,406 - Number of people detected: 2
+2024-08-31 11:44:11,328 - Number of people detected: 3
+2024-08-31 11:44:11,559 - Number of people detected: 2
+2024-08-31 11:44:11,794 - Number of people detected: 3
+2024-08-31 11:44:12,019 - Number of people detected: 2
+2024-08-31 11:44:12,716 - Number of people detected: 3
+2024-08-31 11:44:12,948 - Number of people detected: 2
+2024-08-31 11:44:13,420 - Number of people detected: 3
+2024-08-31 11:44:15,024 - Number of people detected: 2
+2024-08-31 11:44:15,490 - Number of people detected: 3
+2024-08-31 11:44:15,721 - Number of people detected: 2
+2024-08-31 11:44:15,953 - Number of people detected: 3
+2024-08-31 11:44:16,182 - Number of people detected: 2
+2024-08-31 11:44:17,814 - Number of people detected: 3
+2024-08-31 11:44:18,042 - Number of people detected: 2
+2024-08-31 11:44:18,272 - Number of people detected: 3
+2024-08-31 11:44:18,507 - Number of people detected: 2
+2024-08-31 11:44:18,973 - Number of people detected: 3
+2024-08-31 11:44:19,437 - Number of people detected: 2
+2024-08-31 11:44:20,149 - Number of people detected: 3
+2024-08-31 11:44:20,379 - Number of people detected: 2
+2024-08-31 11:44:20,618 - Number of people detected: 3
+2024-08-31 11:44:20,853 - Number of people detected: 2
+2024-08-31 11:44:21,799 - Number of people detected: 3
+2024-08-31 11:44:22,045 - Number of people detected: 2
+2024-08-31 11:44:22,306 - Number of people detected: 3
+2024-08-31 11:44:22,548 - Number of people detected: 2
+2024-08-31 11:44:22,787 - Number of people detected: 3
+2024-08-31 11:44:23,044 - Number of people detected: 2
+2024-08-31 11:44:23,280 - Number of people detected: 3
+2024-08-31 11:44:23,522 - Number of people detected: 2
+2024-08-31 11:44:24,272 - Number of people detected: 3
+2024-08-31 11:44:25,305 - Number of people detected: 2
+2024-08-31 11:44:25,575 - Number of people detected: 3
+2024-08-31 11:44:25,843 - Number of people detected: 2
+2024-08-31 11:44:27,266 - Number of people detected: 3
+2024-08-31 11:44:27,731 - Number of people detected: 2
+2024-08-31 11:44:28,908 - Number of people detected: 3
+2024-08-31 11:44:29,143 - Number of people detected: 2
+2024-08-31 11:44:29,438 - Number of people detected: 3
+2024-08-31 11:44:29,704 - Number of people detected: 2
+2024-08-31 11:44:30,228 - Number of people detected: 1
+2024-08-31 11:44:31,470 - Number of people detected: 2
+2024-08-31 11:44:32,434 - Number of people detected: 1
+2024-08-31 11:44:32,665 - Number of people detected: 2
+2024-08-31 11:44:33,420 - Number of people detected: 3
+2024-08-31 11:44:33,661 - Number of people detected: 1
+2024-08-31 11:44:33,934 - Number of people detected: 2
+2024-08-31 11:44:34,215 - Number of people detected: 1
+2024-08-31 11:44:38,185 - Number of people detected: 2
+2024-08-31 11:44:38,918 - Number of people detected: 1
+2024-08-31 11:44:39,875 - Number of people detected: 2
+2024-08-31 11:44:40,663 - Number of people detected: 1
+2024-08-31 11:44:46,350 - Number of people detected: 2
+2024-08-31 11:44:46,624 - Number of people detected: 1
+2024-08-31 11:44:48,233 - Number of people detected: 2
+2024-08-31 11:44:48,495 - Number of people detected: 1
+2024-08-31 11:44:49,069 - Number of people detected: 2
+2024-08-31 11:44:49,336 - Number of people detected: 1
+2024-08-31 11:45:00,514 - Number of people detected: 2
+2024-08-31 11:45:00,777 - Number of people detected: 1
+2024-08-31 11:45:01,789 - Number of people detected: 2
+2024-08-31 11:45:02,024 - Number of people detected: 1
+2024-08-31 11:45:03,926 - Number of people detected: 2
+2024-08-31 11:45:04,166 - Number of people detected: 1
+2024-08-31 11:45:05,367 - Number of people detected: 2
+2024-08-31 11:45:05,618 - Number of people detected: 1
+2024-08-31 11:45:21,786 - Number of people detected: 2
+2024-08-31 11:45:22,027 - Number of people detected: 1
+2024-08-31 11:45:24,409 - Number of people detected: 2
+2024-08-31 11:45:24,645 - Number of people detected: 1
+2024-08-31 11:45:25,895 - Number of people detected: 3
+2024-08-31 11:45:26,138 - Number of people detected: 1
+2024-08-31 11:45:34,728 - Number of people detected: 2
+2024-08-31 11:45:34,975 - Number of people detected: 1
+2024-08-31 11:45:35,236 - Number of people detected: 2
+2024-08-31 11:45:36,392 - Number of people detected: 1
+2024-08-31 11:45:36,911 - Number of people detected: 2
+2024-08-31 11:45:37,185 - Number of people detected: 1
+2024-08-31 11:45:39,869 - Number of people detected: 2
+2024-08-31 11:45:40,141 - Number of people detected: 1
+2024-08-31 11:45:46,856 - Number of people detected: 2
+2024-08-31 11:45:47,095 - Number of people detected: 1
+2024-08-31 11:45:48,291 - Number of people detected: 2
+2024-08-31 11:45:48,530 - Number of people detected: 1
+2024-08-31 11:45:49,254 - Number of people detected: 2
+2024-08-31 11:45:50,232 - Number of people detected: 3
+2024-08-31 11:45:50,469 - Number of people detected: 2
+2024-08-31 11:45:51,641 - Number of people detected: 1
+2024-08-31 11:45:54,370 - Number of people detected: 2
+2024-08-31 11:45:54,632 - Number of people detected: 1
+2024-08-31 11:45:56,408 - Number of people detected: 2
+2024-08-31 11:45:56,650 - Number of people detected: 1
+2024-08-31 11:45:58,806 - Number of people detected: 2
+2024-08-31 11:45:59,051 - Number of people detected: 1
+2024-08-31 11:45:59,544 - Number of people detected: 2
+2024-08-31 11:45:59,789 - Number of people detected: 1
+2024-08-31 11:46:00,302 - Number of people detected: 2
+2024-08-31 11:46:00,565 - Number of people detected: 1
+2024-08-31 11:46:00,816 - Number of people detected: 2
+2024-08-31 11:46:01,054 - Number of people detected: 1
+2024-08-31 11:46:01,588 - Number of people detected: 2
+2024-08-31 11:46:02,153 - Number of people detected: 1
+2024-08-31 11:46:02,405 - Number of people detected: 2
+2024-08-31 11:46:02,647 - Number of people detected: 1
+2024-08-31 11:46:03,908 - Number of people detected: 2
+2024-08-31 11:46:04,411 - Number of people detected: 1
+2024-08-31 11:46:04,677 - Number of people detected: 2
+2024-08-31 11:46:04,942 - Number of people detected: 1
+2024-08-31 11:46:05,955 - Number of people detected: 2
+2024-08-31 11:46:06,453 - Number of people detected: 1
+2024-08-31 11:46:07,657 - Number of people detected: 2
+2024-08-31 11:46:08,153 - Number of people detected: 1
+2024-08-31 11:46:08,859 - Number of people detected: 2
+2024-08-31 11:46:09,319 - Number of people detected: 1
+2024-08-31 11:46:09,552 - Number of people detected: 2
+2024-08-31 11:46:10,964 - Number of people detected: 1
+2024-08-31 11:46:14,988 - Number of people detected: 2
+2024-08-31 11:46:15,235 - Number of people detected: 1
+2024-08-31 11:46:15,480 - Number of people detected: 2
+2024-08-31 11:46:16,468 - Number of people detected: 1
+2024-08-31 11:46:17,440 - Number of people detected: 2
+2024-08-31 11:46:17,678 - Number of people detected: 1
+2024-08-31 11:46:23,131 - Number of people detected: 2
+2024-08-31 11:46:23,379 - Number of people detected: 1
+2024-08-31 11:46:27,700 - Number of people detected: 2
+2024-08-31 11:46:27,965 - Number of people detected: 1
+2024-08-31 11:46:28,228 - Number of people detected: 2
+2024-08-31 11:46:31,338 - Number of people detected: 1
+2024-08-31 11:46:31,594 - Number of people detected: 2
+2024-08-31 11:46:31,830 - Number of people detected: 1
+2024-08-31 11:46:33,958 - Number of people detected: 2
+2024-08-31 11:46:34,221 - Number of people detected: 1
+2024-08-31 11:46:34,696 - Number of people detected: 2
+2024-08-31 11:46:35,173 - Number of people detected: 1
+2024-08-31 11:46:38,401 - Number of people detected: 2
+2024-08-31 11:46:38,883 - Number of people detected: 1
+2024-08-31 11:46:39,934 - Number of people detected: 2
+2024-08-31 11:46:40,175 - Number of people detected: 1
+2024-08-31 11:46:50,626 - Number of people detected: 2
+2024-08-31 11:46:50,888 - Number of people detected: 1
+2024-08-31 11:46:53,688 - Number of people detected: 2
+2024-08-31 11:46:53,937 - Number of people detected: 1
+2024-08-31 11:46:54,703 - Number of people detected: 2
+2024-08-31 11:46:54,941 - Number of people detected: 1
+2024-08-31 11:47:06,520 - Number of people detected: 2
+2024-08-31 11:47:06,761 - Number of people detected: 1
+2024-08-31 11:47:11,454 - Number of people detected: 2
+2024-08-31 11:47:11,728 - Number of people detected: 1
+2024-08-31 11:47:13,474 - Number of people detected: 2
+2024-08-31 11:47:13,753 - Number of people detected: 1
+2024-08-31 11:47:14,266 - Number of people detected: 2
+2024-08-31 11:47:14,532 - Number of people detected: 1
+2024-08-31 11:47:14,784 - Number of people detected: 2
+2024-08-31 11:47:16,336 - Number of people detected: 1
+2024-08-31 11:47:16,591 - Number of people detected: 2
+2024-08-31 11:47:18,612 - Number of people detected: 1
+2024-08-31 11:47:19,321 - Number of people detected: 2
+2024-08-31 11:47:20,279 - Number of people detected: 1
+2024-08-31 11:47:21,297 - Number of people detected: 2
+2024-08-31 11:47:21,782 - Number of people detected: 1
+2024-08-31 11:47:22,030 - Number of people detected: 2
+2024-08-31 11:47:22,507 - Number of people detected: 1
+2024-08-31 11:47:26,657 - Number of people detected: 2
+2024-08-31 11:47:28,403 - Number of people detected: 1
+2024-08-31 11:47:28,643 - Number of people detected: 2
+2024-08-31 11:47:34,351 - Number of people detected: 1
+2024-08-31 11:47:34,582 - Number of people detected: 2
+2024-08-31 11:47:35,098 - Number of people detected: 1
+2024-08-31 11:47:36,483 - Number of people detected: 2
+2024-08-31 11:47:43,469 - Number of people detected: 1
+2024-08-31 11:47:43,776 - Number of people detected: 2
+2024-08-31 11:47:44,025 - Number of people detected: 1
+2024-08-31 11:47:44,276 - Number of people detected: 2
+2024-08-31 11:47:52,493 - Number of people detected: 1
+2024-08-31 11:47:52,727 - Number of people detected: 2
+2024-08-31 11:47:54,162 - Number of people detected: 1
+2024-08-31 11:47:54,640 - Number of people detected: 2
+2024-08-31 11:48:00,675 - Number of people detected: 3
+2024-08-31 11:48:00,928 - Number of people detected: 2
+2024-08-31 11:48:17,295 - Number of people detected: 1
+2024-08-31 11:48:20,137 - Number of people detected: 2
+2024-08-31 11:48:21,558 - Number of people detected: 3
+2024-08-31 11:48:21,807 - Number of people detected: 2
+2024-08-31 11:48:23,256 - Number of people detected: 1
+2024-08-31 11:48:23,495 - Number of people detected: 2
+2024-08-31 11:48:25,181 - Number of people detected: 1
+2024-08-31 11:48:25,420 - Number of people detected: 2
+2024-08-31 11:48:26,399 - Number of people detected: 1
+2024-08-31 11:48:27,121 - Number of people detected: 2
+2024-08-31 11:48:27,593 - Number of people detected: 1
+2024-08-31 11:48:27,836 - Number of people detected: 2
+2024-08-31 11:48:29,043 - Number of people detected: 1
+2024-08-31 11:48:30,287 - Number of people detected: 2
+2024-08-31 11:48:37,555 - Number of people detected: 1
+2024-08-31 11:48:37,827 - Number of people detected: 2
+2024-08-31 11:48:39,994 - Number of people detected: 1
+2024-08-31 11:48:40,236 - Number of people detected: 2
+2024-08-31 11:48:40,713 - Number of people detected: 1
+2024-08-31 11:48:41,202 - Number of people detected: 2
+2024-08-31 11:48:41,684 - Number of people detected: 1
+2024-08-31 11:48:41,921 - Number of people detected: 2
+2024-08-31 11:48:42,403 - Number of people detected: 1
+2024-08-31 11:48:42,644 - Number of people detected: 2
+2024-08-31 11:48:42,883 - Number of people detected: 1
+2024-08-31 11:48:43,373 - Number of people detected: 2
+2024-08-31 11:48:43,868 - Number of people detected: 1
+2024-08-31 11:48:44,113 - Number of people detected: 2
+2024-08-31 11:48:44,598 - Number of people detected: 1
+2024-08-31 11:48:45,082 - Number of people detected: 2
+2024-08-31 11:48:45,566 - Number of people detected: 1
+2024-08-31 11:48:51,402 - Number of people detected: 2
+2024-08-31 11:48:53,109 - Number of people detected: 1
+2024-08-31 11:48:59,308 - Number of people detected: 2
+2024-08-31 11:48:59,560 - Number of people detected: 1
+2024-08-31 11:49:06,233 - Number of people detected: 2
+2024-08-31 11:49:06,494 - Number of people detected: 1
+2024-08-31 11:49:07,957 - Number of people detected: 2
+2024-08-31 11:49:08,203 - Number of people detected: 1
+2024-08-31 11:49:08,735 - Number of people detected: 2
+2024-08-31 11:49:08,986 - Number of people detected: 1
+2024-08-31 11:49:09,956 - Number of people detected: 2
+2024-08-31 11:49:10,204 - Number of people detected: 1
+2024-08-31 11:49:21,417 - Number of people detected: 2
+2024-08-31 11:49:21,700 - Number of people detected: 1
+2024-08-31 11:49:21,983 - Number of people detected: 2
+2024-08-31 11:49:22,254 - Number of people detected: 1
+2024-08-31 11:49:22,803 - Number of people detected: 2
+2024-08-31 11:49:23,078 - Number of people detected: 1
+2024-08-31 11:49:24,447 - Number of people detected: 2
+2024-08-31 11:49:24,715 - Number of people detected: 1
+2024-08-31 11:49:26,346 - Number of people detected: 2
+2024-08-31 11:49:28,274 - Number of people detected: 1
+2024-08-31 11:49:29,382 - Number of people detected: 2
+2024-08-31 11:49:29,655 - Number of people detected: 1
+2024-08-31 11:49:30,199 - Number of people detected: 2
+2024-08-31 11:49:31,563 - Number of people detected: 1
+2024-08-31 11:49:31,840 - Number of people detected: 2
+2024-08-31 11:49:32,124 - Number of people detected: 1
+2024-08-31 11:49:34,842 - Number of people detected: 2
+2024-08-31 11:49:35,082 - Number of people detected: 1
+2024-08-31 11:49:35,341 - Number of people detected: 2
+2024-08-31 11:49:36,436 - Number of people detected: 1
+2024-08-31 11:49:36,955 - Number of people detected: 2
+2024-08-31 11:49:37,769 - Number of people detected: 1
+2024-08-31 11:49:38,307 - Number of people detected: 2
+2024-08-31 11:49:38,572 - Number of people detected: 1
+2024-08-31 11:49:40,432 - Number of people detected: 2
+2024-08-31 11:49:41,492 - Number of people detected: 1
+2024-08-31 11:49:41,744 - Number of people detected: 2
+2024-08-31 11:49:47,210 - Number of people detected: 1
+2024-08-31 11:49:47,444 - Number of people detected: 2
+2024-08-31 11:49:47,922 - Number of people detected: 1
+2024-08-31 11:49:48,575 - Number of people detected: 2
+2024-08-31 11:49:48,840 - Number of people detected: 1
+2024-08-31 11:49:49,412 - Number of people detected: 2
+2024-08-31 11:49:49,667 - Number of people detected: 1
+2024-08-31 11:49:53,648 - Number of people detected: 2
+2024-08-31 11:49:53,983 - Number of people detected: 1
+2024-08-31 11:49:54,333 - Number of people detected: 2
+2024-08-31 11:49:55,165 - Number of people detected: 1
+2024-08-31 11:49:59,742 - Number of people detected: 2
+2024-08-31 11:50:00,326 - Number of people detected: 1
+2024-08-31 11:50:15,569 - Number of people detected: 2
+2024-08-31 11:50:15,856 - Number of people detected: 1
+2024-08-31 11:50:19,296 - Number of people detected: 2
+2024-08-31 11:50:19,550 - Number of people detected: 1
+2024-08-31 11:50:21,019 - Number of people detected: 2
+2024-08-31 11:50:21,299 - Number of people detected: 1
+2024-08-31 11:50:26,590 - Number of people detected: 2
+2024-08-31 11:50:26,825 - Number of people detected: 1
+2024-08-31 11:50:43,166 - Number of people detected: 2
+2024-08-31 11:50:43,402 - Number of people detected: 1
+2024-08-31 11:50:43,640 - Number of people detected: 2
+2024-08-31 11:50:44,147 - Number of people detected: 1
+2024-08-31 11:50:44,631 - Number of people detected: 2
+2024-08-31 11:50:44,872 - Number of people detected: 1
+2024-08-31 11:50:48,032 - Number of people detected: 2
+2024-08-31 11:50:48,290 - Number of people detected: 1
+2024-08-31 11:50:52,669 - Number of people detected: 2
+2024-08-31 11:50:52,923 - Number of people detected: 1
+2024-08-31 11:50:53,164 - Number of people detected: 2
+2024-08-31 11:50:55,349 - Number of people detected: 1
+2024-08-31 11:50:55,579 - Number of people detected: 2
+2024-08-31 11:51:05,331 - Number of people detected: 1
+2024-08-31 11:51:05,566 - Number of people detected: 2
+2024-08-31 11:51:05,812 - Number of people detected: 1
+2024-08-31 11:51:06,290 - Number of people detected: 2
+2024-08-31 11:51:06,531 - Number of people detected: 1
+2024-08-31 11:51:07,009 - Number of people detected: 2
+2024-08-31 11:51:23,172 - Number of people detected: 3
+2024-08-31 11:51:23,450 - Number of people detected: 2
+2024-08-31 11:51:31,091 - Number of people detected: 3
+2024-08-31 11:51:31,371 - Number of people detected: 2
+2024-08-31 11:51:33,565 - Number of people detected: 3
+2024-08-31 11:51:33,833 - Number of people detected: 2
+2024-08-31 11:51:34,096 - Number of people detected: 3
+2024-08-31 11:51:34,634 - Number of people detected: 2
+2024-08-31 11:51:37,249 - Number of people detected: 3
+2024-08-31 11:51:37,538 - Number of people detected: 2
+2024-08-31 11:51:40,421 - Number of people detected: 1
+2024-08-31 11:51:40,668 - Number of people detected: 2
+2024-08-31 11:52:13,375 - Number of people detected: 1
+2024-08-31 11:52:13,861 - Number of people detected: 2
+2024-08-31 11:52:20,100 - Number of people detected: 1
+2024-08-31 11:52:20,377 - Number of people detected: 2
+2024-08-31 11:52:21,145 - Number of people detected: 1
+2024-08-31 11:52:21,389 - Number of people detected: 2
+2024-08-31 11:52:23,063 - Number of people detected: 1
+2024-08-31 11:52:23,315 - Number of people detected: 2
+2024-08-31 11:52:29,055 - 127.0.0.1 - - [31/Aug/2024 11:52:29] "GET / HTTP/1.1" 200 -
+2024-08-31 11:52:29,900 - 127.0.0.1 - - [31/Aug/2024 11:52:29] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-08-31 11:52:32,152 - Number of people detected: 1
+2024-08-31 11:52:32,158 - 127.0.0.1 - - [31/Aug/2024 11:52:32] "GET /video_feed HTTP/1.1" 200 -
+2024-08-31 11:52:32,411 - Number of people detected: 2
+2024-08-31 11:52:32,894 - Number of people detected: 1
+2024-08-31 11:52:33,647 - Number of people detected: 2
+2024-08-31 11:52:34,201 - Number of people detected: 1
+2024-08-31 11:52:35,203 - Number of people detected: 2
+2024-08-31 11:52:36,653 - Number of people detected: 3
+2024-08-31 11:52:36,895 - Number of people detected: 2
+2024-08-31 11:52:37,131 - Number of people detected: 3
+2024-08-31 11:52:37,884 - Number of people detected: 2
+2024-08-31 11:52:38,119 - Number of people detected: 3
+2024-08-31 11:52:38,590 - Number of people detected: 2
+2024-08-31 11:52:39,699 - Number of people detected: 3
+2024-08-31 11:52:39,974 - Number of people detected: 2
+2024-08-31 11:52:40,758 - Number of people detected: 3
+2024-08-31 11:52:41,009 - Number of people detected: 2
+2024-08-31 11:52:41,491 - Number of people detected: 3
+2024-08-31 11:52:42,269 - Number of people detected: 2
+2024-08-31 11:52:43,617 - Number of people detected: 3
+2024-08-31 11:52:43,882 - Number of people detected: 2
+2024-08-31 11:52:44,166 - Number of people detected: 3
+2024-08-31 11:52:44,469 - Number of people detected: 2
+2024-08-31 11:52:45,361 - Number of people detected: 3
+2024-08-31 11:52:45,899 - Number of people detected: 2
+2024-08-31 11:52:47,495 - Number of people detected: 3
+2024-08-31 11:52:47,748 - Number of people detected: 2
+2024-08-31 11:52:48,041 - Number of people detected: 3
+2024-08-31 11:52:49,069 - Number of people detected: 2
+2024-08-31 11:52:49,582 - Number of people detected: 3
+2024-08-31 11:52:49,816 - Number of people detected: 2
+2024-08-31 11:52:50,051 - Number of people detected: 3
+2024-08-31 11:52:50,285 - Number of people detected: 2
+2024-08-31 11:52:50,527 - Number of people detected: 3
+2024-08-31 11:52:50,758 - Number of people detected: 2
+2024-08-31 11:52:51,467 - Number of people detected: 3
+2024-08-31 11:52:51,700 - Number of people detected: 2
+2024-08-31 11:52:51,935 - Number of people detected: 3
+2024-08-31 11:52:55,703 - Number of people detected: 2
+2024-08-31 11:52:56,203 - Number of people detected: 3
+2024-08-31 11:53:01,002 - Number of people detected: 1
+2024-08-31 11:53:01,248 - Number of people detected: 3
+2024-08-31 11:53:01,717 - Number of people detected: 2
+2024-08-31 11:53:01,956 - Number of people detected: 3
+2024-08-31 11:53:02,424 - Number of people detected: 2
+2024-08-31 11:53:02,655 - Number of people detected: 3
+2024-08-31 11:53:03,827 - Number of people detected: 1
+2024-08-31 11:53:04,062 - Number of people detected: 3
+2024-08-31 11:53:04,306 - Number of people detected: 2
+2024-08-31 11:53:05,244 - Number of people detected: 1
+2024-08-31 11:53:05,486 - Number of people detected: 2
+2024-08-31 11:53:08,068 - Number of people detected: 3
+2024-08-31 11:53:08,303 - Number of people detected: 2
+2024-08-31 11:53:08,539 - Number of people detected: 3
+2024-08-31 11:53:08,771 - Number of people detected: 2
+2024-08-31 11:53:10,404 - Number of people detected: 3
+2024-08-31 11:53:10,870 - Number of people detected: 2
+2024-08-31 11:53:11,107 - Number of people detected: 1
+2024-08-31 11:53:11,587 - Number of people detected: 2
+2024-08-31 11:53:12,568 - Number of people detected: 1
+2024-08-31 11:53:12,824 - Number of people detected: 2
+2024-08-31 11:53:13,599 - Number of people detected: 3
+2024-08-31 11:53:13,837 - Number of people detected: 2
+2024-08-31 11:53:15,611 - Number of people detected: 3
+2024-08-31 11:53:16,394 - Number of people detected: 2
+2024-08-31 11:53:17,199 - Number of people detected: 3
+2024-08-31 11:53:17,459 - Number of people detected: 2
+2024-08-31 11:53:17,704 - Number of people detected: 3
+2024-08-31 11:53:17,963 - Number of people detected: 2
+2024-08-31 11:53:21,526 - Number of people detected: 1
+2024-08-31 11:54:39,105 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.224.156:5000
+2024-08-31 11:54:39,105 - [33mPress CTRL+C to quit[0m
+2024-08-31 11:55:00,319 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.224.156:5000
+2024-08-31 11:55:00,319 - [33mPress CTRL+C to quit[0m
+2024-08-31 11:55:10,837 - 127.0.0.1 - - [31/Aug/2024 11:55:10] "GET / HTTP/1.1" 200 -
+2024-08-31 11:55:11,092 - 127.0.0.1 - - [31/Aug/2024 11:55:11] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-08-31 11:55:14,083 - Number of people detected: 1
+2024-08-31 11:55:14,615 - Logged to database: {'license_plate': 'ABC123', 'people': 1}
+2024-08-31 11:55:14,620 - 127.0.0.1 - - [31/Aug/2024 11:55:14] "GET /video_feed HTTP/1.1" 200 -
+2024-08-31 11:55:20,603 - Number of people detected: 2
+2024-08-31 11:55:21,172 - Logged to database: {'license_plate': 'ABC123', 'people': 2}
+2024-08-31 11:55:21,425 - Number of people detected: 1
+2024-08-31 11:55:21,828 - Logged to database: {'license_plate': 'ABC123', 'people': 1}
+2024-08-31 11:55:28,049 - Number of people detected: 2
+2024-08-31 11:55:28,553 - Logged to database: {'license_plate': 'ABC123', 'people': 2}
+2024-08-31 11:55:28,824 - Number of people detected: 1
+2024-08-31 11:55:29,323 - Logged to database: {'license_plate': 'ABC123', 'people': 1}
+2024-08-31 11:55:29,840 - Number of people detected: 2
+2024-08-31 11:55:30,265 - Logged to database: {'license_plate': 'ABC123', 'people': 2}
+2024-08-31 11:55:30,785 - Number of people detected: 1
+2024-08-31 11:55:31,235 - Logged to database: {'license_plate': 'ABC123', 'people': 1}
+2024-08-31 11:55:31,715 - Number of people detected: 2
+2024-08-31 11:55:32,225 - Logged to database: {'license_plate': 'ABC123', 'people': 2}
+2024-08-31 11:55:32,465 - Number of people detected: 1
+2024-08-31 11:55:32,915 - Logged to database: {'license_plate': 'ABC123', 'people': 1}
+2024-08-31 11:55:34,233 - Number of people detected: 2
+2024-08-31 11:55:34,707 - Logged to database: {'license_plate': 'ABC123', 'people': 2}
+2024-08-31 11:55:34,947 - Number of people detected: 1
+2024-08-31 11:55:35,353 - Logged to database: {'license_plate': 'ABC123', 'people': 1}
+2024-08-31 11:55:36,315 - Number of people detected: 2
+2024-08-31 11:55:36,825 - Logged to database: {'license_plate': 'ABC123', 'people': 2}
+2024-08-31 11:55:43,090 - Number of people detected: 1
+2024-08-31 11:55:43,532 - Logged to database: {'license_plate': 'ABC123', 'people': 1}
+2024-08-31 11:55:43,819 - Number of people detected: 2
+2024-08-31 11:55:44,226 - Logged to database: {'license_plate': 'ABC123', 'people': 2}
+2024-08-31 11:55:44,739 - Number of people detected: 1
+2024-08-31 11:55:45,345 - Logged to database: {'license_plate': 'ABC123', 'people': 1}
+2024-08-31 11:55:48,833 - Number of people detected: 2
+2024-08-31 11:55:49,307 - Logged to database: {'license_plate': 'ABC123', 'people': 2}
+2024-08-31 11:55:49,825 - Number of people detected: 1
+2024-08-31 11:55:50,304 - Logged to database: {'license_plate': 'ABC123', 'people': 1}
+2024-08-31 11:55:52,313 - Number of people detected: 2
+2024-08-31 11:55:52,787 - Logged to database: {'license_plate': 'ABC123', 'people': 2}
+2024-08-31 11:55:53,039 - Number of people detected: 1
+2024-08-31 11:55:53,468 - Logged to database: {'license_plate': 'ABC123', 'people': 1}
+2024-08-31 11:55:53,724 - Number of people detected: 2
+2024-08-31 11:55:54,226 - Logged to database: {'license_plate': 'ABC123', 'people': 2}
+2024-08-31 11:55:54,481 - Number of people detected: 1
+2024-08-31 11:55:54,866 - Logged to database: {'license_plate': 'ABC123', 'people': 1}
+2024-08-31 11:56:02,897 - Number of people detected: 2
+2024-08-31 11:56:03,346 - Logged to database: {'license_plate': 'ABC123', 'people': 2}
+2024-08-31 11:56:03,646 - Number of people detected: 1
+2024-08-31 11:56:04,193 - Logged to database: {'license_plate': 'ABC123', 'people': 1}
+2024-08-31 12:01:52,454 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.224.156:5000
+2024-08-31 12:01:52,455 - [33mPress CTRL+C to quit[0m
+2024-08-31 12:01:57,655 - 127.0.0.1 - - [31/Aug/2024 12:01:57] "GET / HTTP/1.1" 200 -
+2024-08-31 12:01:57,664 - 127.0.0.1 - - [31/Aug/2024 12:01:57] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2024-08-31 12:02:01,282 - Number of people detected: 3
+2024-08-31 12:02:02,009 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:02:02,015 - 127.0.0.1 - - [31/Aug/2024 12:02:02] "GET /video_feed HTTP/1.1" 200 -
+2024-08-31 12:02:02,303 - Number of people detected: 1
+2024-08-31 12:02:02,770 - Logged to database: {'license_plate': 'ABC123', 'people': 1}
+2024-08-31 12:02:03,020 - Number of people detected: 4
+2024-08-31 12:02:03,531 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:02:03,781 - Number of people detected: 3
+2024-08-31 12:02:04,319 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:02:07,612 - Number of people detected: 4
+2024-08-31 12:02:08,169 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:02:09,105 - Number of people detected: 3
+2024-08-31 12:02:09,568 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:02:10,036 - Number of people detected: 2
+2024-08-31 12:02:10,601 - Logged to database: {'license_plate': 'ABC123', 'people': 2}
+2024-08-31 12:02:10,839 - Number of people detected: 3
+2024-08-31 12:02:11,331 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:02:14,599 - Number of people detected: 4
+2024-08-31 12:02:15,129 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:02:16,781 - Number of people detected: 3
+2024-08-31 12:02:17,288 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:02:17,533 - Number of people detected: 4
+2024-08-31 12:02:17,969 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:02:18,211 - Number of people detected: 3
+2024-08-31 12:02:18,679 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:02:18,915 - Number of people detected: 4
+2024-08-31 12:02:19,484 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:02:20,970 - Number of people detected: 3
+2024-08-31 12:02:21,439 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:02:21,680 - Number of people detected: 4
+2024-08-31 12:02:22,171 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:02:27,485 - Number of people detected: 3
+2024-08-31 12:02:28,011 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:02:28,259 - Number of people detected: 4
+2024-08-31 12:02:28,689 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:02:30,105 - Number of people detected: 3
+2024-08-31 12:02:30,578 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:02:30,828 - Number of people detected: 4
+2024-08-31 12:02:31,313 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:02:35,621 - Number of people detected: 3
+2024-08-31 12:02:36,170 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:02:36,880 - Number of people detected: 4
+2024-08-31 12:02:37,414 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:02:37,892 - Number of people detected: 3
+2024-08-31 12:02:38,449 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:02:38,683 - Number of people detected: 4
+2024-08-31 12:02:39,210 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:02:41,096 - Number of people detected: 3
+2024-08-31 12:02:41,658 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:02:43,069 - Number of people detected: 4
+2024-08-31 12:02:43,540 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:02:48,716 - Number of people detected: 3
+2024-08-31 12:02:49,338 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:02:49,579 - Number of people detected: 4
+2024-08-31 12:02:50,050 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:03:00,970 - Number of people detected: 3
+2024-08-31 12:03:01,570 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:03:02,044 - Number of people detected: 4
+2024-08-31 12:03:02,651 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:03:05,233 - Number of people detected: 3
+2024-08-31 12:03:05,898 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:03:06,144 - Number of people detected: 4
+2024-08-31 12:03:06,731 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:03:09,310 - Number of people detected: 3
+2024-08-31 12:03:09,850 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:03:10,782 - Number of people detected: 4
+2024-08-31 12:03:11,331 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:03:12,042 - Number of people detected: 3
+2024-08-31 12:03:12,570 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:03:13,982 - Number of people detected: 4
+2024-08-31 12:03:14,451 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:03:14,695 - Number of people detected: 3
+2024-08-31 12:03:15,289 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:03:15,528 - Number of people detected: 4
+2024-08-31 12:03:16,130 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:03:16,619 - Number of people detected: 2
+2024-08-31 12:03:17,170 - Logged to database: {'license_plate': 'ABC123', 'people': 2}
+2024-08-31 12:03:17,405 - Number of people detected: 3
+2024-08-31 12:03:17,939 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:03:18,175 - Number of people detected: 4
+2024-08-31 12:03:18,771 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:03:19,716 - Number of people detected: 3
+2024-08-31 12:03:20,291 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:03:20,533 - Number of people detected: 4
+2024-08-31 12:03:21,089 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:03:24,091 - Number of people detected: 3
+2024-08-31 12:03:24,612 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:03:24,857 - Number of people detected: 4
+2024-08-31 12:03:25,449 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:03:25,929 - Number of people detected: 3
+2024-08-31 12:03:26,412 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:03:26,647 - Number of people detected: 4
+2024-08-31 12:03:27,170 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:03:32,740 - Number of people detected: 3
+2024-08-31 12:03:33,291 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:03:34,923 - Number of people detected: 4
+2024-08-31 12:03:35,532 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:03:36,947 - Number of people detected: 3
+2024-08-31 12:03:37,450 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:03:37,687 - Number of people detected: 4
+2024-08-31 12:03:38,298 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:03:39,467 - Number of people detected: 3
+2024-08-31 12:03:40,018 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:03:40,253 - Number of people detected: 4
+2024-08-31 12:03:40,772 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:03:41,244 - Number of people detected: 3
+2024-08-31 12:03:41,811 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:03:42,054 - Number of people detected: 4
+2024-08-31 12:03:42,572 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:03:46,332 - Number of people detected: 3
+2024-08-31 12:03:46,852 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:03:47,327 - Number of people detected: 4
+2024-08-31 12:03:47,890 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:03:49,052 - Number of people detected: 3
+2024-08-31 12:03:49,572 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:03:50,059 - Number of people detected: 4
+2024-08-31 12:03:50,659 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:03:59,520 - Number of people detected: 3
+2024-08-31 12:04:00,093 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:04:00,336 - Number of people detected: 4
+2024-08-31 12:04:00,811 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:04:10,573 - Number of people detected: 3
+2024-08-31 12:04:11,260 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:04:11,502 - Number of people detected: 4
+2024-08-31 12:04:12,012 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:04:16,528 - Number of people detected: 3
+2024-08-31 12:04:17,092 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:04:17,417 - Number of people detected: 4
+2024-08-31 12:04:18,013 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:04:38,277 - Number of people detected: 3
+2024-08-31 12:04:38,893 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:04:40,327 - Number of people detected: 4
+2024-08-31 12:04:40,933 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:04:43,060 - Number of people detected: 3
+2024-08-31 12:04:43,671 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:04:43,944 - Number of people detected: 4
+2024-08-31 12:04:44,541 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:04:45,060 - Number of people detected: 3
+2024-08-31 12:04:45,574 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:04:47,291 - Number of people detected: 4
+2024-08-31 12:04:47,814 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:04:56,827 - Number of people detected: 3
+2024-08-31 12:04:57,461 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:04:57,998 - Number of people detected: 4
+2024-08-31 12:04:58,454 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:04:58,721 - Number of people detected: 3
+2024-08-31 12:04:59,256 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:04:59,530 - Number of people detected: 4
+2024-08-31 12:05:00,092 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:05:07,258 - Number of people detected: 3
+2024-08-31 12:05:07,861 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:05:09,987 - Number of people detected: 4
+2024-08-31 12:05:10,654 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:05:12,139 - Number of people detected: 3
+2024-08-31 12:05:12,911 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:05:15,402 - Number of people detected: 4
+2024-08-31 12:05:15,895 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:05:35,039 - Number of people detected: 3
+2024-08-31 12:05:35,501 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:05:35,748 - Number of people detected: 4
+2024-08-31 12:05:36,256 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:05:47,333 - Number of people detected: 3
+2024-08-31 12:05:47,812 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:05:51,401 - Number of people detected: 4
+2024-08-31 12:05:51,857 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:05:52,442 - Number of people detected: 2
+2024-08-31 12:05:52,815 - Error logging to database: 502 Server Error: Bad Gateway for url: https://observant-integrity-production.up.railway.app/vehicles/update_people/
+2024-08-31 12:05:53,075 - Number of people detected: 3
+2024-08-31 12:05:53,536 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:05:53,783 - Number of people detected: 4
+2024-08-31 12:05:54,260 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:05:59,706 - Number of people detected: 3
+2024-08-31 12:06:00,136 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:06:00,393 - Number of people detected: 4
+2024-08-31 12:06:00,856 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:06:07,293 - Number of people detected: 3
+2024-08-31 12:06:07,776 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:06:10,902 - Number of people detected: 4
+2024-08-31 12:06:11,386 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:06:14,904 - Number of people detected: 3
+2024-08-31 12:06:15,419 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:06:15,659 - Number of people detected: 4
+2024-08-31 12:06:16,058 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:06:16,564 - Number of people detected: 3
+2024-08-31 12:06:16,973 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:06:17,217 - Number of people detected: 4
+2024-08-31 12:06:17,732 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:06:18,451 - Number of people detected: 3
+2024-08-31 12:06:18,855 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:06:20,486 - Number of people detected: 4
+2024-08-31 12:06:20,936 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:06:21,710 - Number of people detected: 3
+2024-08-31 12:06:22,153 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:06:22,398 - Number of people detected: 4
+2024-08-31 12:06:22,898 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:06:24,076 - Number of people detected: 3
+2024-08-31 12:06:24,495 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:06:24,735 - Number of people detected: 4
+2024-08-31 12:06:25,137 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:06:27,800 - Number of people detected: 3
+2024-08-31 12:06:28,188 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:06:28,899 - Number of people detected: 4
+2024-08-31 12:06:29,373 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:06:29,619 - Number of people detected: 3
+2024-08-31 12:06:30,073 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:06:30,312 - Number of people detected: 4
+2024-08-31 12:06:30,819 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:06:31,059 - Number of people detected: 3
+2024-08-31 12:06:31,537 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:06:32,062 - Number of people detected: 4
+2024-08-31 12:06:32,537 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:06:33,234 - Number of people detected: 3
+2024-08-31 12:06:33,709 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:06:35,348 - Number of people detected: 4
+2024-08-31 12:06:35,778 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:06:37,507 - Number of people detected: 3
+2024-08-31 12:06:38,018 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:06:39,636 - Number of people detected: 4
+2024-08-31 12:06:40,133 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:07:04,877 - Number of people detected: 3
+2024-08-31 12:07:05,418 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:07:12,664 - Number of people detected: 4
+2024-08-31 12:07:13,138 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:07:13,376 - Number of people detected: 3
+2024-08-31 12:07:13,818 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:07:14,063 - Number of people detected: 4
+2024-08-31 12:07:14,539 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:07:15,001 - Number of people detected: 3
+2024-08-31 12:07:15,379 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:07:15,612 - Number of people detected: 4
+2024-08-31 12:07:16,058 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:07:16,997 - Number of people detected: 3
+2024-08-31 12:07:17,444 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:07:18,837 - Number of people detected: 4
+2024-08-31 12:07:19,298 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:07:19,536 - Number of people detected: 3
+2024-08-31 12:07:20,018 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:07:20,249 - Number of people detected: 4
+2024-08-31 12:07:20,698 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:07:22,091 - Number of people detected: 3
+2024-08-31 12:07:22,575 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:07:23,493 - Number of people detected: 4
+2024-08-31 12:07:23,978 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:07:24,446 - Number of people detected: 3
+2024-08-31 12:07:24,898 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:07:25,369 - Number of people detected: 2
+2024-08-31 12:07:25,779 - Logged to database: {'license_plate': 'ABC123', 'people': 2}
+2024-08-31 12:07:26,018 - Number of people detected: 3
+2024-08-31 12:07:26,419 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:07:26,660 - Number of people detected: 4
+2024-08-31 12:07:27,178 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:07:27,421 - Number of people detected: 3
+2024-08-31 12:07:27,898 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:07:30,204 - Number of people detected: 4
+2024-08-31 12:07:30,620 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:07:38,491 - Number of people detected: 3
+2024-08-31 12:07:38,980 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:07:39,223 - Number of people detected: 5
+2024-08-31 12:07:39,694 - Logged to database: {'license_plate': 'ABC123', 'people': 5}
+2024-08-31 12:07:41,099 - Number of people detected: 4
+2024-08-31 12:07:41,537 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:07:41,776 - Number of people detected: 3
+2024-08-31 12:07:42,221 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:07:42,483 - Number of people detected: 4
+2024-08-31 12:07:42,979 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:07:46,781 - Number of people detected: 5
+2024-08-31 12:07:47,259 - Logged to database: {'license_plate': 'ABC123', 'people': 5}
+2024-08-31 12:07:47,512 - Number of people detected: 4
+2024-08-31 12:07:47,990 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:07:48,271 - Number of people detected: 3
+2024-08-31 12:07:48,784 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:07:49,584 - Number of people detected: 4
+2024-08-31 12:07:49,979 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:07:50,484 - Number of people detected: 3
+2024-08-31 12:07:50,939 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:07:51,183 - Number of people detected: 4
+2024-08-31 12:07:51,620 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:07:51,871 - Number of people detected: 3
+2024-08-31 12:07:52,360 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:07:54,470 - Number of people detected: 4
+2024-08-31 12:07:54,898 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
+2024-08-31 12:07:55,844 - Number of people detected: 3
+2024-08-31 12:07:56,258 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:07:57,200 - Number of people detected: 2
+2024-08-31 12:07:57,583 - Logged to database: {'license_plate': 'ABC123', 'people': 2}
+2024-08-31 12:07:57,823 - Number of people detected: 3
+2024-08-31 12:07:58,302 - Logged to database: {'license_plate': 'ABC123', 'people': 3}
+2024-08-31 12:07:58,793 - Number of people detected: 4
+2024-08-31 12:07:59,335 - Logged to database: {'license_plate': 'ABC123', 'people': 4}
