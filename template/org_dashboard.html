@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Driver Dashboard</title>
+    <title>Organization Dashboard</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -97,41 +97,41 @@
     <div class="container mx-auto p-6 pt-24">
         <!-- Main Header -->
         <header class="mb-8">
-            <h1 class="text-4xl font-bold mb-4 text-gray-800 dark:text-gray-100 text-center">Driver Dashboard</h1>
-            <p class="text-lg text-gray-600 dark:text-gray-300 text-center">Manage your rides, view earnings, and update your profile.</p>
+            <h1 class="text-4xl font-bold mb-4 text-gray-800 dark:text-gray-100 text-center">Organization Dashboard</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300 text-center">Monitor and manage organizational activities efficiently.</p>
         </header>
 
         <!-- Main Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-            <!-- Manage Rides Card -->
-            <a href="driver_dashboard/manage-rides.html" class="card block">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+            <!-- Map Card -->
+            <a href="/template/map/vehicles.html" class="card block">
                 <div class="flex flex-col items-center justify-center h-full">
-                    <i class="fas fa-car card-icon text-green-500"></i>
-                    <h2 class="card-title">Manage Rides</h2>
+                    <i class="fas fa-map-marker-alt card-icon text-blue-500"></i>
+                    <h2 class="card-title">Map</h2>
                 </div>
             </a>
 
-            <!-- Earnings Card -->
-            <a href="driver_dashboard/earnings.html" class="card block">
+            <!-- Driver List Card -->
+            <a href="organization_dashboard/drivers.html" class="card block">
                 <div class="flex flex-col items-center justify-center h-full">
-                    <i class="fas fa-dollar-sign card-icon text-blue-500"></i>
-                    <h2 class="card-title">Earnings</h2>
+                    <i class="fas fa-users card-icon text-green-500"></i>
+                    <h2 class="card-title">Driver List</h2>
                 </div>
             </a>
 
-            <!-- Profile Card -->
-            <a href="driver_dashboard/profile.html" class="card block">
+            <!-- Ride Statistics Card -->
+            <a href="/template/organization_overview.html" class="card block">
                 <div class="flex flex-col items-center justify-center h-full">
-                    <i class="fas fa-user card-icon text-yellow-500"></i>
-                    <h2 class="card-title">Profile</h2>
+                    <i class="fas fa-chart-line card-icon text-yellow-500"></i>
+                    <h2 class="card-title">Overview</h2>
                 </div>
             </a>
 
-            <!-- Support Card -->
-            <a href="driver_dashboard/support.html" class="card block">
+            <!-- Settings Card -->
+            <a href="organization_dashboard/settings.html" class="card block">
                 <div class="flex flex-col items-center justify-center h-full">
-                    <i class="fas fa-headset card-icon text-gray-500"></i>
-                    <h2 class="card-title">Support</h2>
+                    <i class="fas fa-cogs card-icon text-gray-500"></i>
+                    <h2 class="card-title">Settings</h2>
                 </div>
             </a>
         </div>
@@ -141,7 +141,7 @@
     <button class="dark-mode-toggle" id="darkModeToggle">
         <i class="fas fa-moon"></i>
     </button>
-    
+
     <!-- Notification Area -->
     <div id="notification" class="hidden">
         <span id="notificationMessage"></span>
