@@ -8,9 +8,11 @@
         <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
+        <!-- <script src="https://platform.trueselph.com/messenger/agent/cm0ddpguq00r9ut6lrwiqa6fh.js"></script> -->
     </head>
     <body>
         <div id="navbar"></div>
+        <script src="https://platform.trueselph.com/messenger/agent/cm0ddpguq00r9ut6lrwiqa6fh.js"></script>
     </body>
 
     <script>
@@ -20,6 +22,14 @@
             console.log("User logged out");
             // Redirect to the register page
             window.location.href = '/template/signup.html';
+        }
+
+        function view_menu(event) {
+            event.preventDefault();
+            // current_path = localStorage.getItem('current_path');
+            let current_path = JSON.parse(localStorage.getItem('current_path'));
+
+            window.location.href = "/template/"+current_path;
         }
 
         // Function to hide elements by ID
@@ -64,10 +74,10 @@
             document.getElementById("navbar").innerHTML = data;
 
             // Check user login status
-            const userLoggedIn = JSON.parse(localStorage.getItem("userRegistered"));
+            const userLoggedIn = JSON.parse(localStorage.getItem("token"));
             console.log("userLoggedIn:", userLoggedIn);
 
-            if (userLoggedIn && userLoggedIn.token) {
+            if (userLoggedIn) {
                 console.log("userLoggedIn hide");
                 hideElementById("login-link");
                 hideElementById("register-link");

@@ -106,6 +106,7 @@
                 data['token'] = "token_123";
                 localStorage.setItem('userRegistered', JSON.stringify(data));
                 // await postData('https://observant-integrity-production.up.railway.app/customers', data);
+                localStorage.setItem('current_path', JSON.stringify("customer_dashboard.html"));
                 window.location.href = 'customer_dashboard.html';
             } else if (accountType === 'driver') {
                 const phoneNumber = document.getElementById('phoneNumber').value;
@@ -115,7 +116,9 @@
                 data['token'] = "token_123";
                 localStorage.setItem('userRegistered', JSON.stringify(data));
                 // await postData('https://observant-integrity-production.up.railway.app/drivers', data);
+                localStorage.setItem('current_path', JSON.stringify("driver_dashboard.html"));
                 window.location.href = 'driver_dashboard.html';
+
             } else if (accountType === 'organization') {
                 const contactPhoneNumber = document.getElementById('phoneNumber').value;
                 data = { name, contact_email: email, contact_phone_number: contactPhoneNumber, password };
@@ -133,7 +136,8 @@
                 // data_response = await response.json();
                 localStorage.setItem('token', JSON.stringify("defaulttoken"));
                 // await postData('https://observant-integrity-production.up.railway.app/organizations', data);
-                window.location.href = 'organization_dashboard.html';
+                localStorage.setItem('current_path', JSON.stringify("organization_overview.html"));
+                window.location.href = 'organization_overview.html';
             }
         }
 

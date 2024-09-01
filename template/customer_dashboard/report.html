@@ -236,7 +236,7 @@
         // Fetch user data from localStorage and populate the form
         document.addEventListener("DOMContentLoaded", async() => {
             await fetchDrivers(); // Fetch drivers data from the API
-            const userData = JSON.parse(localStorage.getItem("userRegistered"));
+            const userData = JSON.parse(localStorage.getItem("token"));
             if (userData && userData.registered) {
                 document.getElementById("firstName").value = userData.firstName;
                 document.getElementById("lastName").value = userData.lastName;
@@ -306,6 +306,15 @@
             // Redirect to the register page
             window.location.href = '/template/signup.html';
         }
+
+        function view_menu(event) {
+            event.preventDefault();
+            // current_path = localStorage.getItem('current_path');
+            let current_path = JSON.parse(localStorage.getItem('current_path'));
+
+            window.location.href = "/template/"+current_path;
+        }
+        
         // Function to hide elements by ID
         function hideElementById(id) {
             const element = document.getElementById(id);
@@ -348,10 +357,10 @@
             document.getElementById("navbar").innerHTML = data;
 
             // Check user login status
-            const userLoggedIn = JSON.parse(localStorage.getItem("userRegistered"));
+            const userLoggedIn = JSON.parse(localStorage.getItem("token"));
             console.log("userLoggedIn:", userLoggedIn);
 
-            if (userLoggedIn && userLoggedIn.token) {
+            if (userLoggedIn) {
                 console.log("userLoggedIn hide");
                 hideElementById("login-link");
                 hideElementById("register-link");
@@ -394,7 +403,7 @@
 
           // Check user registration status
           const userRegistered = JSON.parse(
-            localStorage.getItem("userRegistered")
+            localStorage.getItem("token")
           );
           console.log("userRegistered:", userRegistered);
 
