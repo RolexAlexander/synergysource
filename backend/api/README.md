@@ -14,6 +14,7 @@ However, note that this will start the API server alone. All other necessary ser
 
 Additionally, you will need to update the hardcoded credentials in database.py so that the API connects seamlessly to your running PostgreSQL service.
 
+[LIVE API SERVER](https://observant-integrity-production.up.railway.app/docs)
 ## API Documentation
 
 Once the API is running, you can visit the following URL to access the interactive API documentation:
