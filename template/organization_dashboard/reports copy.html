@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Synergysource - Map</title>
+    <link rel="icon" type="image/webp" href="assets/logo2.png" />
+  </head>
+  <link
+    href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <body>
+    <div id="navbar"></div>
+    <!-- Driver Comments Table -->
+    <div class="bg-white rounded-lg shadow-md p-4">
+      <h3 class="font-semibold text-lg mb-4">Driver Comments</h3>
+      <table id="selection-table" class="min-w-full border-collapse rounded-lg">
+        <thead>
+          <tr class="bg-gray-200">
+            <th class="py-2 px-4 text-left rounded-l-lg">Driver Name</th>
+            <th class="py-2 px-4 text-left">Comments</th>
+            <th class="py-2 px-4 text-left">Created</th>
+            <th class="py-2 px-4 text-left rounded-r-lg">Reporter</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </body>
+
+  <script>
+      const feedbackData = [
+          { 
+              first_name: 'John', 
+              last_name: 'Doe', 
+              driver: 'John Smith', 
+              report: 'Great performance!', 
+              created_at: '30/08/2024, 19:18:18' 
+          },
+          { 
+              first_name: 'Jane', 
+              last_name: 'Smith', 
+              driver: 'Emily Johnson', 
+              report: 'Needs improvement in punctuality.', 
+              created_at: '30/08/2024, 19:20:00' 
+          },
+          { 
+              first_name: 'Mike', 
+              last_name: 'Johnson', 
+              driver: 'Chris Lee', 
+              report: 'Excellent feedback from customers.', 
+              created_at: '30/08/2024, 19:22:15' 
+          },
+          { 
+              first_name: 'Emily', 
+              last_name: 'Davis', 
+              driver: 'Anna Brown', 
+              report: 'Shows great leadership skills.', 
+              created_at: '30/08/2024, 19:25:30' 
+          },
+          { 
+              first_name: 'Chris', 
+              last_name: 'Lee', 
+              driver: 'David Wilson', 
+              report: 'Good team player but needs to work on communication.', 
+              created_at: '30/08/2024, 19:27:45' 
+          },
+          { 
+              first_name: 'Tharick', 
+              last_name: 'Jairam', 
+              driver: 'John Smith', 
+              report: 'sadfsadf', 
+              created_at: '30/08/2024, 19:18:18' 
+          },
+          { 
+              first_name: 'Sarah', 
+              last_name: 'Johnson', 
+              driver: 'Michael Brown', 
+              report: 'Overall performance is satisfactory.', 
+              created_at: '30/08/2024, 19:30:00' 
+          },
+          { 
+              first_name: 'Daniel', 
+              last_name: 'Williams', 
+              driver: 'Lisa Green', 
+              report: 'Needs to improve on time management.', 
+              created_at: '30/08/2024, 19:32:15' 
+          },
+          { 
+              first_name: 'Laura', 
+              last_name: 'Martinez', 
+              driver: 'Emily White', 
+              report: 'Great at problem-solving and very reliable.', 
+              created_at: '30/08/2024, 19:35:00' 
+          },
+          { 
+              first_name: 'James', 
+              last_name: 'Garcia', 
+              driver: 'Oliver Smith', 
+              report: 'Excellent communication skills and teamwork.', 
+              created_at: '30/08/2024, 19:37:30' 
+          },
+          { 
+              first_name: 'Nina', 
+              last_name: 'Roberts', 
+              driver: 'Sophia Johnson', 
+              report: 'Consistent and dependable with high-quality work.', 
+              created_at: '30/08/2024, 19:40:00' 
+          }
+      ];
+
+
+
+      const tableBody = document.querySelector("#selection-table tbody"); // Replace with your actual table ID
+
+      feedbackData.forEach(data => {
+          const row = document.createElement("tr");
+          row.classList.add("border-b");
+          
+          row.innerHTML = `
+              <td class="py-2 px-4">${data.driver}</td>
+              <td class="py-2 px-4">${data.report}</td>
+              <td class="py-2 px-4">${data.created_at}</td>
+              <td class="py-2 px-4">${data.first_name} ${data.last_name}</td>
+          `;
+          
+          tableBody.appendChild(row);
+      });
+    </script>
+
+  <script>
+    // Function to hide elements by ID
+    function hideElementById(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.style.display = "none";
+      }
+    }
+
+    // Function to show elements by ID
+    function showElementById(id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.style.display = "block";
+      }
+    }
+
+    // Fetch the navbar and check registration status
+    fetch("../navbar.html")
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("navbar").innerHTML = data;
+
+        // Check user registration status
+        const userRegistered = JSON.parse(
+          localStorage.getItem("token")
+        );
+        console.log("userRegistered:", userRegistered);
+
+        if (userRegistered && userRegistered.registered) {
+          hideElementById("login-link");
+          hideElementById("register-link");
+          showElementById("profile-link");
+        }
+
+        // Set up mobile menu toggle functionality
+        document
+          .querySelectorAll("[data-collapse-toggle]")
+          .forEach((button) => {
+            button.addEventListener("click", function () {
+              const mobileMenu = document.getElementById("mobile-menu-2");
+              if (mobileMenu) {
+                mobileMenu.style.display =
+                  mobileMenu.style.display === "none" ||
+                  mobileMenu.style.display === ""
+                    ? "block"
+                    : "none";
+              }
+            });
+          });
+      })
+      .catch((error) => console.error("Error loading navbar:", error));
+  </script>
+</html>

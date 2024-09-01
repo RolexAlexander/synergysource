@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map for User Pickups</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <div id="map" class="z-10"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([6.818, -58.119], 13);
+
+        // Add tile layer
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add heatmap layer
+        var heat = L.heatLayer([
+            [6.818, -58.119], [6.819, -58.120], [6.817, -58.118], [6.818, -58.121],
+            [6.816, -58.122], [6.820, -58.118], [6.821, -58.119], [6.817, -58.120],
+            [6.818, -58.121], [6.819, -58.122], [6.820, -58.119], [6.816, -58.120],
+            [6.821, -58.121], [6.817, -58.122], [6.818, -58.119], [6.819, -58.118],
+            [6.820, -58.119], [6.821, -58.120], [6.816, -58.121], [6.818, -58.122],
+            [6.817, -58.119], [6.819, -58.120], [6.818, -58.121], [6.820, -58.122],
+            [6.821, -58.119], [6.818, -58.120], [6.819, -58.121], [6.817, -58.122],
+            [6.818, -58.119], [6.820, -58.118], [6.821, -58.119], [6.818, -58.120],
+            [6.816, -58.121], [6.820, -58.122], [6.821, -58.119], [6.818, -58.120],
+            [6.819, -58.121], [6.817, -58.122], [6.820, -58.119], [6.821, -58.118],
+            [6.818, -58.119], [6.819, -58.120], [6.817, -58.121], [6.820, -58.122],
+            [6.821, -58.119], [6.815, -58.123], [6.822, -58.124], [6.823, -58.124],
+            [6.814, -58.124], [6.824, -58.124], [6.8245, -58.114], [6.8245, -58.114],
+            [6.8245, -58.114], [6.8245, -58.114]
+        ], {radius: 15, blur: 15, maxZoom: 18, minOpacity: 0.2}).addTo(map);
+
+        // Add geolocation control
+        L.control.locate({
+            position: 'topleft',
+            radius: 200,
+            follow: true,
+            keepCurrentZoomLevel: true
+        }).addTo(map);
+    </script>
+
+    <div
+      id="m-booked-bl-simple-week-vertical-71616"
+      class="absolute top-1/5 right-0 z-60"
+      style="display: none;"
+    >
+      <div
+        class="booked-wzs-160-275 weather-customize"
+        style="background-color: #137ae9; width: 160px"
+        id="width1 "
+      >
+        <div class="booked-wzs-160-275_in">
+          <div class="booked-wzs-160-275-data">
+            <div class="booked-wzs-160-275-left-img wrz-18"></div>
+            <div class="booked-wzs-160-275-right">
+              <div class="booked-wzs-day-deck">
+                <div class="booked-wzs-day-val">
+                  <div class="booked-wzs-day-number">
+                    <span class="plus">+</span>32
+                  </div>
+                  <div class="booked-wzs-day-dergee">
+                    <div class="booked-wzs-day-dergee-val">&deg;</div>
+                    <div class="booked-wzs-day-dergee-name">C</div>
+                  </div>
+                </div>
+                <div class="booked-wzs-day">
+                  <div class="booked-wzs-day-d">
+                    <span class="plus">+</span>32&deg;
+                  </div>
+                  <div class="booked-wzs-day-n">
+                    <span class="plus">+</span>23&deg;
+                  </div>
+                </div>
+              </div>
+              <div class="booked-wzs-160-275-info">
+                <div class="booked-wzs-160-275-city smolest">Georgetown</div>
+                <div class="booked-wzs-160-275-date">Friday, 30</div>
+              </div>
+            </div>
+          </div>
+          <table cellpadding="0" cellspacing="0" class="booked-wzs-table-160">
+            <tr>
+              <td class="week-day">
+                <span class="week-day-txt">Saturday</span>
+              </td>
+              <td class="week-day-ico">
+                <div class="wrz-sml wrzs-18"></div>
+              </td>
+              <td class="week-day-val"><span class="plus">+</span>32&deg;</td>
+              <td class="week-day-val"><span class="plus">+</span>23&deg;</td>
+            </tr>
+            <tr>
+              <td class="week-day">
+                <span class="week-day-txt">Sunday</span>
+              </td>
+              <td class="week-day-ico">
+                <div class="wrz-sml wrzs-18"></div>
+              </td>
+              <td class="week-day-val"><span class="plus">+</span>29&deg;</td>
+              <td class="week-day-val"><span class="plus">+</span>25&deg;</td>
+            </tr>
+            <tr>
+              <td class="week-day">
+                <span class="week-day-txt">Monday</span>
+              </td>
+              <td class="week-day-ico">
+                <div class="wrz-sml wrzs-18"></div>
+              </td>
+              <td class="week-day-val"><span class="plus">+</span>31&deg;</td>
+              <td class="week-day-val"><span class="plus">+</span>25&deg;</td>
+            </tr>
+            <tr>
+              <td class="week-day">
+                <span class="week-day-txt">Tuesday</span>
+              </td>
+              <td class="week-day-ico">
+                <div class="wrz-sml wrzs-18"></div>
+              </td>
+              <td class="week-day-val"><span class="plus">+</span>30&deg;</td>
+              <td class="week-day-val"><span class="plus">+</span>25&deg;</td>
+            </tr>
+            <tr>
+              <td class="week-day">
+                <span class="week-day-txt">Wednesday</span>
+              </td>
+              <td class="week-day-ico">
+                <div class="wrz-sml wrzs-18"></div>
+              </td>
+              <td class="week-day-val"><span class="plus">+</span>31&deg;</td>
+              <td class="week-day-val"><span class="plus">+</span>26&deg;</td>
+            </tr>
+            <tr>
+              <td class="week-day">
+                <span class="week-day-txt">Thursday</span>
+              </td>
+              <td class="week-day-ico">
+                <div class="wrz-sml wrzs-18"></div>
+              </td>
+              <td class="week-day-val"><span class="plus">+</span>31&deg;</td>
+              <td class="week-day-val"><span class="plus">+</span>26&deg;</td>
+            </tr>
+          </table>
+          <div class="booked-wzs-center">
+            <span class="booked-wzs-bottom-l">See 7-Day Forecast</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- buttons  -->
+    <div class="fixed bottom-2 right-2 flex space-x-2 z-50">
+      <a
+        class="bg-gray-600 text-white rounded-md px-2 py-1 text-sm hover:bg-gray-700"
+        href="/template/map/vehicles.html"
+        >Vehicles</a
+      >
+      <a
+
+        class="bg-gray-600 text-white rounded-md px-2 py-1 text-sm hover:bg-gray-700"
+        href="/template/map/routes.html"
+        >Routes</a
+      >
+      <a
+        class="bg-gray-800 text-white rounded-md px-2 py-1 text-sm hover:bg-gray-700"
+        href="/template/map/hotspots.html"
+        >hotspots</a
+      >
+      <a
+        class="bg-gray-600 text-white rounded-md px-2 py-1 text-sm hover:bg-gray-700"
+        href="/template/map/traffic.html"
+        >Traffic</a
+      >
+      <button
+        id="toggle-button"
+        class="bg-gray-600 text-white rounded-md px-2 py-1 text-sm hover:bg-gray-800"
+      >
+        Weather
+      </button>
+    </div>
+</body>
+
+  <!-- navbar script -->
+  <script>
+
+      // Function to logout
+      function logout(event) {
+          // event.preventDefault(); // Prevent the default anchor behavior
+          localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
+          console.log("User logged out");
+          // Redirect to the register page
+          window.location.href = '/template/signup.html';
+      }
+
+      function view_menu(event) {
+          event.preventDefault();
+          // current_path = localStorage.getItem('current_path');
+          let current_path = JSON.parse(localStorage.getItem('current_path'));
+
+          window.location.href = "/template/"+current_path;
+      }
+      
+
+      // Function to hide elements by ID
+      function hideElementById(id) {
+          const element = document.getElementById(id);
+          if (element) {
+              element.style.display = "none";
+          }
+      }
+
+      // Function to show elements by ID
+      function showElementById(id) {
+          const element = document.getElementById(id);
+          if (element) {
+              element.style.display = "block";
+          }
+      }
+
+      // Function to toggle profile dropdown visibility
+      function toggleProfileDropdown() {
+          const dropdown = document.getElementById('profile-dropdown');
+          dropdown.classList.toggle('hidden');
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function(event) {
+          if (!event.target.matches('#profile-button')) {
+              const dropdowns = document.getElementsByClassName('absolute');
+              for (let i = 0; i < dropdowns.length; i++) {
+                  const openDropdown = dropdowns[i];
+                  if (!openDropdown.classList.contains('hidden')) {
+                      openDropdown.classList.add('hidden');
+                  }
+              }
+          }
+      }
+
+
+      fetch("../navbar.html")
+      .then((response) => response.text())
+      .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+
+          // Check user login status
+          const userLoggedIn = JSON.parse(localStorage.getItem("token"));
+          console.log("userLoggedIn:", userLoggedIn);
+
+          if (userLoggedIn) {
+              console.log("userLoggedIn hide");
+              hideElementById("login-link");
+              hideElementById("register-link");
+              showElementById("profile-menu");
+          } else {
+              showElementById("login-link");
+              showElementById("register-link");
+              hideElementById("profile-menu");
+          }
+
+          // Set up mobile menu toggle functionality
+          // Assuming you will define this function
+          // setupMobileMenuToggle();
+      })
+      .catch((error) => console.error("Error loading navbar:", error));
+  
+  
+  </script>
+
+
+
+  <!-- get weather  -->
+  <script type="text/javascript">
+      var css_file = document.createElement("link");
+      var widgetUrl = location.href;
+      css_file.setAttribute("rel", "stylesheet");
+      css_file.setAttribute("type", "text/css");
+      css_file.setAttribute(
+        "href",
+        "https://s.bookcdn.com/css/w/booked-wzs-widget-160x275.css?v=0.0.1"
+      );
+      document.getElementsByTagName("head")[0].appendChild(css_file);
+      function setWidgetData_71616(data) {
+        if (typeof data != "undefined" && data.results.length > 0) {
+          for (var i = 0; i < data.results.length; ++i) {
+            var objMainBlock = document.getElementById(
+              "m-booked-bl-simple-week-vertical-71616"
+            );
+            if (objMainBlock !== null) {
+              var copyBlock = document.getElementById(
+                "m-bookew-weather-copy-" + data.results[i].widget_type
+              );
+              objMainBlock.innerHTML = data.results[i].html_code;
+              if (copyBlock !== null) objMainBlock.appendChild(copyBlock);
+            }
+          }
+        } else {
+          alert("data=undefined||data.results is empty");
+        }
+      }
+      var widgetSrc =
+        "https://widgets.booked.net/weather/info?action=get_weather_info;ver=7;cityID=11754;type=4;scode=;ltid=3458;domid=w209;anc_id=25591;countday=undefined;cmetric=1;wlangID=1;color=137AE9;wwidth=160;header_color=ffffff;text_color=333333;link_color=08488D;border_form=1;footer_color=ffffff;footer_text_color=333333;transparent=0;v=0.0.1";
+      widgetSrc += ";ref=" + widgetUrl;
+      widgetSrc += ";rand_id=71616";
+      var weatherBookedScript = document.createElement("script");
+      weatherBookedScript.setAttribute("type", "text/javascript");
+      weatherBookedScript.src = widgetSrc;
+      document.body.appendChild(weatherBookedScript);
+  </script>
+
+ 
+  <!-- toggle weather  -->
+  <script>
+    document
+      .getElementById("toggle-button")
+      .addEventListener("click", function () {
+        console.log("work 22");
+        const panel = document.getElementById(
+          "m-booked-bl-simple-week-vertical-71616"
+        );
+        // console.log(panel);
+        if (panel.style.display === "none") {
+          panel.style.display = "block";
+        } else {
+          panel.style.display = "none";
+        }
+      });
+
+
+  </script>
+
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <title>Real-Time Weather Monitoring</title>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: #dddddd;
+        }
+        .card {
+            background-color: #2b2b2b;
+            border: 1px solid #444444;
+        }
+        .card-title {
+            color: #ffffff;
+        }
+        .card-body {
+            padding: 1.5rem;
+        }
+        .uv-circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            margin: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h1 class="text-center">Real-Time Weather Monitoring</h1>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Temperature Over Time</h5>
+                    <div id="temperature-graph"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Humidity Over Time</h5>
+                    <div id="humidity-graph"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">UV Index</h5>
+                    <div id="uv-index" class="uv-circle"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Wind Speed</h5>
+                    <div id="wind-speed-graph"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Rain Possibility</h5>
+                    <div id="rain-possibility-graph"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let temperatures = [];
+    let times = [];
+    let humidities = [];
+    let windSpeeds = [];
+    let rainPossibilities = [];
+
+    function generateRealisticData() {
+        const temp = (Math.random() * 10 + 70).toFixed(2);
+        const humidity = (Math.random() * 10 + 40).toFixed(2);
+        const uvIndex = (Math.random() * 10).toFixed(1);
+        const windSpeed = (Math.random() * 10).toFixed(2);
+        const rainProbability = (Math.random() * 100).toFixed(2);
+        const timestamp = new Date().toLocaleTimeString();
+
+        temperatures.push(parseFloat(temp));
+        humidities.push(parseFloat(humidity));
+        windSpeeds.push(parseFloat(windSpeed));
+        rainPossibilities.push(parseFloat(rainProbability));
+        times.push(timestamp);
+
+        // Keep data lists to a max length of 20
+        if (temperatures.length > 20) {
+            temperatures.shift();
+            humidities.shift();
+            windSpeeds.shift();
+            rainPossibilities.shift();
+            times.shift();
+        }
+
+        updateGraphs();
+    }
+
+    function updateGraphs() {
+        // Temperature graph
+        Plotly.newPlot('temperature-graph', [{
+            x: times,
+            y: temperatures,
+            mode: 'lines+markers',
+            type: 'scatter',
+            line: { shape: 'spline', color: '#ff7f0e' },
+            marker: { color: '#ff7f0e', size: 8 }
+        }], {
+            title: 'Temperature Over Time',
+            paper_bgcolor: '#2b2b2b',
+            plot_bgcolor: '#1e1e1e',
+            font: { color: '#e1e1e1' },
+            xaxis: { title: 'Time', gridcolor: '#444444' },
+            yaxis: { title: 'Temperature (°F)', gridcolor: '#444444' }
+        });
+
+        // Humidity graph
+        Plotly.newPlot('humidity-graph', [{
+            x: times,
+            y: humidities,
+            mode: 'lines+markers',
+            type: 'scatter',
+            line: { shape: 'spline', color: '#1f77b4' },
+            marker: { color: '#1f77b4', size: 8 }
+        }], {
+            title: 'Humidity Over Time',
+            paper_bgcolor: '#2b2b2b',
+            plot_bgcolor: '#1e1e1e',
+            font: { color: '#e1e1e1' },
+            xaxis: { title: 'Time', gridcolor: '#444444' },
+            yaxis: { title: 'Humidity (%)', gridcolor: '#444444' }
+        });
+
+        // Wind Speed gauge
+        Plotly.newPlot('wind-speed-graph', [{
+            type: 'indicator',
+            mode: 'gauge+number',
+            value: windSpeeds[windSpeeds.length - 1],
+            title: { text: 'Wind Speed (mph)', font: { color: '#e1e1e1' } },
+            gauge: {
+                axis: { range: [0, 20], tickcolor: '#e1e1e1' },
+                bar: { color: '#17becf' },
+                steps: [
+                    { range: [0, 5], color: '#3399FF' },
+                    { range: [5, 10], color: '#33CCFF' },
+                    { range: [10, 15], color: '#66FFFF' },
+                    { range: [15, 20], color: '#99FFFF' }
+                ],
+                threshold: {
+                    line: { color: 'red', width: 4 },
+                    thickness: 0.75,
+                    value: 15
+                }
+            },
+        }], {
+            paper_bgcolor: '#2b2b2b',
+            plot_bgcolor: '#1e1e1e',
+            font: { color: '#e1e1e1' }
+        });
+
+        // Rain Possibility bar chart
+        Plotly.newPlot('rain-possibility-graph', [{
+            x: times,
+            y: rainPossibilities,
+            type: 'bar',
+            marker: { color: '#17becf' },
+            text: rainPossibilities.map(value => `${value}%`),
+            textposition: 'auto',
+            hoverinfo: 'x+y'
+        }], {
+            title: 'Rain Possibility Over Time',
+            paper_bgcolor: '#2b2b2b',
+            plot_bgcolor: '#1e1e1e',
+            font: { color: '#e1e1e1' },
+            xaxis: { title: 'Time', gridcolor: '#444444' },
+            yaxis: { title: 'Possibility (%)', gridcolor: '#444444' }
+        });
+
+        // UV Index visualization
+        const uvIndex = (Math.random() * 10).toFixed(1);
+        const uvDiv = document.getElementById('uv-index');
+        uvDiv.style.backgroundColor = uvIndex < 3 ? '#4caf50' :
+            uvIndex < 6 ? '#ffeb3b' :
+            uvIndex < 8 ? '#ff9800' : '#f44336';
+        uvDiv.innerHTML = `UV: ${uvIndex}`;
+        uvDiv.style.width = '120px';
+        uvDiv.style.height = '120px';
+        uvDiv.style.borderRadius = '50%';
+        uvDiv.style.display = 'flex';
+        uvDiv.style.justifyContent = 'center';
+        uvDiv.style.alignItems = 'center';
+        uvDiv.style.color = 'white';
+        uvDiv.style.fontSize = '24px';
+        uvDiv.style.margin = '0 auto';
+        uvDiv.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.3)';
+        uvDiv.style.border = '2px solid rgba(255, 255, 255, 0.5)';
+    }
+
+    // Call the function every 5 seconds
+    setInterval(generateRealisticData, 5000);
+</script>
+
+<script>
+    function logout(event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+        localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
+        console.log("User logged out");
+        // Redirect to the register page
+        window.location.href = '/template/signup.html';
+    }
+
+    function view_menu(event) {
+        event.preventDefault();
+        // current_path = localStorage.getItem('current_path');
+        let current_path = JSON.parse(localStorage.getItem('current_path'));
+
+        window.location.href = "/template/"+current_path;
+    }
+    
+    // Function to hide elements by ID
+    function hideElementById(id) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.style.display = "none";
+        }
+    }
+
+    // Function to show elements by ID
+    function showElementById(id) {
+        const element = document.getElementById(id);
+        if (element) {
+            element.style.display = "block";
+        }
+    }
+
+    // Function to toggle profile dropdown visibility
+    function toggleProfileDropdown() {
+        const dropdown = document.getElementById('profile-dropdown');
+        dropdown.classList.toggle('hidden');
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+        if (!event.target.matches('#profile-button')) {
+            const dropdowns = document.getElementsByClassName('absolute');
+            for (let i = 0; i < dropdowns.length; i++) {
+                const openDropdown = dropdowns[i];
+                if (!openDropdown.classList.contains('hidden')) {
+                    openDropdown.classList.add('hidden');
+                }
+            }
+        }
+    }
+
+    fetch("../navbar.html")
+    .then((response) => response.text())
+    .then((data) => {
+        document.getElementById("navbar").innerHTML = data;
+
+        // Check user login status
+        const userLoggedIn = JSON.parse(localStorage.getItem("token"));
+        console.log("userLoggedIn:", userLoggedIn);
+
+        if (userLoggedIn) {
+            console.log("userLoggedIn hide");
+            hideElementById("login-link");
+            hideElementById("register-link");
+            showElementById("profile-menu");
+        } else {
+            showElementById("login-link");
+            showElementById("register-link");
+            hideElementById("profile-menu");
+        }
+
+        // Set up mobile menu toggle functionality
+        // Assuming you will define this function
+        // setupMobileMenuToggle();
+    })
+    .catch((error) => console.error("Error loading navbar:", error));
+</script>
+
+</body>
+</html>
