@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" type="image/webp" href="assets/logo2.png" />
+    <title>Organization Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/date-fns@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+
+  <style>
+    /* Navbar styling */
+    #navbar {
+        backdrop-filter: blur(10px);
+    }
+    .navbar-item {
+        padding: 0.75rem 1.5rem;
+        color: white;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .navbar-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #f0f0f0;
+    }
+    /* Card Styling */
+    .card {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .card-icon {
+        color: #007bff;
+        font-size: 36px;
+        margin-bottom: 10px;
+        transition: color 0.3s;
+    }
+    .card-icon:hover {
+        color: #0056b3;
+    }
+    .card-title {
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+    }
+    /* Dark Mode Toggle Button Styling */
+    .dark-mode-toggle {
+        background-color: #1f2937;
+        color: #f9fafb;
+        position: fixed;
+        bottom: 6px;
+        right: 6px;
+        padding: 0.75rem;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .dark-mode-toggle:hover {
+        background-color: #374151;
+        transform: scale(1.05);
+    }
+    /* Notification Styling */
+    #notification {
+        background-color: #d1fae5;
+        border: 1px solid #10b981;
+        color: #047857;
+        position: fixed;
+        bottom: 4px;
+        right: 4px;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 300px;
+        transition: transform 0.3s;
+        transform: translateY(10px);
+    }
+    #notification.show {
+        transform: translateY(0);
+    }
+</style>
+
+  <body class="dark:bg-gray-900">
+    <div id="navbar"></div>
+
+    <div class="container mx-auto p-4 sm:p-6">
+      <h1 class="text-xl text-white sm:text-2xl font-bold mb-4 sm:mb-6">Organization Overview</h1>
+        <!-- Main Header -->
+
+        <!-- Main Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+            <!-- Map Card -->
+            <a href="/synergysource/template/map/vehicles.html" class="card block bg-gray-400">
+                <div class="flex flex-col items-center justify-center h-full">
+                    <i class="fas fa-map-marker-alt card-icon text-blue-500"></i>
+                    <h2 class="card-title">Map</h2>
+                </div>
+            </a>
+
+            <!-- Driver List Card -->
+            <a href="organization_dashboard/drivers.html" class="card block bg-gray-400">
+                <div class="flex flex-col items-center justify-center h-full">
+                    <i class="fas fa-users card-icon text-green-500"></i>
+                    <h2 class="card-title">Driver List</h2>
+                </div>
+            </a>
+
+            <!-- Ride Statistics Card -->
+            <a href="/synergysource/template/organization_overview.html" class="card block bg-gray-400">
+                <div class="flex flex-col items-center justify-center h-full">
+                    <i class="fas fa-chart-line card-icon text-yellow-500"></i>
+                    <h2 class="card-title">Overview</h2>
+                </div>
+            </a>
+
+            <!-- Settings Card -->
+            <a href="organization_dashboard/settings.html" class="card block bg-gray-400">
+                <div class="flex flex-col items-center justify-center h-full">
+                    <i class="fas fa-cogs card-icon text-gray-500"></i>
+                    <h2 class="card-title">Settings</h2>
+                </div>
+            </a>
+        </div>
+    
+
+
+
+      <!-- Driver Comments Table -->
+      <div class="bg-gray-400 rounded-lg shadow-md p-3 sm:p-4">
+        <h3 class="font-semibold text-base sm:text-lg mb-3 sm:mb-4">Driver Reports</h3>
+        <table id="selection-table" class="min-w-full border-collapse rounded-lg text-sm sm:text-base">
+          <thead>
+            <tr class="bg-gray-500">
+              <th class="py-1 px-2 sm:py-2 sm:px-4 text-left rounded-l-lg">Driver Name</th>
+              <th class="py-1 px-2 sm:py-2 sm:px-4 text-left">Comments</th>
+              <th class="py-1 px-2 sm:py-2 sm:px-4 text-left">Created</th>
+              <th class="py-1 px-2 sm:py-2 sm:px-4 text-left rounded-r-lg">Reporter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Dynamically filled rows will go here -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Emergency Table -->
+      <div class="bg-gray-400 rounded-lg shadow-md p-3 sm:p-4 mt-4">
+        <h3 class="font-semibold text-base sm:text-lg mb-3 sm:mb-4">Emergency Notification</h3>
+        <table id="emergency-table" class="min-w-full border-collapse rounded-lg text-sm sm:text-base">
+          <thead>
+            <tr class="bg-gray-500">
+              <th class="py-1 px-2 sm:py-2 sm:px-4 text-left rounded-l-lg">Driver Name</th>
+              <th class="py-1 px-2 sm:py-2 sm:px-4 text-left">Comments</th>
+              <th class="py-1 px-2 sm:py-2 sm:px-4 text-left">Created</th>
+              <th class="py-1 px-2 sm:py-2 sm:px-4 text-left rounded-r-lg">Reporter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Dynamically filled rows will go here -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Maintainance Table -->
+      <div class="bg-gray-400 rounded-lg shadow-md p-3 sm:p-4 mt-4">
+        <h3 class="font-semibold text-base sm:text-lg mb-3 sm:mb-4">Maintainance Reports</h3>
+        <table id="maintenance-table" class="min-w-full border-collapse rounded-lg text-sm sm:text-base">
+          <thead>
+            <tr class="bg-gray-500">
+              <th class="py-1 px-2 sm:py-2 sm:px-4 text-left rounded-l-lg">Number Plate</th>
+              <th class="py-1 px-2 sm:py-2 sm:px-4 text-left rounded-r-lg">Message</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <!-- call llm to check if vehicle needs servicing -->
+    <script>
+        function convertStrToJson(llmResponse) {
+            // Remove code block markers if they exist
+            if (typeof llmResponse === 'string') {
+                llmResponse = llmResponse.replace('```json', '').replace('```', '');
+            }
+
+            try {
+                // Check if llmResponse is already an object or array
+                if (typeof llmResponse === 'object' && llmResponse !== null) {
+                    return llmResponse;
+                } else {
+                    // Parse the JSON string
+                    return JSON.parse(llmResponse);
+                }
+            } catch (error) {
+                // Handle parsing errors
+                console.error('JSON parsing error:', error);
+                return null; // or handle the case when parsing fails
+            }
+        }
+
+        // const vehicles = [
+        //     {
+        //         "driver_name": "Alice Smith",
+        //         "vehicle_type": "bus",
+        //         "license_plate": "ABC123",
+        //         "capacity": 16,
+        //         "people": 4,
+        //         "latitude": 6.823338,
+        //         "longitude": -58.118653,
+        //         "current_mileage": 25000,
+        //         "date_last_serviced": "2024-07-15"
+        //     },
+        //     {
+        //         "driver_name": "Bob Johnson",
+        //         "vehicle_type": "car",
+        //         "license_plate": "XYZ789",
+        //         "capacity": 5,
+        //         "people": 5,
+        //         "latitude": 6.820305,
+        //         "longitude": -58.108098,
+        //         "current_mileage": 30000,
+        //         "date_last_serviced": "2024-06-10"
+        //     },
+        //     {
+        //         "driver_name": "Alice Smith",
+        //         "vehicle_type": "bus",
+        //         "license_plate": "ABC123",
+        //         "capacity": 16,
+        //         "people": 4,
+        //         "latitude": 6.823338,
+        //         "longitude": -58.118653,
+        //         "current_mileage": 25000,
+        //         "date_last_serviced": "2024-07-15"
+        //     },
+        //     {
+        //         "driver_name": "Bob Johnson",
+        //         "vehicle_type": "car",
+        //         "license_plate": "XYZ789",
+        //         "capacity": 5,
+        //         "people": 5,
+        //         "latitude": -58.118653,
+        //         "longitude": 6.823338,
+        //         "current_mileage": 30000,
+        //         "date_last_serviced": "2024-06-10"
+        //     }
+        // ];
+
+        const vehicles = [
+            {
+                "driver_name": "Eve Adams",
+                "vehicle_type": "truck",
+                "license_plate": "TRK001",
+                "capacity": 12,
+                "people": 3,
+                "latitude": 6.825500,
+                "longitude": -58.115000,
+                "current_mileage": 32000,
+                "date_last_serviced": "2023-12-20"
+            },
+            {
+                "driver_name": "Frank Castle",
+                "vehicle_type": "van",
+                "license_plate": "VAN002",
+                "capacity": 8,
+                "people": 5,
+                "latitude": 6.820800,
+                "longitude": -58.120000,
+                "current_mileage": 15000,
+                "date_last_serviced": "2024-03-05"
+            },
+            {
+                "driver_name": "Grace Lee",
+                "vehicle_type": "SUV",
+                "license_plate": "SUV003",
+                "capacity": 5,
+                "people": 2,
+                "latitude": 6.822000,
+                "longitude": -58.122000,
+                "current_mileage": 40000,
+                "date_last_serviced": "2024-01-10"
+            },
+            {
+                "driver_name": "Henry Wong",
+                "vehicle_type": "sedan",
+                "license_plate": "SED004",
+                "capacity": 5,
+                "people": 4,
+                "latitude": 6.821200,
+                "longitude": -58.121000,
+                "current_mileage": 70000,
+                "date_last_serviced": "2023-09-15"
+            }
+        ];
+
+        const maintenance_file = {
+            "maintenance_intervals": {
+                "oil_change": {
+                "distance_based": "3000-7500 miles (4800-12000 kilometers)",
+                "time_based": "Every 6 months"
+                },
+                "tire_rotation": {
+                "distance_based": "5000-8000 miles (8000-13000 kilometers)",
+                "time_based": "Every 6 months"
+                },
+                "wheel_alignment": {
+                "distance_based": "Every 10000 miles (16000 kilometers)",
+                "condition_based": "If uneven tire wear or vehicle pulls to one side"
+                },
+                "brake_inspection": {
+                "distance_based": "10000-15000 miles (16000-24000 kilometers)",
+                "time_based": "Annually"
+                },
+                "transmission_fluid_change": {
+                "distance_based": "30000-60000 miles (48000-96000 kilometers)",
+                "time_based": "Every 2-4 years"
+                },
+                "engine_air_filter": {
+                "distance_based": "15000-30000 miles (24000-48000 kilometers)",
+                "time_based": "Inspect every 12 months"
+                },
+                "coolant_change": {
+                "distance_based": "30000-50000 miles (48000-80000 kilometers)",
+                "time_based": "Every 2-3 years"
+                },
+                "timing_belt_chain_replacement": {
+                "distance_based": "60000-100000 miles (96000-160000 kilometers)",
+                "time_based": "Every 5-7 years"
+                },
+                "battery_replacement": {
+                "time_based": "Every 3-5 years"
+                },
+                "spark_plug_replacement": {
+                "distance_based": "30000-100000 miles (48000-160000 kilometers)",
+                "time_based": "Every 3-5 years"
+                }
+            }
+        };
+
+        const prompt = `Your goal is to check which vehicles need maintenance based on the json below\n\n ${JSON.stringify(maintenance_file)}\n\n list of vehicles:\n ${JSON.stringify(vehicles)}\n\n. return a list of object containing number_plate, status and message.\nInstruction:\n- status 'servicing' or 'good'.\n- simple message letting the use know if their vehicle needs servicing and what needs it.\n- the number plate of the vehicle being inspected.\n\nMake sure u return a valid json list without any explination. Just need a json list.`;
+
+        
+        async function sendMessage() {
+            // // Call the ChatGPT API
+            // const response = await fetch('https://api.openai.com/v1/chat/completions', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //         Authorization: 'Bearer sk-qPOgTLlB6ToYsoL2ylulT3BlbkFJ4Iu0M9RZn3QC1iJRc', // Use your actual API key here
+            //     },
+            //     body: JSON.stringify({
+            //         model: 'gpt-4o',
+            //         messages: [{ role: 'system', content: prompt }],
+            //         max_tokens: 4000,
+            //     }),
+            // });
+
+            // if (!response.ok) {
+            //     const errorData = await response.json();
+            //     console.error('Error:', errorData);
+            //     return `Error: ${errorData.error.message}`; // Return the error message
+            // }
+
+            // const data = await response.json();
+            try {
+                // console.log(data.choices[0].message.content);
+                // const jsonObject = convertStrToJson(data.choices[0].message.content);
+                jsonObject = [
+                    {
+                        "number_plate": "TRK001",
+                        "status": "good",
+                        "message": "Your vehicle is in good condition."
+                    },
+                    {
+                        "number_plate": "VAN002",
+                        "status": "servicing",
+                        "message": "Your vehicle needs an oil change and tire rotation."
+                    },
+                    {
+                        "number_plate": "SUV003",
+                        "status": "good",
+                        "message": "Your vehicle is in good condition."
+                    },
+                    {
+                        "number_plate": "SED004",
+                        "status": "servicing",
+                        "message": "Your vehicle needs an oil change, tire rotation, and wheel alignment."
+                    }
+                ];
+                console.log(jsonObject);
+
+                // Update the table here after processing the response
+                const tableBody = document.querySelector("#maintenance-table tbody");
+                tableBody.innerHTML = ''; // Clear previous rows
+
+                const servicingVehicles = jsonObject.filter(item => item.status === 'servicing');
+
+                servicingVehicles.forEach(data => {
+                    const row = document.createElement("tr");
+                    row.classList.add("border-b");
+                    
+                    row.innerHTML = `
+                        <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${data.number_plate}</td>
+                        <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${data.message}</td>
+                    `;
+                    
+                    tableBody.appendChild(row);
+                });
+
+            } catch (error) {
+                console.log("error converting to json", error);
+            }
+        }
+
+        sendMessage();
+    </script>
+
+
+    <script>
+      // Example JavaScript for populating table, etc.
+      const feedbackData = [
+          { 
+              first_name: 'John', 
+              last_name: 'Doe', 
+              driver: 'John Smith', 
+              report: 'Great performance!', 
+              created_at: '30/08/2024, 19:18:18' 
+          },
+          { 
+              first_name: 'Jane', 
+              last_name: 'Smith', 
+              driver: 'Emily Johnson', 
+              report: 'Needs improvement in punctuality.', 
+              created_at: '30/08/2024, 19:20:00' 
+          },
+          { 
+              first_name: 'Mike', 
+              last_name: 'Johnson', 
+              driver: 'Chris Lee', 
+              report: 'Excellent feedback from customers.', 
+              created_at: '30/08/2024, 19:22:15' 
+          },
+          { 
+              first_name: 'Emily', 
+              last_name: 'Davis', 
+              driver: 'Anna Brown', 
+              report: 'Shows great leadership skills.', 
+              created_at: '30/08/2024, 19:25:30' 
+          },
+          { 
+              first_name: 'Chris', 
+              last_name: 'Lee', 
+              driver: 'David Wilson', 
+              report: 'Good team player but needs to work on communication.', 
+              created_at: '30/08/2024, 19:27:45' 
+          },
+          { 
+              first_name: 'Tharick', 
+              last_name: 'Jairam', 
+              driver: 'John Smith', 
+              report: 'sadfsadf', 
+              created_at: '30/08/2024, 19:18:18' 
+          },
+          { 
+              first_name: 'Sarah', 
+              last_name: 'Johnson', 
+              driver: 'Michael Brown', 
+              report: 'Overall performance is satisfactory.', 
+              created_at: '30/08/2024, 19:30:00' 
+          },
+          { 
+              first_name: 'Daniel', 
+              last_name: 'Williams', 
+              driver: 'Lisa Green', 
+              report: 'Needs to improve on time management.', 
+              created_at: '30/08/2024, 19:32:15' 
+          },
+          { 
+              first_name: 'Laura', 
+              last_name: 'Martinez', 
+              driver: 'Emily White', 
+              report: 'Great at problem-solving and very reliable.', 
+              created_at: '30/08/2024, 19:35:00' 
+          },
+          { 
+              first_name: 'James', 
+              last_name: 'Garcia', 
+              driver: 'Oliver Smith', 
+              report: 'Excellent communication skills and teamwork.', 
+              created_at: '30/08/2024, 19:37:30' 
+          },
+          { 
+              first_name: 'Nina', 
+              last_name: 'Roberts', 
+              driver: 'Sophia Johnson', 
+              report: 'Consistent and dependable with high-quality work.', 
+              created_at: '30/08/2024, 19:40:00' 
+          }
+      ];
+
+      const tableBody = document.querySelector("#selection-table tbody");
+
+      const firstThreeFeedbacks = feedbackData.slice(0, 3);
+
+      firstThreeFeedbacks.forEach(data => {
+          const row = document.createElement("tr");
+          row.classList.add("border-b");
+
+          // const dateStr = '30/08/2024, 19:18:18';
+          const parsedDate = dateFns.parse(data.created_at, 'dd/MM/yyyy, HH:mm:ss', new Date());
+          const readableDate = dateFns.format(parsedDate, 'MMMM d, yyyy h:mm a');
+          console.log(readableDate); // Output: "August 30, 2024 7:18 PM"
+
+          
+          row.innerHTML = `
+              <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${data.driver}</td>
+              <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${data.report}</td>
+              <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${readableDate}</td>
+              <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${data.first_name} ${data.last_name}</td>
+          `;
+          
+          tableBody.appendChild(row);
+      });
+    </script>
+
+    <script>
+      // Example JavaScript for populating table, etc.
+      const efeedbackData = [
+          { 
+              first_name: 'Michael', 
+              last_name: 'Brown', 
+              driver: 'Lucas Smith', 
+              report: 'Driver was speeding dangerously during the trip!', 
+              created_at: '30/08/2024, 20:40:00' 
+          },
+          { 
+              first_name: 'Sarah', 
+              last_name: 'Davis', 
+              driver: 'David Johnson', 
+              report: 'Emergency stop needed to avoid an accident!', 
+              created_at: '30/08/2024, 20:45:15' 
+          },
+          { 
+              first_name: 'Daniel', 
+              last_name: 'Wilson', 
+              driver: 'Chris Lee', 
+              report: 'Driver was distracted and nearly missed a red light!', 
+              created_at: '30/08/2024, 20:50:30' 
+          },
+          { 
+              first_name: 'Emily', 
+              last_name: 'Garcia', 
+              driver: 'Henry Brown', 
+              report: 'Passengers felt unsafe due to erratic driving!', 
+              created_at: '30/08/2024, 20:55:00' 
+          },
+          { 
+              first_name: 'Liam', 
+              last_name: 'Hernandez', 
+              driver: 'David Wilson', 
+              report: 'Driver was involved in a near-miss collision!', 
+              created_at: '30/08/2024, 21:00:45' 
+          }
+      ];
+
+
+
+      const etableBody = document.querySelector("#emergency-table tbody");
+
+      const efirstThreeFeedbacks = efeedbackData.slice(0, 3);
+
+      efirstThreeFeedbacks.forEach(data => {
+          const row = document.createElement("tr");
+          row.classList.add("border-b");
+
+          // const dateStr = '30/08/2024, 19:18:18';
+          const parsedDate = dateFns.parse(data.created_at, 'dd/MM/yyyy, HH:mm:ss', new Date());
+          const readableDate = dateFns.format(parsedDate, 'MMMM d, yyyy h:mm a');
+          console.log(readableDate); // Output: "August 30, 2024 7:18 PM"
+
+          
+          row.innerHTML = `
+              <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${data.driver}</td>
+              <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${data.report}</td>
+              <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${readableDate}</td>
+              <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${data.first_name} ${data.last_name}</td>
+          `;
+          
+          etableBody.appendChild(row);
+      });
+    </script>
+
+
+    <script>
+
+        function logout(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
+            console.log("User logged out");
+            // Redirect to the register page
+            window.location.href = '/synergysource/template/signup.html';
+        }
+
+        function view_menu(event) {
+            event.preventDefault();
+            // current_path = localStorage.getItem('current_path');
+            let current_path = JSON.parse(localStorage.getItem('current_path'));
+
+            window.location.href = "/synergysource/template/"+current_path;
+        }
+        
+        // Function to hide elements by ID
+        function hideElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "none";
+            }
+        }
+
+        // Function to show elements by ID
+        function showElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "block";
+            }
+        }
+
+        // Function to toggle profile dropdown visibility
+        function toggleProfileDropdown() {
+            const dropdown = document.getElementById('profile-dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('#profile-button')) {
+                const dropdowns = document.getElementsByClassName('absolute');
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (!openDropdown.classList.contains('hidden')) {
+                        openDropdown.classList.add('hidden');
+                    }
+                }
+            }
+        }
+
+
+        fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+            document.getElementById("navbar").innerHTML = data;
+
+            // Check user login status
+            const userLoggedIn = JSON.parse(localStorage.getItem("token"));
+            console.log("userLoggedIn:", userLoggedIn);
+
+            if (userLoggedIn) {
+                console.log("userLoggedIn hide");
+                hideElementById("login-link");
+                hideElementById("register-link");
+                showElementById("profile-menu");
+            } else {
+                showElementById("login-link");
+                showElementById("register-link");
+                hideElementById("profile-menu");
+            }
+
+            // Set up mobile menu toggle functionality
+            // Assuming you will define this function
+            // setupMobileMenuToggle();
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
+    </script>
+
+    <!-- <script>
+        // Function to hide elements by ID
+        function hideElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "none";
+            }
+        }
+
+        // Function to show elements by ID
+        function showElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "block";
+            }
+        }
+
+        // Function to toggle profile dropdown visibility
+        function toggleProfileDropdown() {
+            const dropdown = document.getElementById('profile-dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('#profile-button')) {
+                const dropdowns = document.getElementsByClassName('absolute');
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (!openDropdown.classList.contains('hidden')) {
+                        openDropdown.classList.add('hidden');
+                    }
+                }
+            }
+        }
+
+        fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+            document.getElementById("navbar").innerHTML = data;
+
+            // Check user login status
+            const userLoggedIn = JSON.parse(localStorage.getItem("token"));
+            console.log("userLoggedIn:", userLoggedIn);
+
+            if (userLoggedIn) {
+                console.log("userLoggedIn hide");
+                hideElementById("login-link");
+                hideElementById("register-link");
+                showElementById("profile-menu");
+            } else {
+                showElementById("login-link");
+                showElementById("register-link");
+                hideElementById("profile-menu");
+            }
+
+            // Set up mobile menu toggle functionality
+            // Assuming you will define this function
+            // setupMobileMenuToggle();
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
+    </script> -->
+
+    <!-- <script>
+      // Function to hide elements by ID
+      function hideElementById(id) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.style.display = "none";
+        }
+      }
+
+      // Function to show elements by ID
+      function showElementById(id) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.style.display = "block";
+        }
+      }
+
+      // Fetch the navbar and check registration status
+      fetch("navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+
+          // Check user registration status
+          const userRegistered = JSON.parse(
+            localStorage.getItem("token")
+          );
+
+          if (userRegistered && userRegistered.registered) {
+            hideElementById("login-link");
+            hideElementById("register-link");
+            showElementById("profile-link");
+          }
+
+          // Set up mobile menu toggle functionality
+          document
+            .querySelectorAll("[data-collapse-toggle]")
+            .forEach((button) => {
+              button.addEventListener("click", function () {
+                const mobileMenu = document.getElementById("mobile-menu-2");
+                if (mobileMenu) {
+                  mobileMenu.style.display =
+                    mobileMenu.style.display === "none" ||
+                    mobileMenu.style.display === ""
+                      ? "block"
+                      : "none";
+                }
+              });
+            });
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
+    </script> -->
+  </body>
+</html>

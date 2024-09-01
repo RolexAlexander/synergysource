@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Customer Dashboard</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Navbar styling */
+        #navbar {
+            backdrop-filter: blur(10px);
+        }
+        .navbar-item {
+            padding: 0.75rem 1.5rem;
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #f0f0f0;
+        }
+        /* Card Styling */
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .card-icon {
+            color: #007bff;
+            font-size: 36px;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        .card-icon:hover {
+            color: #0056b3;
+        }
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+        }
+        /* Dark Mode Toggle Button Styling */
+        .dark-mode-toggle {
+            background-color: #1f2937;
+            color: #f9fafb;
+            position: fixed;
+            bottom: 6px;
+            right: 6px;
+            padding: 0.75rem;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .dark-mode-toggle:hover {
+            background-color: #374151;
+            transform: scale(1.05);
+        }
+        /* Notification Styling */
+        #notification {
+            background-color: #d1fae5;
+            border: 1px solid #10b981;
+            color: #047857;
+            position: fixed;
+            bottom: 4px;
+            right: 4px;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            transition: transform 0.3s;
+            transform: translateY(10px);
+        }
+        #notification.show {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+    <div id="navbar" class="z-20"></div>
+
+    <script src="https://platform.trueselph.com/messenger/agent/cm0ddpguq00r9ut6lrwiqa6fh.js"></script>
+
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-6 pt-24">
+        <!-- Main Header -->
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold mb-4 text-gray-800 dark:text-gray-100 text-center">Customer Dashboard</h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300 text-center">Manage your rides, view reports, and get weather updates.</p>
+        </header>
+
+        <!-- Main Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+            <!-- Map Card -->
+            <a href="map/vehicles.html" class="card block bg-gray-400">
+                <div class="flex flex-col items-center justify-center h-full">
+                    <i class="fas fa-map-marker-alt card-icon"></i>
+                    <h2 class="card-title">Map</h2>
+                </div>
+            </a>
+
+            <!-- Manage Ride Card -->
+            <a href="customer_dashboard/ride.html" class="card block bg-gray-400">
+                <div class="flex flex-col items-center justify-center h-full">
+                    <i class="fas fa-car card-icon text-green-500"></i>
+                    <h2 class="card-title">Manage Ride</h2>
+                </div>
+            </a>
+
+            <!-- Report Card -->
+            <a href="customer_dashboard/report.html" class="card block bg-gray-400">
+                <div class="flex flex-col items-center justify-center h-full">
+                    <i class="fas fa-file-alt card-icon text-yellow-500"></i>
+                    <h2 class="card-title">Report</h2>
+                </div>
+            </a>
+
+            <!-- Weather Forecast Card -->
+            <a href="customer_dashboard/map.html" class="card block bg-gray-400">
+                <div class="flex flex-col items-center justify-center h-full">
+                    <i class="fas fa-cloud-sun card-icon text-gray-500"></i>
+                    <h2 class="card-title">Weather Forecast</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Notification Area -->
+    <div id="notification" class="hidden">
+        <span id="notificationMessage"></span>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark Mode Toggle
+        document.getElementById('darkModeToggle').addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
+        });
+
+        // Set initial theme
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark');
+            }
+        });
+
+        // Notification
+        const notification = localStorage.getItem('notification');
+        if (notification) {
+            const notificationDiv = document.getElementById('notification');
+            document.getElementById('notificationMessage').textContent = notification;
+            notificationDiv.classList.remove('hidden');
+            notificationDiv.classList.add('show');
+            setTimeout(() => {
+                notificationDiv.classList.remove('show');
+                setTimeout(() => {
+                    notificationDiv.classList.add('hidden');
+                }, 300);
+            }, 5000);
+            localStorage.removeItem('notification');
+        }
+    </script>
+
+          <!-- navbar script -->
+  <script>
+
+      // Function to logout
+      function logout(event) {
+          // event.preventDefault(); // Prevent the default anchor behavior
+          localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
+          console.log("User logged out");
+          // Redirect to the register page
+          window.location.href = '/synergysource/template/signup.html';
+      }
+
+      function view_menu(event) {
+          event.preventDefault();
+          // current_path = localStorage.getItem('current_path');
+          let current_path = JSON.parse(localStorage.getItem('current_path'));
+
+          window.location.href = "/synergysource/template/"+current_path;
+      }
+      
+
+      // Function to hide elements by ID
+      function hideElementById(id) {
+          const element = document.getElementById(id);
+          if (element) {
+              element.style.display = "none";
+          }
+      }
+
+      // Function to show elements by ID
+      function showElementById(id) {
+          const element = document.getElementById(id);
+          if (element) {
+              element.style.display = "block";
+          }
+      }
+
+      // Function to toggle profile dropdown visibility
+      function toggleProfileDropdown() {
+          const dropdown = document.getElementById('profile-dropdown');
+          dropdown.classList.toggle('hidden');
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function(event) {
+          if (!event.target.matches('#profile-button')) {
+              const dropdowns = document.getElementsByClassName('absolute');
+              for (let i = 0; i < dropdowns.length; i++) {
+                  const openDropdown = dropdowns[i];
+                  if (!openDropdown.classList.contains('hidden')) {
+                      openDropdown.classList.add('hidden');
+                  }
+              }
+          }
+      }
+
+
+      fetch("navbar.html")
+      .then((response) => response.text())
+      .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+
+          // Check user login status
+          const userLoggedIn = JSON.parse(localStorage.getItem("token"));
+          console.log("userLoggedIn:", userLoggedIn);
+
+          if (userLoggedIn) {
+              console.log("userLoggedIn hide");
+              hideElementById("login-link");
+              hideElementById("register-link");
+              showElementById("profile-menu");
+          } else {
+              showElementById("login-link");
+              showElementById("register-link");
+              hideElementById("profile-menu");
+          }
+
+          // Set up mobile menu toggle functionality
+          // Assuming you will define this function
+          // setupMobileMenuToggle();
+      })
+      .catch((error) => console.error("Error loading navbar:", error));
+  
+  
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Synergysource - Ride</title>
+    <link rel="icon" type="image/webp" href="assets/logo2.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-300">
+    <div id="navbar"></div>
+    <div class="max-w-screen-xl mx-auto p-4 mt-4">
+      <!-- Title and Add Button -->
+      <div class="flex items-center justify-between mb-4">
+        <h1 class="text-lg sm:text-xl font-bold text-gray-800">Rides</h1>
+        <button
+          onclick="openAddRideModal()"
+          class="ml-4 bg-blue-600 text-white px-3 py-2 sm:px-4 sm:py-2 rounded-md shadow-sm hover:bg-blue-700 text-sm sm:text-base"
+        >
+          Book Ride
+        </button>
+      </div>
+
+      <!-- Table -->
+      <div class="overflow-x-auto bg-gray-300">
+        <table
+          class="min-w-full max-w-screen-xl bg-white shadow-md rounded border-collapse"
+        >
+          <thead>
+            <tr class="bg-gray-800 text-white text-xs sm:text-sm">
+              <th class="p-1 sm:p-2 text-left">Pick Up</th>
+              <th class="p-1 sm:p-2 text-left">Destination</th>
+              <th class="p-1 sm:p-2 text-left">Passengers</th>
+              <th class="p-1 sm:p-2 text-left">Vehicle</th>
+              <th class="p-1 sm:p-2 text-center">Time</th>
+              <th class="p-1 sm:p-2 pr-2 text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="ride-table-body">
+            <tr class="border-b">
+              <td class="p-1 sm:p-2 bg-gray-100 text-xs sm:text-sm text-gray-700">
+                Location A
+              </td>
+              <td class="p-1 sm:p-2 bg-gray-100 text-xs sm:text-sm text-gray-700">
+                Location B
+              </td>
+              <td class="p-1 sm:p-2 bg-gray-100 text-xs sm:text-sm text-gray-700">4</td>
+              <td class="p-1 sm:p-2 bg-gray-100 text-xs sm:text-sm text-gray-700">Sedan</td>
+              <td class="p-1 sm:p-2 bg-gray-100 text-xs text-center sm:text-sm text-gray-700">2024-08-31 23:38</td>
+              <td class="p-1 sm:p-2 bg-gray-100 text-right">
+                <button
+                  class="bg-red-500 text-white px-2 sm:px-3 py-1 rounded hover:bg-red-600"
+                  onclick="cancelRide(this)"
+                >
+                  Cancel
+                </button>
+              </td>
+            </tr>
+            <!-- Additional rows as needed -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Add Ride Modal -->
+    <div
+      id="add-ride-modal"
+      class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden"
+    >
+      <div class="bg-white p-4 sm:p-6 rounded shadow-lg max-w-md w-full">
+        <h2 class="text-lg sm:text-xl font-bold mb-4">Book</h2>
+        <form id="add-ride-form">
+          <div class="mb-4">
+            <label for="pickup" class="block text-gray-700">Pick Up</label>
+            <input
+              type="text"
+              id="pickup"
+              name="pickup"
+              class="w-full px-2 sm:px-4 py-1 sm:py-2 border rounded-md"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label for="destination" class="block text-gray-700"
+              >Destination</label
+            >
+            <input
+              type="text"
+              id="destination"
+              name="destination"
+              class="w-full px-2 sm:px-4 py-1 sm:py-2 border rounded-md"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label for="date" class="block text-gray-700">Date</label>
+            <input
+              type="date"
+              id="date"
+              name="date"
+              class="w-full px-2 sm:px-4 py-1 sm:py-2 border rounded-md"
+              required
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="time" class="block text-gray-700">Time</label>
+            <input
+              type="time"
+              id="time"
+              name="time"
+              class="w-full px-2 sm:px-4 py-1 sm:py-2 border rounded-md"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label for="passengers" class="block text-gray-700"
+              >Passengers</label
+            >
+            <input
+              type="number"
+              id="passengers"
+              name="passengers"
+              class="w-full px-2 sm:px-4 py-1 sm:py-2 border rounded-md"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label for="vehicle" class="block text-gray-700">Vehicle</label>
+            <select
+              id="vehicle"
+              name="vehicle"
+              class="w-full px-2 sm:px-4 py-1 sm:py-2 border rounded-md"
+              required
+            >
+              <option value="Sedan">Sedan</option>
+              <option value="SUV">SUV</option>
+              <option value="Van">Van</option>
+              <option value="Truck">Truck</option>
+            </select>
+          </div>
+          <div class="flex justify-end">
+            <button
+              type="button"
+              onclick="closeAddRideModal()"
+              class="mr-2 sm:mr-4 bg-gray-500 text-white px-3 py-1 rounded hover:bg-gray-600"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700"
+            >
+              Add Ride
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Set today's date as the default value for the date input
+      const today = new Date().toISOString().split("T")[0];
+      document.getElementById("date").value = today;
+
+      // Set the current time as the default value for the time input
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, "0");
+      const minutes = String(now.getMinutes()).padStart(2, "0");
+      document.getElementById("time").value = `${hours}:${minutes}`;
+    </script>
+
+    <script>
+      // Open Add Ride Modal
+      function openAddRideModal() {
+        document.getElementById("add-ride-modal").classList.remove("hidden");
+      }
+
+      // Close Add Ride Modal
+      function closeAddRideModal() {
+        document.getElementById("add-ride-modal").classList.add("hidden");
+      }
+
+      // Cancel a Ride
+      function cancelRide(button) {
+        const row = button.closest("tr");
+        row.remove(); // Remove the ride from the table
+      }
+
+      // Handle Add Ride Form Submission
+      document
+        .getElementById("add-ride-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const pickup = document.getElementById("pickup").value;
+          const destination = document.getElementById("destination").value;
+          const date = document.getElementById("date").value;
+          const time = document.getElementById("time").value;
+          const passengers = document.getElementById("passengers").value;
+          const vehicle = document.getElementById("vehicle").value;
+
+          // Add the new ride to the table
+          const tableBody = document.getElementById("ride-table-body");
+          const newRow = `
+                <tr class="border-b">
+                    <td class="p-1 sm:p-2 text-xs sm:text-sm text-gray-700">${pickup}</td>
+                    <td class="p-1 sm:p-2 text-xs sm:text-sm text-gray-700">${destination}</td>
+                    <td class="p-1 sm:p-2 text-xs sm:text-sm text-gray-700">${passengers}</td>
+                    <td class="p-1 sm:p-2 text-xs sm:text-sm text-gray-700">${vehicle}</td>
+                    <td class="p-1 sm:p-2 text-xs text-center sm:text-sm text-gray-700">${date} ${time}</td>
+                    <td class="p-1 sm:p-2 text-right">
+                        <button class="bg-red-500 text-white px-2 sm:px-3 py-1 rounded hover:bg-red-600" onclick="cancelRide(this)">Cancel</button>
+                    </td>
+                </tr>
+            `;
+          tableBody.insertAdjacentHTML("beforeend", newRow);
+
+          // Reset the form and close the modal
+          document.getElementById("add-ride-form").reset();
+          closeAddRideModal();
+        });
+
+      function hideElementById(id) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.style.display = "none";
+        }
+      }
+      // Fetch the navbar and check registration status
+      fetch("../navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+
+          // Check user registration status
+          const userRegistered = JSON.parse(
+            localStorage.getItem("token")
+          );
+          if (userRegistered && userRegistered.registered) {
+            hideElementById("login-link");
+            hideElementById("register-link");
+            showElementById("profile-link");
+          }
+
+          // Set up mobile menu toggle functionality
+          document
+            .querySelectorAll("[data-collapse-toggle]")
+            .forEach((button) => {
+              button.addEventListener("click", function () {
+                const mobileMenu = document.getElementById("mobile-menu-2");
+                if (mobileMenu) {
+                  mobileMenu.style.display =
+                    mobileMenu.style.display === "none" ||
+                    mobileMenu.style.display === ""
+                      ? "block"
+                      : "none";
+                }
+              });
+            });
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
+    </script>
+
+        <script>
+
+        function logout(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
+            console.log("User logged out");
+            // Redirect to the register page
+            window.location.href = '/synergysource/template/signup.html';
+        }
+
+        function view_menu(event) {
+            event.preventDefault();
+            // current_path = localStorage.getItem('current_path');
+            let current_path = JSON.parse(localStorage.getItem('current_path'));
+
+            window.location.href = "/synergysource/template/"+current_path;
+        }
+        
+        // Function to hide elements by ID
+        function hideElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "none";
+            }
+        }
+
+        // Function to show elements by ID
+        function showElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "block";
+            }
+        }
+
+        // Function to toggle profile dropdown visibility
+        function toggleProfileDropdown() {
+            const dropdown = document.getElementById('profile-dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('#profile-button')) {
+                const dropdowns = document.getElementsByClassName('absolute');
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (!openDropdown.classList.contains('hidden')) {
+                        openDropdown.classList.add('hidden');
+                    }
+                }
+            }
+        }
+
+
+        fetch("../navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+            document.getElementById("navbar").innerHTML = data;
+
+            // Check user login status
+            const userLoggedIn = JSON.parse(localStorage.getItem("token"));
+            console.log("userLoggedIn:", userLoggedIn);
+
+            if (userLoggedIn) {
+                console.log("userLoggedIn hide");
+                hideElementById("login-link");
+                hideElementById("register-link");
+                showElementById("profile-menu");
+            } else {
+                showElementById("login-link");
+                showElementById("register-link");
+                hideElementById("profile-menu");
+            }
+
+            // Set up mobile menu toggle functionality
+            // Assuming you will define this function
+            // setupMobileMenuToggle();
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
+    </script>
+
+
+    <!-- <script>
+      // Function to hide elements by ID
+      function hideElementById(id) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.style.display = "none";
+        }
+      }
+
+      // Function to show elements by ID
+      function showElementById(id) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.style.display = "block";
+        }
+      }
+
+      // Fetch the navbar and check registration status
+      fetch("../navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+
+          // Check user registration status
+          const userRegistered = JSON.parse(
+            localStorage.getItem("token")
+          );
+          console.log("userRegistered:", userRegistered);
+
+          if (userRegistered && userRegistered.registered) {
+            hideElementById("login-link");
+            hideElementById("register-link");
+            showElementById("profile-link");
+          }
+
+          // Set up mobile menu toggle functionality
+          document
+            .querySelectorAll("[data-collapse-toggle]")
+            .forEach((button) => {
+              button.addEventListener("click", function () {
+                const mobileMenu = document.getElementById("mobile-menu-2");
+                if (mobileMenu) {
+                  mobileMenu.style.display =
+                    mobileMenu.style.display === "none" ||
+                    mobileMenu.style.display === ""
+                      ? "block"
+                      : "none";
+                }
+              });
+            });
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
+    </script> -->
+  </body>
+</html>

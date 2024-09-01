@@ -1,0 +1,26 @@
+<body>
+    <header>
+        <nav class="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                <a href="/synergysource/template/index.html" class="flex items-center">
+                    <img src="/synergysource/template/assets/logo2.png" class="mr-3 h-6 sm:h-9" alt="Synergy Source Logo" />
+                    <span class="self-center text-sm font-semibold whitespace-nowrap dark:text-white">Synergy Source</span>
+                </a>
+                <div class="flex items-center lg:order-2" id="auth-links">
+                    <a href="/synergysource/template/login.html" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2" id="login-link">Log in</a>
+                    <a href="/synergysource/template/signup.html" class="text-white bg-[#1d4ed8] hover:bg-[#1e40af] focus:ring-4 focus:ring-[#93c5fd] font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-[#2563eb] dark:hover:bg-[#1d4ed8] focus:outline-none dark:focus:ring-[#1e40af]" id="register-link">Register</a>
+                    <div class="relative inline-block text-left" id="profile-menu">
+                        <button id="profile-button" type="button" class="text-gray-700 bg-gray-200 hover:bg-gray-300 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600" onclick="toggleProfileDropdown()">Profile</button>
+                        <div id="profile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg dark:bg-gray-700 z-50">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-white" onclick="view_menu(event)">Menu</a>
+                            <a href="/synergysource/template/payment.html" class="block px-4 py-2 text-sm text-gray-700 dark:text-white">Payment</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 dark:text-white">Settings</a>
+                            <a href="#" id="logout-button" class="block px-4 py-2 text-sm text-gray-700 dark:text-white" onclick="logout(event)">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+</body>
