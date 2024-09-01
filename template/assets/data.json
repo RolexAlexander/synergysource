@@ -1,0 +1,86 @@
+{
+  "vehicles": [
+    {
+      "license_plate": "GTB 1234",
+      "driver": {
+        "name": "John Smith",
+        "experience_years": 10,
+        "rating": 4.7,
+        "license_number": "GY123456"
+      },
+      "vehicle_type": "Minibus",
+      "estimated_travel_time": "45 minutes"
+    },
+    {
+      "license_plate": "PTT 5678",
+      "driver": {
+        "name": "Jane Doe",
+        "experience_years": 8,
+        "rating": 4.8,
+        "license_number": "GY654321"
+      },
+      "vehicle_type": "Sedan",
+      "estimated_travel_time": "30 minutes"
+    },
+    {
+      "license_plate": "HHF 9101",
+      "driver": {
+        "name": "Michael Johnson",
+        "experience_years": 12,
+        "rating": 4.6,
+        "license_number": "GY789012"
+      },
+      "vehicle_type": "SUV",
+      "estimated_travel_time": "50 minutes"
+    },
+    {
+      "license_plate": "JKK 1213",
+      "driver": {
+        "name": "Emily Davis",
+        "experience_years": 5,
+        "rating": 4.9,
+        "license_number": "GY345678"
+      },
+      "vehicle_type": "Taxi",
+      "estimated_travel_time": "25 minutes"
+    },
+    {
+      "license_plate": "VVV 1415",
+      "driver": {
+        "name": "David Brown",
+        "experience_years": 15,
+        "rating": 4.5,
+        "license_number": "GY901234"
+      },
+      "vehicle_type": "Pickup",
+      "estimated_travel_time": "55 minutes"
+    }
+  ],
+  "routes": [
+    {
+      "route_name": "Georgetown to New Amsterdam",
+      "distance_km": 100,
+      "estimated_travel_time": "1 hour 45 minutes"
+    },
+    {
+      "route_name": "Georgetown to Linden",
+      "distance_km": 65,
+      "estimated_travel_time": "1 hour 15 minutes"
+    },
+    {
+      "route_name": "Georgetown to Parika",
+      "distance_km": 45,
+      "estimated_travel_time": "1 hour"
+    },
+    {
+      "route_name": "Georgetown to Timehri",
+      "distance_km": 41,
+      "estimated_travel_time": "50 minutes"
+    },
+    {
+      "route_name": "Georgetown to Berbice",
+      "distance_km": 105,
+      "estimated_travel_time": "2 hours"
+    }
+  ]
+}

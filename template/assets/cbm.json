@@ -1,0 +1,43 @@
+{
+  "maintenance_intervals": {
+    "oil_change": {
+      "distance_based": "3000-7500 miles (4800-12000 kilometers)",
+      "time_based": "Every 6 months"
+    },
+    "tire_rotation": {
+      "distance_based": "5000-8000 miles (8000-13000 kilometers)",
+      "time_based": "Every 6 months"
+    },
+    "wheel_alignment": {
+      "distance_based": "Every 10000 miles (16000 kilometers)",
+      "condition_based": "If uneven tire wear or vehicle pulls to one side"
+    },
+    "brake_inspection": {
+      "distance_based": "10000-15000 miles (16000-24000 kilometers)",
+      "time_based": "Annually"
+    },
+    "transmission_fluid_change": {
+      "distance_based": "30000-60000 miles (48000-96000 kilometers)",
+      "time_based": "Every 2-4 years"
+    },
+    "engine_air_filter": {
+      "distance_based": "15000-30000 miles (24000-48000 kilometers)",
+      "time_based": "Inspect every 12 months"
+    },
+    "coolant_change": {
+      "distance_based": "30000-50000 miles (48000-80000 kilometers)",
+      "time_based": "Every 2-3 years"
+    },
+    "timing_belt_chain_replacement": {
+      "distance_based": "60000-100000 miles (96000-160000 kilometers)",
+      "time_based": "Every 5-7 years"
+    },
+    "battery_replacement": {
+      "time_based": "Every 3-5 years"
+    },
+    "spark_plug_replacement": {
+      "distance_based": "30000-100000 miles (48000-160000 kilometers)",
+      "time_based": "Every 3-5 years"
+    }
+  }
+}

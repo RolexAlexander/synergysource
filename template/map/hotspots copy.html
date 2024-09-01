@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map for User Pickups</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([6.818, -58.119], 13);
+
+        // Add tile layer
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add heatmap layer
+        var heat = L.heatLayer([
+            [6.818, -58.119], [6.819, -58.120], [6.817, -58.118], [6.818, -58.121],
+            [6.816, -58.122], [6.820, -58.118], [6.821, -58.119], [6.817, -58.120],
+            [6.818, -58.121], [6.819, -58.122], [6.820, -58.119], [6.816, -58.120],
+            [6.821, -58.121], [6.817, -58.122], [6.818, -58.119], [6.819, -58.118],
+            [6.820, -58.119], [6.821, -58.120], [6.816, -58.121], [6.818, -58.122],
+            [6.817, -58.119], [6.819, -58.120], [6.818, -58.121], [6.820, -58.122],
+            [6.821, -58.119], [6.818, -58.120], [6.819, -58.121], [6.817, -58.122],
+            [6.818, -58.119], [6.820, -58.118], [6.821, -58.119], [6.818, -58.120],
+            [6.816, -58.121], [6.820, -58.122], [6.821, -58.119], [6.818, -58.120],
+            [6.819, -58.121], [6.817, -58.122], [6.820, -58.119], [6.821, -58.118],
+            [6.818, -58.119], [6.819, -58.120], [6.817, -58.121], [6.820, -58.122],
+            [6.821, -58.119], [6.815, -58.123], [6.822, -58.124], [6.823, -58.124],
+            [6.814, -58.124], [6.824, -58.124], [6.8245, -58.114], [6.8245, -58.114],
+            [6.8245, -58.114], [6.8245, -58.114]
+        ], {radius: 15, blur: 15, maxZoom: 18, minOpacity: 0.2}).addTo(map);
+
+        // Add geolocation control
+        L.control.locate({
+            position: 'topleft',
+            radius: 200,
+            follow: true,
+            keepCurrentZoomLevel: true
+        }).addTo(map);
+    </script>
+
+    <!-- buttons  -->
+    <div class="fixed bottom-2 right-2 flex space-x-2 z-40">
+        <a
+          class="bg-blue-800 text-white rounded-md px-2 py-1 text-sm hover:bg-blue-700"
+          href="/template/map/vehicles.html"
+          >Vehicles</a
+        >
+        <a
+  
+          class="bg-blue-600 text-white rounded-md px-2 py-1 text-sm hover:bg-blue-700"
+          href="/template/map/routes.html"
+          >Routes</a
+        >
+        <a
+          class="bg-blue-600 text-white rounded-md px-2 py-1 text-sm hover:bg-blue-700"
+          href="/template/map/hotspots.html"
+          >hotspots</a
+        >
+        <a
+          class="bg-blue-600 text-white rounded-md px-2 py-1 text-sm hover:bg-blue-700"
+          href="/template/map/traffic.html"
+          >Traffic</a
+        >
+        <button
+          id="toggle-button"
+          class="bg-blue-600 text-white rounded-md px-2 py-1 text-sm hover:bg-blue-800"
+        >
+          Weather
+        </button>
+      </div>
+</body>
+</html>
