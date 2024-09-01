@@ -1,4 +1,4 @@
-# Weather Folder
+# Weather
 
 This folder contains scripts for generating weather graphs using both mockup and real weather data.
 
