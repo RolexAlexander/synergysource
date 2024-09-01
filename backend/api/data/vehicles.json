@@ -1,0 +1,18 @@
+[
+    {
+        "license_plate": "ABC123",
+        "capacity": 16,
+        "organization_id": "62c935ce-7b2c-4cff-860e-69f8dba00328", 
+        "operating_location": "Location A",
+        "vehicle_type": "bus",
+        "status": true
+    },
+    {
+        "license_plate": "XYZ789",
+        "capacity": 5,
+        "organization_id": "faf0dfbe-2165-401c-895b-0bb0de956a2c", 
+        "operating_location": "Location B",
+        "vehicle_type": "car",
+        "status": true
+    }
+]

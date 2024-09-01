@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  fastapi:
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    ports:
+      - 8000:8000
+    networks:
+      - api-network
+
+networks: 
+  api-network:
+    driver: bridge

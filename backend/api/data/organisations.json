@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Guy Rides Inc.",
+        "contact_email": "contact@guyrides.com",
+        "contact_phone_number": "555-5555",
+        "password": "organizationpass"
+    },
+    {
+        "name": "Transport Solutions Ltd.",
+        "contact_email": "info@transportsolutions.com",
+        "contact_phone_number": "555-9876",
+        "password": "transportpass"
+    }
+]

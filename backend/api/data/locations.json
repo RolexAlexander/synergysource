@@ -1,0 +1,14 @@
+[
+    {
+        "driver_id": "daf183d3-4167-4ebe-9c5f-e1dc6934ca0e",
+        "name": "Location A",
+        "latitude": 6.823338,
+        "longitude": -58.118653
+    }, 
+    {
+        "driver_id": "0a513d02-e372-40db-8a60-1358881a045b",
+        "name": "Location B",
+        "latitude": -58.118653,
+        "longitude": 6.823338
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Alice Smith",
+        "rating": "5 stars",
+        "license_number": "ABC1234",
+        "phone_number": "555-5678",
+        "password": "driverpass",
+        "organization_id": "62c935ce-7b2c-4cff-860e-69f8dba00328"  
+    },
+    {
+        "name": "Bob Johnson",
+        "rating": "4.7 stars",
+        "license_number": "XYZ9876",
+        "phone_number": "555-4321",
+        "password": "driverpass123",
+        "organization_id": "faf0dfbe-2165-401c-895b-0bb0de956a2c"  
+    }
+]
