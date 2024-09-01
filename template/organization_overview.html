@@ -94,17 +94,17 @@
     }
 </style>
 
-  <body class="bg-gray-100">
+  <body class="dark:bg-gray-900">
     <div id="navbar"></div>
 
     <div class="container mx-auto p-4 sm:p-6">
-      <h1 class="text-xl sm:text-2xl font-bold mb-4 sm:mb-6">Organization Overview</h1>
+      <h1 class="text-xl text-white sm:text-2xl font-bold mb-4 sm:mb-6">Organization Overview</h1>
         <!-- Main Header -->
 
         <!-- Main Cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
             <!-- Map Card -->
-            <a href="/template/map/vehicles.html" class="card block">
+            <a href="/template/map/vehicles.html" class="card block bg-gray-400">
                 <div class="flex flex-col items-center justify-center h-full">
                     <i class="fas fa-map-marker-alt card-icon text-blue-500"></i>
                     <h2 class="card-title">Map</h2>
@@ -112,7 +112,7 @@
             </a>
 
             <!-- Driver List Card -->
-            <a href="organization_dashboard/drivers.html" class="card block">
+            <a href="organization_dashboard/drivers.html" class="card block bg-gray-400">
                 <div class="flex flex-col items-center justify-center h-full">
                     <i class="fas fa-users card-icon text-green-500"></i>
                     <h2 class="card-title">Driver List</h2>
@@ -120,7 +120,7 @@
             </a>
 
             <!-- Ride Statistics Card -->
-            <a href="/template/organization_overview.html" class="card block">
+            <a href="/template/organization_overview.html" class="card block bg-gray-400">
                 <div class="flex flex-col items-center justify-center h-full">
                     <i class="fas fa-chart-line card-icon text-yellow-500"></i>
                     <h2 class="card-title">Overview</h2>
@@ -128,7 +128,7 @@
             </a>
 
             <!-- Settings Card -->
-            <a href="organization_dashboard/settings.html" class="card block">
+            <a href="organization_dashboard/settings.html" class="card block bg-gray-400">
                 <div class="flex flex-col items-center justify-center h-full">
                     <i class="fas fa-cogs card-icon text-gray-500"></i>
                     <h2 class="card-title">Settings</h2>
@@ -140,11 +140,11 @@
 
 
       <!-- Driver Comments Table -->
-      <div class="bg-white rounded-lg shadow-md p-3 sm:p-4">
+      <div class="bg-gray-400 rounded-lg shadow-md p-3 sm:p-4">
         <h3 class="font-semibold text-base sm:text-lg mb-3 sm:mb-4">Driver Reports</h3>
         <table id="selection-table" class="min-w-full border-collapse rounded-lg text-sm sm:text-base">
           <thead>
-            <tr class="bg-gray-200">
+            <tr class="bg-gray-500">
               <th class="py-1 px-2 sm:py-2 sm:px-4 text-left rounded-l-lg">Driver Name</th>
               <th class="py-1 px-2 sm:py-2 sm:px-4 text-left">Comments</th>
               <th class="py-1 px-2 sm:py-2 sm:px-4 text-left">Created</th>
@@ -158,11 +158,11 @@
       </div>
 
       <!-- Emergency Table -->
-      <div class="bg-white rounded-lg shadow-md p-3 sm:p-4 mt-4">
+      <div class="bg-gray-400 rounded-lg shadow-md p-3 sm:p-4 mt-4">
         <h3 class="font-semibold text-base sm:text-lg mb-3 sm:mb-4">Emergency Notification</h3>
         <table id="emergency-table" class="min-w-full border-collapse rounded-lg text-sm sm:text-base">
           <thead>
-            <tr class="bg-gray-200">
+            <tr class="bg-gray-500">
               <th class="py-1 px-2 sm:py-2 sm:px-4 text-left rounded-l-lg">Driver Name</th>
               <th class="py-1 px-2 sm:py-2 sm:px-4 text-left">Comments</th>
               <th class="py-1 px-2 sm:py-2 sm:px-4 text-left">Created</th>
@@ -176,13 +176,13 @@
       </div>
 
       <!-- Maintainance Table -->
-      <div class="bg-white rounded-lg shadow-md p-3 sm:p-4 mt-4">
+      <div class="bg-gray-400 rounded-lg shadow-md p-3 sm:p-4 mt-4">
         <h3 class="font-semibold text-base sm:text-lg mb-3 sm:mb-4">Maintainance Reports</h3>
         <table id="maintenance-table" class="min-w-full border-collapse rounded-lg text-sm sm:text-base">
           <thead>
-            <tr class="bg-gray-200">
+            <tr class="bg-gray-500">
               <th class="py-1 px-2 sm:py-2 sm:px-4 text-left rounded-l-lg">Number Plate</th>
-              <th class="py-1 px-2 sm:py-2 sm:px-4 text-left">Message</th>
+              <th class="py-1 px-2 sm:py-2 sm:px-4 text-left rounded-r-lg">Message</th>
             </tr>
           </thead>
           <tbody>
@@ -416,8 +416,8 @@
                     row.classList.add("border-b");
                     
                     row.innerHTML = `
-                        <td class="py-1 text-sm px-2 sm:py-2 sm:px-4">${data.number_plate}</td>
-                        <td class="py-1 text-sm px-2 sm:py-2 sm:px-4">${data.message}</td>
+                        <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${data.number_plate}</td>
+                        <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${data.message}</td>
                     `;
                     
                     tableBody.appendChild(row);
@@ -529,10 +529,10 @@
 
           
           row.innerHTML = `
-              <td class="py-1 text-sm px-2 sm:py-2 sm:px-4">${data.driver}</td>
-              <td class="py-1 text-sm px-2 sm:py-2 sm:px-4">${data.report}</td>
-              <td class="py-1 text-sm px-2 sm:py-2 sm:px-4">${readableDate}</td>
-              <td class="py-1 text-sm px-2 sm:py-2 sm:px-4">${data.first_name} ${data.last_name}</td>
+              <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${data.driver}</td>
+              <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${data.report}</td>
+              <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${readableDate}</td>
+              <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${data.first_name} ${data.last_name}</td>
           `;
           
           tableBody.appendChild(row);
@@ -596,10 +596,10 @@
 
           
           row.innerHTML = `
-              <td class="py-1 text-sm px-2 sm:py-2 sm:px-4">${data.driver}</td>
-              <td class="py-1 text-sm px-2 sm:py-2 sm:px-4">${data.report}</td>
-              <td class="py-1 text-sm px-2 sm:py-2 sm:px-4">${readableDate}</td>
-              <td class="py-1 text-sm px-2 sm:py-2 sm:px-4">${data.first_name} ${data.last_name}</td>
+              <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${data.driver}</td>
+              <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${data.report}</td>
+              <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${readableDate}</td>
+              <td class="py-1 border-b border-gray-500 text-sm px-2 sm:py-2 sm:px-4">${data.first_name} ${data.last_name}</td>
           `;
           
           etableBody.appendChild(row);

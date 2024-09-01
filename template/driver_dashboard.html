@@ -89,9 +89,7 @@
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
     <!-- Navbar -->
-    <div id="navbar" class="fixed top-0 left-0 w-full bg-opacity-70 bg-gray-800 text-white shadow-md z-50">
-        <!-- Navbar content will be loaded here -->
-    </div>
+    <div id="navbar" class="z-20"></div>
 
     <!-- Main Content -->
     <div class="container mx-auto p-6 pt-24">
@@ -104,7 +102,7 @@
         <!-- Main Cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
             <!-- Manage Rides Card -->
-            <a href="driver_dashboard/manage-rides.html" class="card block">
+            <a href="driver_dashboard/manage-rides.html" class="card block bg-gray-400">
                 <div class="flex flex-col items-center justify-center h-full">
                     <i class="fas fa-car card-icon text-green-500"></i>
                     <h2 class="card-title">Manage Rides</h2>
@@ -112,7 +110,7 @@
             </a>
 
             <!-- Earnings Card -->
-            <a href="driver_dashboard/earnings.html" class="card block">
+            <a href="driver_dashboard/earnings.html" class="card block bg-gray-400">
                 <div class="flex flex-col items-center justify-center h-full">
                     <i class="fas fa-dollar-sign card-icon text-blue-500"></i>
                     <h2 class="card-title">Earnings</h2>
@@ -120,7 +118,7 @@
             </a>
 
             <!-- Profile Card -->
-            <a href="driver_dashboard/profile.html" class="card block">
+            <a href="driver_dashboard/profile.html" class="card block bg-gray-400">
                 <div class="flex flex-col items-center justify-center h-full">
                     <i class="fas fa-user card-icon text-yellow-500"></i>
                     <h2 class="card-title">Profile</h2>
@@ -128,7 +126,7 @@
             </a>
 
             <!-- Support Card -->
-            <a href="driver_dashboard/support.html" class="card block">
+            <a href="driver_dashboard/support.html" class="card block bg-gray-400">
                 <div class="flex flex-col items-center justify-center h-full">
                     <i class="fas fa-headset card-icon text-gray-500"></i>
                     <h2 class="card-title">Support</h2>
@@ -137,10 +135,6 @@
         </div>
     </div>
 
-    <!-- Dark Mode Toggle Button -->
-    <button class="dark-mode-toggle" id="darkModeToggle">
-        <i class="fas fa-moon"></i>
-    </button>
     
     <!-- Notification Area -->
     <div id="notification" class="hidden">
@@ -178,5 +172,92 @@
             localStorage.removeItem('notification');
         }
     </script>
+
+      <!-- navbar script -->
+  <script>
+
+      // Function to logout
+      function logout(event) {
+          // event.preventDefault(); // Prevent the default anchor behavior
+          localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
+          console.log("User logged out");
+          // Redirect to the register page
+          window.location.href = '/template/signup.html';
+      }
+
+      function view_menu(event) {
+          event.preventDefault();
+          // current_path = localStorage.getItem('current_path');
+          let current_path = JSON.parse(localStorage.getItem('current_path'));
+
+          window.location.href = "/template/"+current_path;
+      }
+      
+
+      // Function to hide elements by ID
+      function hideElementById(id) {
+          const element = document.getElementById(id);
+          if (element) {
+              element.style.display = "none";
+          }
+      }
+
+      // Function to show elements by ID
+      function showElementById(id) {
+          const element = document.getElementById(id);
+          if (element) {
+              element.style.display = "block";
+          }
+      }
+
+      // Function to toggle profile dropdown visibility
+      function toggleProfileDropdown() {
+          const dropdown = document.getElementById('profile-dropdown');
+          dropdown.classList.toggle('hidden');
+      }
+
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function(event) {
+          if (!event.target.matches('#profile-button')) {
+              const dropdowns = document.getElementsByClassName('absolute');
+              for (let i = 0; i < dropdowns.length; i++) {
+                  const openDropdown = dropdowns[i];
+                  if (!openDropdown.classList.contains('hidden')) {
+                      openDropdown.classList.add('hidden');
+                  }
+              }
+          }
+      }
+
+
+      fetch("navbar.html")
+      .then((response) => response.text())
+      .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+
+          // Check user login status
+          const userLoggedIn = JSON.parse(localStorage.getItem("token"));
+          console.log("userLoggedIn:", userLoggedIn);
+
+          if (userLoggedIn) {
+              console.log("userLoggedIn hide");
+              hideElementById("login-link");
+              hideElementById("register-link");
+              showElementById("profile-menu");
+          } else {
+              showElementById("login-link");
+              showElementById("register-link");
+              hideElementById("profile-menu");
+          }
+
+          // Set up mobile menu toggle functionality
+          // Assuming you will define this function
+          // setupMobileMenuToggle();
+      })
+      .catch((error) => console.error("Error loading navbar:", error));
+  
+  
+  </script>
+
 </body>
 </html>
