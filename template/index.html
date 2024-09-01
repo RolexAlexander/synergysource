@@ -11,8 +11,6 @@
         <!-- <script src="https://platform.trueselph.com/messenger/agent/cm0ddpguq00r9ut6lrwiqa6fh.js"></script> -->
     </head>
     <body>
-        <div id="navbar"></div>
-        <script src="https://platform.trueselph.com/messenger/agent/cm0ddpguq00r9ut6lrwiqa6fh.js"></script>
     </body>
 
     <script>
@@ -68,7 +66,7 @@
         }
 
 
-        fetch("navbar.html")
+        fetch("template/navbar.html")
         .then((response) => response.text())
         .then((data) => {
             document.getElementById("navbar").innerHTML = data;
