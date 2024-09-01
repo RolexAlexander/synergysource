@@ -11,7 +11,8 @@
     </style>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
-    <!-- Navbar and Content -->
+    <!-- Navbar -->
+    <div id="navbar"></div>
     <div class="container mx-auto p-6 pt-24">
         <!-- Main Header -->
         <header class="mb-8">
@@ -31,18 +32,13 @@
         </div>
 
         <!-- Camera Support Section -->
-        <div id="camera" class="mb-6">
+        <div id="camera" class="mb-6 flex justify-center items-center">
             <div class="text-center" id="video-container">
                 <!-- Replace the URL with your back-end's video feed URL -->
                 <img src="https://mrgww2tp-5000.use2.devtunnels.ms/video_feed" style="height: 100%; width: auto;" alt="Camera feed">
             </div>
         </div>
     </div>
-
-    <!-- Dark Mode Toggle Button -->
-    <button class="dark-mode-toggle fixed bottom-6 right-6 bg-gray-800 text-white p-4 rounded-full shadow-md transition-transform duration-300">
-        <i class="fas fa-moon"></i>
-    </button>
 
     <!-- JavaScript -->
     <script>
@@ -58,6 +54,89 @@
                 document.body.classList.add('dark');
             }
         });
+    </script>
+
+    <!-- logics for navbar  -->
+    <script>
+
+        function logout(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
+            localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
+            console.log("User logged out");
+            // Redirect to the register page
+            window.location.href = '/synergysource/template/signup.html';
+        }
+
+        function view_menu(event) {
+            event.preventDefault();
+            // current_path = localStorage.getItem('current_path');
+            let current_path = JSON.parse(localStorage.getItem('current_path'));
+
+            window.location.href = "/synergysource/template/"+current_path;
+        }
+
+        
+        // Function to hide elements by ID
+        function hideElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "none";
+            }
+        }
+
+        // Function to show elements by ID
+        function showElementById(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "block";
+            }
+        }
+
+        // Function to toggle profile dropdown visibility
+        function toggleProfileDropdown() {
+            const dropdown = document.getElementById('profile-dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('#profile-button')) {
+                const dropdowns = document.getElementsByClassName('absolute');
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (!openDropdown.classList.contains('hidden')) {
+                        openDropdown.classList.add('hidden');
+                    }
+                }
+            }
+        }
+
+
+        fetch("../navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+            document.getElementById("navbar").innerHTML = data;
+
+            // Check user login status
+            const userLoggedIn = JSON.parse(localStorage.getItem("token"));
+            console.log("userLoggedIn:", userLoggedIn);
+
+            if (userLoggedIn) {
+                console.log("userLoggedIn hide");
+                hideElementById("login-link");
+                hideElementById("register-link");
+                showElementById("profile-menu");
+            } else {
+                showElementById("login-link");
+                showElementById("register-link");
+                hideElementById("profile-menu");
+            }
+
+            // Set up mobile menu toggle functionality
+            // Assuming you will define this function
+            // setupMobileMenuToggle();
+        })
+        .catch((error) => console.error("Error loading navbar:", error));
     </script>
 </body>
 </html>
