@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Weather Monitoring</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+        .plot-container {
+            margin-top: 30px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Real-Time Weather Monitoring</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                {% if not running %}
+                <form method="POST">
+                    <div class="form-group">
+                        <label for="lat">Enter Latitude:</label>
+                        <input type="text" id="lat" name="lat" class="form-control" placeholder="Latitude" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lon">Enter Longitude:</label>
+                        <input type="text" id="lon" name="lon" class="form-control" placeholder="Longitude" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Start Monitoring</button>
+                </form>
+                {% else %}
+                <button id="stop-btn" class="btn btn-danger btn-block">Stop Monitoring</button>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row justify-content-center plot-container">
+            <div class="col-md-8">
+                <h2 class="text-center">Temperature Over Time</h2>
+                <img id="plot" src="/plot.png" alt="Real-Time Temperature Plot">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            function updatePlot() {
+                $('#plot').attr('src', '/plot.png?' + new Date().getTime());
+            }
+            setInterval(updatePlot, 5000);  // Refresh plot every 5 seconds
+
+            $('#stop-btn').click(function() {
+                $.post('/stop', function(response) {
+                    if (response.success) {
+                        location.reload();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
