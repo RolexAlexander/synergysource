@@ -232,7 +232,7 @@
         localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
         console.log("User logged out");
         // Redirect to the register page
-        window.location.href = '/template/signup.html';
+        window.location.href = '/synergysource/template/signup.html';
     }
 
     function view_menu(event) {
@@ -240,7 +240,7 @@
         // current_path = localStorage.getItem('current_path');
         let current_path = JSON.parse(localStorage.getItem('current_path'));
 
-        window.location.href = "/template/"+current_path;
+        window.location.href = "/synergysource/template/"+current_path;
     }
     
     // Function to hide elements by ID

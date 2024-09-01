@@ -104,7 +104,7 @@
         <!-- Main Cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
             <!-- Map Card -->
-            <a href="/template/map/vehicles.html" class="card block bg-gray-400">
+            <a href="/synergysource/template/map/vehicles.html" class="card block bg-gray-400">
                 <div class="flex flex-col items-center justify-center h-full">
                     <i class="fas fa-map-marker-alt card-icon text-blue-500"></i>
                     <h2 class="card-title">Map</h2>
@@ -120,7 +120,7 @@
             </a>
 
             <!-- Ride Statistics Card -->
-            <a href="/template/organization_overview.html" class="card block bg-gray-400">
+            <a href="/synergysource/template/organization_overview.html" class="card block bg-gray-400">
                 <div class="flex flex-col items-center justify-center h-full">
                     <i class="fas fa-chart-line card-icon text-yellow-500"></i>
                     <h2 class="card-title">Overview</h2>
@@ -614,7 +614,7 @@
             localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
             console.log("User logged out");
             // Redirect to the register page
-            window.location.href = '/template/signup.html';
+            window.location.href = '/synergysource/template/signup.html';
         }
 
         function view_menu(event) {
@@ -622,7 +622,7 @@
             // current_path = localStorage.getItem('current_path');
             let current_path = JSON.parse(localStorage.getItem('current_path'));
 
-            window.location.href = "/template/"+current_path;
+            window.location.href = "/synergysource/template/"+current_path;
         }
         
         // Function to hide elements by ID

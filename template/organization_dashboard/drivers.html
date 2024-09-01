@@ -101,7 +101,7 @@
         sampleData.forEach(data => {
             const row = document.createElement("tr");
             row.classList.add("hover:bg-gray-50", "cursor-pointer", "p-1", "md:p-2");
-            row.dataset.url = `/template/organization_dashboard/driver_details.html?id=${data.name}`; // Assuming you have an ID for the item
+            row.dataset.url = `/synergysource/template/organization_dashboard/driver_details.html?id=${data.name}`; // Assuming you have an ID for the item
 
             row.innerHTML = `
                 <td class="font-medium text-gray-900 whitespace-nowrap dark:text-gray-600">${data.name}</td>
@@ -147,7 +147,7 @@
             localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
             console.log("User logged out");
             // Redirect to the register page
-            window.location.href = '/template/signup.html';
+            window.location.href = '/synergysource/template/signup.html';
         }
 
         function view_menu(event) {
@@ -155,7 +155,7 @@
             // current_path = localStorage.getItem('current_path');
             let current_path = JSON.parse(localStorage.getItem('current_path'));
 
-            window.location.href = "/template/"+current_path;
+            window.location.href = "/synergysource/template/"+current_path;
         }
         
         // Function to hide elements by ID

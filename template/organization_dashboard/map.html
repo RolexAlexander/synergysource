@@ -179,7 +179,7 @@
             }).addTo(map);
 
             var greenIcon = L.icon({
-            iconUrl: '/template/assets/car-service.png',
+            iconUrl: '/synergysource/template/assets/car-service.png',
             iconSize: [40, 40],  // size of the icon
             iconAnchor: [20, 40],  // center horizontally, bottom vertically
             popupAnchor: [0, -40]   // point from which the popup should open relative to the iconAnchor
@@ -243,7 +243,7 @@
                     </button>
                 </div>
             `;
-            // <a href="/template/customer_dashboard/ride.html">Hail Vehicle</a>
+            // <a href="/synergysource/template/customer_dashboard/ride.html">Hail Vehicle</a>
 
             // Attach the popup to the marker
             marker.bindPopup(popupContent);
@@ -281,7 +281,7 @@
             localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
             console.log("User logged out");
             // Redirect to the register page
-            window.location.href = '/template/signup.html';
+            window.location.href = '/synergysource/template/signup.html';
         }
 
         function view_menu(event) {
@@ -289,7 +289,7 @@
             // current_path = localStorage.getItem('current_path');
             let current_path = JSON.parse(localStorage.getItem('current_path'));
 
-            window.location.href = "/template/"+current_path;
+            window.location.href = "/synergysource/template/"+current_path;
         }
 
         
