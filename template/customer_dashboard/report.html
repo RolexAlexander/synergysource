@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <!-- navbar  -->
     <div id="navbar"></div>
 
     <div class="container mx-auto p-4 sm:p-2">
@@ -68,6 +69,7 @@
     </div>
 
 
+    <!-- script for rating stars  -->
     <script>
         const stars = document.querySelectorAll('#rating span');
         const ratingValue = document.getElementById('ratingValue');
@@ -118,33 +120,7 @@
         });
     </script>
 
-
-
-    <!-- <script>
-        const stars = document.querySelectorAll('#rating span');
-        const ratingValue = document.getElementById('ratingValue');
-
-        stars.forEach(star => {
-            star.addEventListener('click', () => {
-                // Set the selected rating value
-                const value = star.getAttribute('data-value');
-                ratingValue.value = value;
-
-                // Update the appearance of the stars
-                stars.forEach(s => {
-                    if (s.getAttribute('data-value') <= value) {
-                        s.classList.remove('text-gray-300');
-                        s.classList.add('text-yellow-400');
-                    } else {
-                        s.classList.remove('text-yellow-400');
-                        s.classList.add('text-gray-300');
-                    }
-                });
-            });
-        });
-    </script> -->
-
-
+    <!-- emergency submit  -->
     <script>
         document.getElementById("emergencyButton").addEventListener("click", (event) => {
         event.preventDefault(); // Prevent default form submission
@@ -172,9 +148,9 @@
 
     </script>
 
+    <!-- auto fill form using data from db -->
     <script>
         let drivers2 = []; // Initialize an empty array for drivers
-        console.log("init driver2")
 
         // Function to fetch driver data from the API
         async function fetchDrivers() {
@@ -205,34 +181,7 @@
             }
         }
 
-        
-        // // Sample driver data
-        // const drivers = [
-        //     {
-        //         license_plate: "GTB 1234",
-        //         driver: {
-        //             name: "John Smith",
-        //             experience_years: 10,
-        //             rating: 4.7,
-        //             license_number: "GY123456"
-        //         },
-        //         vehicle_type: "Minibus",
-        //         estimated_travel_time: "45 minutes"
-        //     },
-        //     {
-        //         license_plate: "GTB 90",
-        //         driver: {
-        //             name: "John Doe",
-        //             experience_years: 10,
-        //             rating: 4.7,
-        //             license_number: "GY123456"
-        //         },
-        //         vehicle_type: "car",
-        //         estimated_travel_time: "45 minutes"
-        //     }
-        //     // Add more driver objects as needed
-        // ];
-
+    
         // Fetch user data from localStorage and populate the form
         document.addEventListener("DOMContentLoaded", async() => {
             await fetchDrivers(); // Fetch drivers data from the API
@@ -279,9 +228,6 @@
             const currentTime = new Date(); // Get the current time
             const formattedTime = currentTime.toLocaleString(); // Change this as needed
 
-            console.log("Driver Search:", driverSearch.value);
-            console.log("Report:", report);
-            console.log("Created At:", formattedTime); // Log the current time
             // Store notification message
             localStorage.setItem('notification', 'Report submitted successfully!');
             localStorage.setItem('report_data', JSON.stringify({
@@ -295,15 +241,15 @@
             
             window.location.href = '../customer_dashboard.html';
         });
-    </script>
+    
+    </script>  
 
-        <script>
+    <!-- logics for navbar  -->
+    <script>
 
         function logout(event) {
             event.preventDefault(); // Prevent the default anchor behavior
             localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
-            console.log("User logged out");
-            // Redirect to the register page
             window.location.href = '/synergysource/template/signup.html';
         }
 
@@ -371,66 +317,10 @@
                 hideElementById("profile-menu");
             }
 
-            // Set up mobile menu toggle functionality
-            // Assuming you will define this function
-            // setupMobileMenuToggle();
         })
         .catch((error) => console.error("Error loading navbar:", error));
     </script>
 
-    <!-- <script>
-      // Function to hide elements by ID
-      function hideElementById(id) {
-        const element = document.getElementById(id);
-        if (element) {
-          element.style.display = "none";
-        }
-      }
-
-      // Function to show elements by ID
-      function showElementById(id) {
-        const element = document.getElementById(id);
-        if (element) {
-          element.style.display = "block";
-        }
-      }
-
-      // Fetch the navbar and check registration status
-      fetch("../navbar.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("navbar").innerHTML = data;
-
-          // Check user registration status
-          const userRegistered = JSON.parse(
-            localStorage.getItem("token")
-          );
-          console.log("userRegistered:", userRegistered);
-
-          if (userRegistered && userRegistered.registered) {
-            hideElementById("login-link");
-            hideElementById("register-link");
-            showElementById("profile-link");
-          }
-
-          // Set up mobile menu toggle functionality
-          document
-            .querySelectorAll("[data-collapse-toggle]")
-            .forEach((button) => {
-              button.addEventListener("click", function () {
-                const mobileMenu = document.getElementById("mobile-menu-2");
-                if (mobileMenu) {
-                  mobileMenu.style.display =
-                    mobileMenu.style.display === "none" ||
-                    mobileMenu.style.display === ""
-                      ? "block"
-                      : "none";
-                }
-              });
-            });
-        })
-        .catch((error) => console.error("Error loading navbar:", error));
-    </script> -->
 </body>
 
 </html>

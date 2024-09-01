@@ -98,8 +98,8 @@
     <div id="navbar"></div>
 
     <div class="container mx-auto p-4 sm:p-6">
+    <!-- Main Header -->
       <h1 class="text-xl text-white sm:text-2xl font-bold mb-4 sm:mb-6">Organization Overview</h1>
-        <!-- Main Header -->
 
         <!-- Main Cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
@@ -215,53 +215,7 @@
             }
         }
 
-        // const vehicles = [
-        //     {
-        //         "driver_name": "Alice Smith",
-        //         "vehicle_type": "bus",
-        //         "license_plate": "ABC123",
-        //         "capacity": 16,
-        //         "people": 4,
-        //         "latitude": 6.823338,
-        //         "longitude": -58.118653,
-        //         "current_mileage": 25000,
-        //         "date_last_serviced": "2024-07-15"
-        //     },
-        //     {
-        //         "driver_name": "Bob Johnson",
-        //         "vehicle_type": "car",
-        //         "license_plate": "XYZ789",
-        //         "capacity": 5,
-        //         "people": 5,
-        //         "latitude": 6.820305,
-        //         "longitude": -58.108098,
-        //         "current_mileage": 30000,
-        //         "date_last_serviced": "2024-06-10"
-        //     },
-        //     {
-        //         "driver_name": "Alice Smith",
-        //         "vehicle_type": "bus",
-        //         "license_plate": "ABC123",
-        //         "capacity": 16,
-        //         "people": 4,
-        //         "latitude": 6.823338,
-        //         "longitude": -58.118653,
-        //         "current_mileage": 25000,
-        //         "date_last_serviced": "2024-07-15"
-        //     },
-        //     {
-        //         "driver_name": "Bob Johnson",
-        //         "vehicle_type": "car",
-        //         "license_plate": "XYZ789",
-        //         "capacity": 5,
-        //         "people": 5,
-        //         "latitude": -58.118653,
-        //         "longitude": 6.823338,
-        //         "current_mileage": 30000,
-        //         "date_last_serviced": "2024-06-10"
-        //     }
-        // ];
-
+        // NOTE: using dummy data 
         const vehicles = [
             {
                 "driver_name": "Eve Adams",
@@ -308,7 +262,8 @@
                 "date_last_serviced": "2023-09-15"
             }
         ];
-
+        
+        // Data llm will need to check if vehicle needs servicing
         const maintenance_file = {
             "maintenance_intervals": {
                 "oil_change": {
@@ -355,14 +310,14 @@
 
         const prompt = `Your goal is to check which vehicles need maintenance based on the json below\n\n ${JSON.stringify(maintenance_file)}\n\n list of vehicles:\n ${JSON.stringify(vehicles)}\n\n. return a list of object containing number_plate, status and message.\nInstruction:\n- status 'servicing' or 'good'.\n- simple message letting the use know if their vehicle needs servicing and what needs it.\n- the number plate of the vehicle being inspected.\n\nMake sure u return a valid json list without any explination. Just need a json list.`;
 
-        
+        // api_key was removed and function was commented out. result was used as dummy data. 
         async function sendMessage() {
             // // Call the ChatGPT API
             // const response = await fetch('https://api.openai.com/v1/chat/completions', {
             //     method: 'POST',
             //     headers: {
             //         'Content-Type': 'application/json',
-            //         Authorization: 'Bearer sk-qPOgTLlB6ToYsoL2ylulT3BlbkFJ4Iu0M9RZn3QC1iJRc', // Use your actual API key here
+            //         Authorization: 'Bearer ADD_TOKEN_HERE', // Use your actual API key here
             //     },
             //     body: JSON.stringify({
             //         model: 'gpt-4o',
@@ -403,7 +358,7 @@
                         "message": "Your vehicle needs an oil change, tire rotation, and wheel alignment."
                     }
                 ];
-                console.log(jsonObject);
+
 
                 // Update the table here after processing the response
                 const tableBody = document.querySelector("#maintenance-table tbody");
@@ -431,7 +386,8 @@
         sendMessage();
     </script>
 
-
+    <!-- JavaScript for populating report table  -->
+    <!-- NOTE: Dummy data is used. Backed is not full integrated with frontend -->
     <script>
       // Example JavaScript for populating table, etc.
       const feedbackData = [
@@ -539,6 +495,8 @@
       });
     </script>
 
+    <!-- JavaScript for populating emergency table -->
+    <!-- NOTE: Dummy data is used. Backed is not full integrated with frontend -->
     <script>
       // Example JavaScript for populating table, etc.
       const efeedbackData = [
@@ -579,8 +537,6 @@
           }
       ];
 
-
-
       const etableBody = document.querySelector("#emergency-table tbody");
 
       const efirstThreeFeedbacks = efeedbackData.slice(0, 3);
@@ -589,10 +545,9 @@
           const row = document.createElement("tr");
           row.classList.add("border-b");
 
-          // const dateStr = '30/08/2024, 19:18:18';
           const parsedDate = dateFns.parse(data.created_at, 'dd/MM/yyyy, HH:mm:ss', new Date());
           const readableDate = dateFns.format(parsedDate, 'MMMM d, yyyy h:mm a');
-          console.log(readableDate); // Output: "August 30, 2024 7:18 PM"
+          console.log(readableDate); 
 
           
           row.innerHTML = `
@@ -610,18 +565,15 @@
     <script>
 
         function logout(event) {
-            event.preventDefault(); // Prevent the default anchor behavior
-            localStorage.setItem('userRegistered', JSON.stringify({})); // Clear local storage
+            event.preventDefault();
+            localStorage.setItem('userRegistered', JSON.stringify({})); 
             console.log("User logged out");
-            // Redirect to the register page
             window.location.href = '/synergysource/template/signup.html';
         }
 
         function view_menu(event) {
             event.preventDefault();
-            // current_path = localStorage.getItem('current_path');
             let current_path = JSON.parse(localStorage.getItem('current_path'));
-
             window.location.href = "/synergysource/template/"+current_path;
         }
         
@@ -680,128 +632,9 @@
                 showElementById("register-link");
                 hideElementById("profile-menu");
             }
-
-            // Set up mobile menu toggle functionality
-            // Assuming you will define this function
-            // setupMobileMenuToggle();
         })
         .catch((error) => console.error("Error loading navbar:", error));
     </script>
-
-    <!-- <script>
-        // Function to hide elements by ID
-        function hideElementById(id) {
-            const element = document.getElementById(id);
-            if (element) {
-                element.style.display = "none";
-            }
-        }
-
-        // Function to show elements by ID
-        function showElementById(id) {
-            const element = document.getElementById(id);
-            if (element) {
-                element.style.display = "block";
-            }
-        }
-
-        // Function to toggle profile dropdown visibility
-        function toggleProfileDropdown() {
-            const dropdown = document.getElementById('profile-dropdown');
-            dropdown.classList.toggle('hidden');
-        }
-
-        // Close the dropdown if the user clicks outside of it
-        window.onclick = function(event) {
-            if (!event.target.matches('#profile-button')) {
-                const dropdowns = document.getElementsByClassName('absolute');
-                for (let i = 0; i < dropdowns.length; i++) {
-                    const openDropdown = dropdowns[i];
-                    if (!openDropdown.classList.contains('hidden')) {
-                        openDropdown.classList.add('hidden');
-                    }
-                }
-            }
-        }
-
-        fetch("navbar.html")
-        .then((response) => response.text())
-        .then((data) => {
-            document.getElementById("navbar").innerHTML = data;
-
-            // Check user login status
-            const userLoggedIn = JSON.parse(localStorage.getItem("token"));
-            console.log("userLoggedIn:", userLoggedIn);
-
-            if (userLoggedIn) {
-                console.log("userLoggedIn hide");
-                hideElementById("login-link");
-                hideElementById("register-link");
-                showElementById("profile-menu");
-            } else {
-                showElementById("login-link");
-                showElementById("register-link");
-                hideElementById("profile-menu");
-            }
-
-            // Set up mobile menu toggle functionality
-            // Assuming you will define this function
-            // setupMobileMenuToggle();
-        })
-        .catch((error) => console.error("Error loading navbar:", error));
-    </script> -->
-
-    <!-- <script>
-      // Function to hide elements by ID
-      function hideElementById(id) {
-        const element = document.getElementById(id);
-        if (element) {
-          element.style.display = "none";
-        }
-      }
-
-      // Function to show elements by ID
-      function showElementById(id) {
-        const element = document.getElementById(id);
-        if (element) {
-          element.style.display = "block";
-        }
-      }
-
-      // Fetch the navbar and check registration status
-      fetch("navbar.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("navbar").innerHTML = data;
-
-          // Check user registration status
-          const userRegistered = JSON.parse(
-            localStorage.getItem("token")
-          );
-
-          if (userRegistered && userRegistered.registered) {
-            hideElementById("login-link");
-            hideElementById("register-link");
-            showElementById("profile-link");
-          }
-
-          // Set up mobile menu toggle functionality
-          document
-            .querySelectorAll("[data-collapse-toggle]")
-            .forEach((button) => {
-              button.addEventListener("click", function () {
-                const mobileMenu = document.getElementById("mobile-menu-2");
-                if (mobileMenu) {
-                  mobileMenu.style.display =
-                    mobileMenu.style.display === "none" ||
-                    mobileMenu.style.display === ""
-                      ? "block"
-                      : "none";
-                }
-              });
-            });
-        })
-        .catch((error) => console.error("Error loading navbar:", error));
-    </script> -->
-  </body>
+  
+</body>
 </html>

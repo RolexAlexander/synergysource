@@ -10,11 +10,11 @@
 
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
     <form id="registrationForm" class="bg-white p-6 rounded-lg shadow-md w-full max-w-md space-y-6">
+        <!-- Name Field -->
         <div>
             <label class="block text-sm font-semibold text-gray-700">Name</label>
             <input type="text" placeholder="Enter your Name" class="mt-1 p-2 block w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" id="name" required>
         </div>
-
         <!-- Account Type Field -->
         <div>
             <label class="block text-sm font-semibold text-gray-700">Account Type</label>
@@ -25,19 +25,16 @@
                 <option value="organization">Organization</option>
             </select>
         </div>
-
         <!-- Email Field -->
         <div>
             <label class="block text-sm font-semibold text-gray-700">Email</label>
             <input type="email" placeholder="Enter your Email" class="mt-1 p-2 block w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" id="email" required>
         </div>
-
         <!-- Password Field -->
         <div>
             <label class="block text-sm font-semibold text-gray-700">Password</label>
             <input type="password" placeholder="Enter your Password" class="mt-1 p-2 block w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" id="password" required>
         </div>
-
         <!-- Additional Fields for Driver -->
         <div id="driverFields" class="hidden space-y-4">
             <div>
@@ -49,7 +46,6 @@
                 <input type="text" placeholder="Enter Rating" class="mt-1 p-2 block w-full border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" id="rating">
             </div>
         </div>
-
         <!-- Contact Phone Number Field -->
         <div id="contactFields" class="hidden">
             <label class="block text-sm font-semibold text-gray-700">Phone Number</label>
@@ -60,6 +56,7 @@
         <button type="button" class="w-full py-2 bg-gray-800 text-white font-semibold rounded-md hover:bg-gray-900" onclick="registerUser()">Sign Up</button>
     </form>
 
+    <!-- register and hide specific fields based on account type -->
     <script>
         function toggleFields() {
             const accountType = document.getElementById('accountType').value;
@@ -84,9 +81,6 @@
 
                 data_response = await response.json();
                 localStorage.setItem('token', JSON.stringify(data_response));
-                localStorage.setItem('tokenee', JSON.stringify({"dd":"data_response"}));
-                console.log("data_response");
-                console.log(data_response);
                 return data_response;
             } catch (error) {
                 console.error('Error:', error);
@@ -99,11 +93,12 @@
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             let data = {};
-
+            
+            // creating different account types
+            // NOTE: backend was not full intergreated with frontend
             if (accountType === 'customer') {
                 const phoneNumber = document.getElementById('phoneNumber').value;
                 data = { name, email, phone_number: phoneNumber, password };
-                // data['token'] = "token_123";
                 localStorage.setItem('token', JSON.stringify("defaulttoken"));
                 localStorage.setItem('userRegistered', JSON.stringify(data));
                 // await postData('https://observant-integrity-production.up.railway.app/customers', data);

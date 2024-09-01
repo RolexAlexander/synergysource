@@ -68,8 +68,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
+    <!-- navbar  -->
     <div id="navbar"></div>
 
+    <!-- weather widget -->
     <div
       id="m-booked-bl-simple-week-vertical-71616"
       class="absolute top-1/5 right-0 z-20"
@@ -186,12 +188,9 @@
         <div id="map" class="h-screen"></div>
       </div>
 
-      <!-- Weather Widget -->
-      <div id="weather-toggle" class="absolute top-5 right-5 z-20">
-        <!-- Weather widget content goes here -->
-      </div>
     </div>
 
+    <!-- Add Ride Modal over map -->
     <div
       id="add-ride-modal"
       class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden z-20"
@@ -287,7 +286,7 @@
       </div>
     </div>
 
-    <!-- buttons  -->
+    <!-- map buttons  -->
     <div class="fixed bottom-2 right-2 flex space-x-2 z-40">
       <a
         class="bg-gray-600 text-white rounded-md px-2 py-1 text-sm hover:bg-gray-700"
@@ -319,6 +318,7 @@
     </div>
   </body>
 
+    <!-- weather script  -->
   <script type="text/javascript">
       var css_file = document.createElement("link");
       var widgetUrl = location.href;
@@ -357,6 +357,7 @@
       document.body.appendChild(weatherBookedScript);
     </script>
 
+  <!-- toggle weather widget  -->
   <script>
     document
       .getElementById("toggle-button")
@@ -399,6 +400,7 @@
     }
   </script>
 
+  <!-- loading map  -->
   <script>
     async function initMap() {
       // Load the Google Maps API
@@ -448,6 +450,7 @@
     initMap();
   </script>
 
+  <!-- logics for navbar -->
     <script>
 
         function logout(event) {
@@ -529,57 +532,4 @@
         .catch((error) => console.error("Error loading navbar:", error));
     </script>
 
-  <!-- <script>
-    // Function to hide elements by ID
-    function hideElementById(id) {
-      const element = document.getElementById(id);
-      if (element) {
-        element.style.display = "none";
-      }
-    }
-
-    // Function to show elements by ID
-    function showElementById(id) {
-      const element = document.getElementById(id);
-      if (element) {
-        element.style.display = "block";
-      }
-    }
-
-    // Fetch the navbar and check registration status
-    fetch("../navbar.html")
-      .then((response) => response.text())
-      .then((data) => {
-        document.getElementById("navbar").innerHTML = data;
-
-        // Check user registration status
-        const userRegistered = JSON.parse(
-          localStorage.getItem("token")
-        );
-        console.log("userRegistered:", userRegistered);
-
-        if (userRegistered && userRegistered.registered) {
-          hideElementById("login-link");
-          hideElementById("register-link");
-          showElementById("profile-link");
-        }
-
-        // Set up mobile menu toggle functionality
-        document
-          .querySelectorAll("[data-collapse-toggle]")
-          .forEach((button) => {
-            button.addEventListener("click", function () {
-              const mobileMenu = document.getElementById("mobile-menu-2");
-              if (mobileMenu) {
-                mobileMenu.style.display =
-                  mobileMenu.style.display === "none" ||
-                  mobileMenu.style.display === ""
-                    ? "block"
-                    : "none";
-              }
-            });
-          });
-      })
-      .catch((error) => console.error("Error loading navbar:", error));
-  </script> -->
 </html>

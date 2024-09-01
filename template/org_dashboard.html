@@ -67,31 +67,10 @@
             background-color: #374151;
             transform: scale(1.05);
         }
-        /* Notification Styling */
-        #notification {
-            background-color: #d1fae5;
-            border: 1px solid #10b981;
-            color: #047857;
-            position: fixed;
-            bottom: 4px;
-            right: 4px;
-            padding: 0.75rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 300px;
-            transition: transform 0.3s;
-            transform: translateY(10px);
-        }
-        #notification.show {
-            transform: translateY(0);
-        }
     </style>
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
-    <!-- Navbar -->
-    <div id="navbar" class="fixed top-0 left-0 w-full bg-opacity-70 bg-gray-800 text-white shadow-md z-50">
-        <!-- Navbar content will be loaded here -->
-    </div>
+    <div id="navbar"></div>
 
     <!-- Main Content -->
     <div class="container mx-auto p-6 pt-24">
@@ -137,23 +116,8 @@
         </div>
     </div>
 
-    <!-- Dark Mode Toggle Button -->
-    <button class="dark-mode-toggle" id="darkModeToggle">
-        <i class="fas fa-moon"></i>
-    </button>
-
-    <!-- Notification Area -->
-    <div id="notification" class="hidden">
-        <span id="notificationMessage"></span>
-    </div>
-
     <!-- JavaScript -->
     <script>
-        // Dark Mode Toggle
-        document.getElementById('darkModeToggle').addEventListener('click', () => {
-            document.body.classList.toggle('dark');
-            localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light');
-        });
 
         // Set initial theme
         document.addEventListener('DOMContentLoaded', () => {
@@ -162,21 +126,6 @@
             }
         });
 
-        // Notification
-        const notification = localStorage.getItem('notification');
-        if (notification) {
-            const notificationDiv = document.getElementById('notification');
-            document.getElementById('notificationMessage').textContent = notification;
-            notificationDiv.classList.remove('hidden');
-            notificationDiv.classList.add('show');
-            setTimeout(() => {
-                notificationDiv.classList.remove('show');
-                setTimeout(() => {
-                    notificationDiv.classList.add('hidden');
-                }, 300);
-            }, 5000);
-            localStorage.removeItem('notification');
-        }
     </script>
 </body>
 </html>
