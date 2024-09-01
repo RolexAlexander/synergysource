@@ -103,7 +103,8 @@
             if (accountType === 'customer') {
                 const phoneNumber = document.getElementById('phoneNumber').value;
                 data = { name, email, phone_number: phoneNumber, password };
-                data['token'] = "token_123";
+                // data['token'] = "token_123";
+                localStorage.setItem('token', JSON.stringify("defaulttoken"));
                 localStorage.setItem('userRegistered', JSON.stringify(data));
                 // await postData('https://observant-integrity-production.up.railway.app/customers', data);
                 localStorage.setItem('current_path', JSON.stringify("customer_dashboard.html"));
@@ -113,7 +114,8 @@
                 const licenseNumber = document.getElementById('licenseNumber').value;
                 const rating = document.getElementById('rating').value;
                 data = { name, rating, license_number: licenseNumber, phone_number: phoneNumber, password, organization_id: '3fa85f64-5717-4562-b3fc-2c963f66afa6' };
-                data['token'] = "token_123";
+                // data['token'] = "token_123";
+                localStorage.setItem('token', JSON.stringify("defaulttoken"));
                 localStorage.setItem('userRegistered', JSON.stringify(data));
                 // await postData('https://observant-integrity-production.up.railway.app/drivers', data);
                 localStorage.setItem('current_path', JSON.stringify("driver_dashboard.html"));
